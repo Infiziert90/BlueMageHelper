@@ -1,23 +1,13 @@
 ﻿using Dalamud.Game;
-using Dalamud.Game.Command;
-using Dalamud.Game.Text;
 using Dalamud.Game.Gui;
 using Dalamud.IoC;
 using Dalamud.Logging;
 using Dalamud.Plugin;
 using System;
 using System.IO;
-using System.Reflection;
-using FFXIVClientStructs.FFXIV.Client.UI;
 using FFXIVClientStructs.FFXIV.Component.GUI;
-using FFXIVClientStructs.FFXIV.Client.System.String;
-using System.Text;
-using Dalamud.Game.Text.SeStringHandling.Payloads;
 using System.Runtime.InteropServices;
-using System.Net;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System.Text.RegularExpressions;
 
 namespace BlueMageHelper
 {
@@ -36,7 +26,6 @@ namespace BlueMageHelper
         private const int blank_text_textnode_index = 54;
         private const int spell_number_textnode_index = 62;
         private const int spell_name_textnode_index = 61;
-        private const string sources_list_url = "https://markjsosnowski.github.io/FFXIV/spell_sources.json";
         private const int expected_nodelistcount = 4;
 
         public BlueMageHelper(
@@ -58,15 +47,15 @@ namespace BlueMageHelper
 
             try
             {
-                using (WebClient wc = new WebClient())
-                {
-                    var spell_sources_json_string = wc.DownloadString(sources_list_url);
-                    this.spell_sources = JObject.Parse(spell_sources_json_string);
-                }
+                PluginLog.Debug("Loading Spell Sources.");
+                var path = Path.Combine(PluginInterface.AssemblyLocation.Directory?.FullName!, "spell_sources.json");
+                PluginLog.Debug(path);
+                var spell_sources_json_string = File.ReadAllText(path);
+                this.spell_sources = JObject.Parse(spell_sources_json_string);
             }
-            catch (WebException e)
+            catch (Exception e)
             {
-                PluginLog.Error("There was a problem accessing the spell list. Is GitHub down?", e);
+                PluginLog.Error("There was a problem accessing the spell list.", e);
                 this.spell_sources = null;
             }
         }
@@ -93,14 +82,18 @@ namespace BlueMageHelper
             string hint_text;
             //AddonAOZNotebook* spellbook_addon = (AddonAOZNotebook*)addon_ptr;
             AtkUnitBase* spellbook_base_node = (AtkUnitBase*)addon_ptr;
+            
             if (spellbook_base_node->UldManager.NodeListCount < spell_number_textnode_index + 1)
                 return;
+            
             AtkTextNode* spell_name_textnode = (AtkTextNode*)spellbook_base_node->UldManager.NodeList[spell_name_textnode_index];
             #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             string spell_name = Marshal.PtrToStringAnsi(new IntPtr(spell_name_textnode->NodeText.StringPtr));
             #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-            if (spell_name != "???" && !this.Configuration.show_hint_even_if_unlocked) // Don't need to show hints for already known spells. Maybe make this a config value.
+            
+            if (spell_name != "???" && !this.Configuration.show_hint_even_if_unlocked)
                 return;
+            
             AtkTextNode* empty_textnode = (AtkTextNode*)spellbook_base_node->UldManager.NodeList[blank_text_textnode_index];
             AtkTextNode* spell_number_textnode = (AtkTextNode*)spellbook_base_node->UldManager.NodeList[spell_number_textnode_index];
             #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
@@ -148,8 +141,8 @@ namespace BlueMageHelper
                 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
                 #pragma warning disable CS8603 // Possible null reference return.
                 return (string)spell_sources[spell_number];
-            else
-                return "No data for spell #" + spell_number + "";
+            
+            return "No data for spell #" + spell_number + "";
         }
 
         public void Dispose()

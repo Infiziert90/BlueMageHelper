@@ -63,7 +63,6 @@ namespace BlueMageHelper
                 if (ImGui.Checkbox("Show hint even if a spell is already unlocked.", ref configValue))
                 {
                     this.configuration.show_hint_even_if_unlocked = configValue;
-                    // can save immediately on change, if you don't want to provide a "Save and Close" button
                     this.configuration.Save();
                 }
 
