@@ -31,9 +31,6 @@
 		<Content Include="BlueMageHelper.json">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="spell_sources.json">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
 		<Content Include="images\icon.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
@@ -41,7 +38,6 @@
 	
 	<ItemGroup>
         <PackageReference Include="DalamudPackager" Version="2.1.10" />
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     </ItemGroup>
 
   <ItemGroup>

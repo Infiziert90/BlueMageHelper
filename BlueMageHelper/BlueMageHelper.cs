@@ -4,10 +4,9 @@ using Dalamud.IoC;
 using Dalamud.Logging;
 using Dalamud.Plugin;
 using System;
-using System.IO;
 using FFXIVClientStructs.FFXIV.Component.GUI;
 using System.Runtime.InteropServices;
-using Newtonsoft.Json.Linq;
+using static BlueMageHelper.SpellSources;
 
 namespace BlueMageHelper
 {
@@ -21,13 +20,14 @@ namespace BlueMageHelper
         private PluginUI PluginUI { get; init; }
         private Framework Framework { get; init; }
         private GameGui GameGui { get; init; }
-
-        private JObject spell_sources;
+        
         private const int blank_text_textnode_index = 54;
         private const int spell_number_textnode_index = 62;
         private const int spell_name_textnode_index = 61;
+        private const int region_textnode_index = 57;
+        private const int region_image_index = 56;
         private const int expected_nodelistcount = 4;
-
+        
         public BlueMageHelper(
             [RequiredVersion("1.0")] DalamudPluginInterface pluginInterface,
             [RequiredVersion("1.0")] Framework framework,
@@ -44,20 +44,6 @@ namespace BlueMageHelper
             this.PluginInterface.UiBuilder.Draw += DrawUI;
             this.PluginInterface.UiBuilder.OpenConfigUi += DrawConfigUI;
             Framework.Update += AOZNotebook_addon_manager;
-
-            try
-            {
-                PluginLog.Debug("Loading Spell Sources.");
-                var path = Path.Combine(PluginInterface.AssemblyLocation.Directory?.FullName!, "spell_sources.json");
-                PluginLog.Debug(path);
-                var spell_sources_json_string = File.ReadAllText(path);
-                this.spell_sources = JObject.Parse(spell_sources_json_string);
-            }
-            catch (Exception e)
-            {
-                PluginLog.Error("There was a problem accessing the spell list.", e);
-                this.spell_sources = null;
-            }
         }
 
         private void AOZNotebook_addon_manager(Framework framework)
@@ -82,33 +68,37 @@ namespace BlueMageHelper
             string hint_text;
             //AddonAOZNotebook* spellbook_addon = (AddonAOZNotebook*)addon_ptr;
             AtkUnitBase* spellbook_base_node = (AtkUnitBase*)addon_ptr;
-            
+
             if (spellbook_base_node->UldManager.NodeListCount < spell_number_textnode_index + 1)
                 return;
-            
+
             AtkTextNode* spell_name_textnode = (AtkTextNode*)spellbook_base_node->UldManager.NodeList[spell_name_textnode_index];
             #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             string spell_name = Marshal.PtrToStringAnsi(new IntPtr(spell_name_textnode->NodeText.StringPtr));
             #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-            
+
             if (spell_name != "???" && !this.Configuration.show_hint_even_if_unlocked)
                 return;
-            
+
             AtkTextNode* empty_textnode = (AtkTextNode*)spellbook_base_node->UldManager.NodeList[blank_text_textnode_index];
             AtkTextNode* spell_number_textnode = (AtkTextNode*)spellbook_base_node->UldManager.NodeList[spell_number_textnode_index];
+            AtkTextNode* region = (AtkTextNode*)spellbook_base_node->UldManager.NodeList[region_textnode_index];
+            AtkImageNode* regionImage = (AtkImageNode*)spellbook_base_node->UldManager.NodeList[region_image_index];
             #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             spell_number_string = Marshal.PtrToStringAnsi(new IntPtr(spell_number_textnode->NodeText.StringPtr));
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
             //spell_number_string = extract_spell_number(spell_number_string);
-            spell_number_string = spell_number_string.Substring(1); // Remove the # from the spell number
-            #pragma warning restore CS8602 // Dereference of a possibly null reference.
-            hint_text = get_hint_text(spell_number_string);
+            spell_number_string = spell_number_string[1..]; // Remove the # from the spell number
+            
+            var spellSource = get_hint_text(spell_number_string);
             empty_textnode->ResizeNodeForCurrentText();
             //TODO if there is already text in the box, append a new line instead
-            empty_textnode->SetText(hint_text);
-
+            empty_textnode->SetText(spellSource.Info);
             empty_textnode->AtkResNode.ToggleVisibility(true);
+            
+            // Change region if needed
+            spellSource.SetRegion(region, regionImage);
         }
 
         /* Works if the blue mmage spellbook is already open. crashes if trying to open the spellbook from a closed state.
@@ -135,14 +125,9 @@ namespace BlueMageHelper
         }*/
 
         //TODO use monster IDs and perform a sheets lookup
-        private string get_hint_text(string spell_number)
+        private SpellSource get_hint_text(string spell_number)
         {
-            if (this.spell_sources.ContainsKey(spell_number))
-                #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
-                #pragma warning disable CS8603 // Possible null reference return.
-                return (string)spell_sources[spell_number];
-            
-            return "No data for spell #" + spell_number + "";
+            return Sources.ContainsKey(spell_number) ? Sources[spell_number] : new SpellSource($"No data for spell #{spell_number}");
         }
 
         public void Dispose()
