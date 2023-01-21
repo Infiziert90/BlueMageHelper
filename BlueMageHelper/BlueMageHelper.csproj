@@ -4,7 +4,7 @@
 		<TargetFramework>net7.0-windows</TargetFramework>
 		<LangVersion>latest</LangVersion>
 		<PackageId>BlueMageHelper</PackageId>
-		<Authors>Sl0nderman</Authors>
+		<Authors>Infi, Sl0nderman</Authors>
 		<Version>1.2.0.0</Version>
 	</PropertyGroup>
 
@@ -13,17 +13,10 @@
 		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<OutputType>Library</OutputType>
+		<OutputPath>..\builds\$(Configuration)\</OutputPath>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-		<OutputPath>build\</OutputPath>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-		<DocumentationFile></DocumentationFile>
-		<OutputPath>build\</OutputPath>
 	</PropertyGroup>
 
 
@@ -40,24 +33,37 @@
         <PackageReference Include="DalamudPackager" Version="2.1.10" />
     </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="Dalamud">
-		<HintPath>$(AppData)\XIVLauncher\addon\Hooks\dev\Dalamud.dll</HintPath>
-		<Private>false</Private>
-    </Reference>
-    <Reference Include="FFXIVClientStructs">
-		<HintPath>$(AppData)\XIVLauncher\addon\Hooks\dev\FFXIVClientStructs.dll</HintPath>
-		<Private>false</Private>
-    </Reference>
-    <Reference Include="ImGui.NET">
-		<HintPath>$(AppData)\XIVLauncher\addon\Hooks\dev\ImGui.NET.dll</HintPath>
-		<Private>false</Private>
-    </Reference>
-    <Reference Include="ImGuiScene">
-      <HintPath>$(AppData)\XIVLauncher\addon\Hooks\dev\ImGuiScene.dll</HintPath>
-	  <Private>false</Private>
-    </Reference>
-  </ItemGroup>
+
+	<PropertyGroup>
+		<DalamudLibPath>$(appdata)\XIVLauncher\addon\Hooks\dev\</DalamudLibPath>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<Reference Include="Dalamud">
+		  <HintPath>$(DalamudLibPath)Dalamud.dll</HintPath>
+		  <Private>false</Private>
+		</Reference>
+		<Reference Include="ImGui.NET">
+		  <HintPath>$(DalamudLibPath)ImGui.NET.dll</HintPath>
+		  <Private>false</Private>
+		</Reference>
+		<Reference Include="ImGuiScene">
+		  <HintPath>$(DalamudLibPath)ImGuiScene.dll</HintPath>
+		  <Private>false</Private>
+		</Reference>
+		<Reference Include="Lumina">
+		  <HintPath>$(DalamudLibPath)Lumina.dll</HintPath>
+		  <Private>false</Private>
+		</Reference>
+		<Reference Include="Lumina.Excel">
+		  <HintPath>$(DalamudLibPath)Lumina.Excel.dll</HintPath>
+		  <Private>false</Private>
+		</Reference>
+		<Reference Include="FFXIVClientStructs">
+			<HintPath>$(DalamudLibPath)FFXIVClientStructs.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+	</ItemGroup>
 	<Target Name="PackagePlugin" AfterTargets="Build">
 		<DalamudPackager ProjectDir="$(ProjectDir)" OutputPath="$(OutputPath)" AssemblyName="$(AssemblyName)" />
 	</Target>
