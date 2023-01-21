@@ -26,6 +26,7 @@ namespace BlueMageHelper
         private const int spell_name_textnode_index = 61;
         private const int region_textnode_index = 57;
         private const int region_image_index = 56;
+        private const int unlearned_node_index = 63;
         private const int expected_nodelistcount = 4;
         
         public BlueMageHelper(
@@ -65,19 +66,14 @@ namespace BlueMageHelper
         private unsafe void spellbook_writer(IntPtr addon_ptr)
         {
             string spell_number_string = string.Empty;
-            string hint_text;
             //AddonAOZNotebook* spellbook_addon = (AddonAOZNotebook*)addon_ptr;
             AtkUnitBase* spellbook_base_node = (AtkUnitBase*)addon_ptr;
 
-            if (spellbook_base_node->UldManager.NodeListCount < spell_number_textnode_index + 1)
+            if (spellbook_base_node->UldManager.NodeListCount < unlearned_node_index + 1)
                 return;
 
-            AtkTextNode* spell_name_textnode = (AtkTextNode*)spellbook_base_node->UldManager.NodeList[spell_name_textnode_index];
-            #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
-            string spell_name = Marshal.PtrToStringAnsi(new IntPtr(spell_name_textnode->NodeText.StringPtr));
-            #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-
-            if (spell_name != "???" && !this.Configuration.show_hint_even_if_unlocked)
+            AtkTextNode* unlearned_textNode = (AtkTextNode*)spellbook_base_node->UldManager.NodeList[unlearned_node_index];
+            if (!unlearned_textNode->AtkResNode.IsVisible && !this.Configuration.show_hint_even_if_unlocked)
                 return;
 
             AtkTextNode* empty_textnode = (AtkTextNode*)spellbook_base_node->UldManager.NodeList[blank_text_textnode_index];
