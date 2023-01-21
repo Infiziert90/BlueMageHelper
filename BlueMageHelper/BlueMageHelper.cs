@@ -5,7 +5,6 @@ using Dalamud.Logging;
 using Dalamud.Plugin;
 using System;
 using FFXIVClientStructs.FFXIV.Component.GUI;
-using System.Runtime.InteropServices;
 using static BlueMageHelper.SpellSources;
 
 namespace BlueMageHelper
@@ -13,7 +12,6 @@ namespace BlueMageHelper
     public sealed class BlueMageHelper : IDalamudPlugin
     {
         public string Name => "Blue Mage Helper";
-        //private const string commandName = "/blu";
 
         private DalamudPluginInterface PluginInterface { get; init; }
         private Configuration Configuration { get; init; }
@@ -26,7 +24,6 @@ namespace BlueMageHelper
         private const int region_textnode_index = 57;
         private const int region_image_index = 56;
         private const int unlearned_node_index = 63;
-        private const int expected_nodelistcount = 4;
         
         private string lastSeenSpell = string.Empty;
         private string lastOrgText = string.Empty;
@@ -67,7 +64,6 @@ namespace BlueMageHelper
 
         private unsafe void spellbook_writer(IntPtr addon_ptr)
         {
-            string spell_number_string = string.Empty;
             //AddonAOZNotebook* spellbook_addon = (AddonAOZNotebook*)addon_ptr;
             AtkUnitBase* spellbook_base_node = (AtkUnitBase*)addon_ptr;
 
@@ -82,8 +78,8 @@ namespace BlueMageHelper
             AtkTextNode* spell_number_textnode = (AtkTextNode*)spellbook_base_node->UldManager.NodeList[spell_number_textnode_index];
             AtkTextNode* region = (AtkTextNode*)spellbook_base_node->UldManager.NodeList[region_textnode_index];
             AtkImageNode* regionImage = (AtkImageNode*)spellbook_base_node->UldManager.NodeList[region_image_index];
-            spell_number_string = Marshal.PtrToStringAnsi(new IntPtr(spell_number_textnode->NodeText.StringPtr));
-            spell_number_string = spell_number_string![1..]; // Remove the # from the spell number
+            var spell_number_string = spell_number_textnode->NodeText.ToString();
+            spell_number_string = spell_number_string[1..]; // Remove the # from the spell number
             
             // Try to preserve last seen org text
             if (spell_number_string != lastSeenSpell) lastOrgText = empty_textnode->NodeText.ToString();
@@ -97,29 +93,6 @@ namespace BlueMageHelper
             spellSource.SetRegion(region, regionImage);
         }
 
-        /* Works if the blue mmage spellbook is already open. crashes if trying to open the spellbook from a closed state.
-         * 2021-12-01 17:10:34.247 -05:00 [DBG] [BlueMageHelper] Extracted  from 
-         * Not sure how it's getting an empty string if i'm checking for that to exist
-         * Also not sure where it's crashing even if it's an empty string??
-         */
-        /*private string extract_spell_number(string spell_number_string)
-        {
-            try
-            {
-                Regex spell_number_regex = new Regex(@"\d+");
-                Match regex_match = spell_number_regex.Match(spell_number_string);
-                string spell_number = regex_match.Value;
-                PluginLog.Debug("Extracted " + regex_match.Value + " from " + spell_number_string);
-                return spell_number;
-            }
-            catch(Exception e)
-            {
-                PluginLog.Debug("Exception was caught in the extract_spell_number function" + e);
-                return "1";
-            }
-        
-        }*/
-
         //TODO use monster IDs and perform a sheets lookup
         private SpellSource get_hint_text(string spell_number)
         {
@@ -129,14 +102,7 @@ namespace BlueMageHelper
         public void Dispose()
         {
             this.PluginUI.Dispose();
-            //this.CommandManager.RemoveHandler(commandName);
             Framework.Update -= AOZNotebook_addon_manager;
-        }
-
-        private void OnCommand(string command, string args)
-        {
-            // in response to the slash command, just display our main ui
-            this.PluginUI.Visible = true;
         }
 
         private void DrawUI()

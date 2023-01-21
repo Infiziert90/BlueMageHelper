@@ -1,9 +1,9 @@
 {
   "name": "Blue Mage Helper",
-  "Author": "Sl0nderman | Infi",
-  "Punchline": "Helps you fill our your Blue Mage Spellbook",
+  "Author": "Infi, Sl0nderman",
+  "Punchline": "Helps you fill out your Blue Mage Spellbook",
   "Description": "Adds monster names and coordinates to the \"Where to Learn\" section of your blue mage spellbook.",
-  "RepoUrl": "https://github.com/markjsosnowski/BlueMageHelper",
+  "RepoUrl": "https://github.com/Infiziert90/BlueMageHelper",
   "Tags": [ "spells", "spellbook", "blu" ],
   "CategoryTags": [ "jobs" ]
 }
