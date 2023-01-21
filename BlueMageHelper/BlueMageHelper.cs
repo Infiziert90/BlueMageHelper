@@ -23,11 +23,13 @@ namespace BlueMageHelper
         
         private const int blank_text_textnode_index = 54;
         private const int spell_number_textnode_index = 62;
-        private const int spell_name_textnode_index = 61;
         private const int region_textnode_index = 57;
         private const int region_image_index = 56;
         private const int unlearned_node_index = 63;
         private const int expected_nodelistcount = 4;
+        
+        private string lastSeenSpell = string.Empty;
+        private string lastOrgText = string.Empty;
         
         public BlueMageHelper(
             [RequiredVersion("1.0")] DalamudPluginInterface pluginInterface,
@@ -80,17 +82,15 @@ namespace BlueMageHelper
             AtkTextNode* spell_number_textnode = (AtkTextNode*)spellbook_base_node->UldManager.NodeList[spell_number_textnode_index];
             AtkTextNode* region = (AtkTextNode*)spellbook_base_node->UldManager.NodeList[region_textnode_index];
             AtkImageNode* regionImage = (AtkImageNode*)spellbook_base_node->UldManager.NodeList[region_image_index];
-            #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             spell_number_string = Marshal.PtrToStringAnsi(new IntPtr(spell_number_textnode->NodeText.StringPtr));
-#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
-            //spell_number_string = extract_spell_number(spell_number_string);
-            spell_number_string = spell_number_string[1..]; // Remove the # from the spell number
+            spell_number_string = spell_number_string![1..]; // Remove the # from the spell number
+            
+            // Try to preserve last seen org text
+            if (spell_number_string != lastSeenSpell) lastOrgText = empty_textnode->NodeText.ToString();
+            lastSeenSpell = spell_number_string;
             
             var spellSource = get_hint_text(spell_number_string);
-            empty_textnode->ResizeNodeForCurrentText();
-            //TODO if there is already text in the box, append a new line instead
-            empty_textnode->SetText(spellSource.Info);
+            empty_textnode->SetText($"{(lastOrgText != "" ? $"{lastOrgText}\n" : "")}{spellSource.Info}");
             empty_textnode->AtkResNode.ToggleVisibility(true);
             
             // Change region if needed
