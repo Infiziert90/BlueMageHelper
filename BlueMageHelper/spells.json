@@ -1,0 +1,1030 @@
+{
+  "1": {
+    "name": "Water Cannon",
+    "icon": "72203",
+    "source": {
+      "info": "Become a Blue Mage",
+      "acquiringTips": null
+    }
+  },
+  "2": {
+    "name": "Flame Thrower",
+    "icon": "72220",
+    "source": {
+      "info": "(Last Boss) Gobmachine G-VI",
+      "acquiringTips": null,
+      "territoryType": 362
+    }
+  },
+  "3": {
+    "name": "Aqua Breath",
+    "icon": "72208",
+    "source": {
+      "info": "Ultros",
+      "acquiringTips": "Aqua Breath is the signature attack of Ultros. He will use it frequently.",
+      "territoryType": 142
+    }
+  },
+  "4": {
+    "name": "Flying Frenzy",
+    "icon": "72207",
+    "source": {
+      "info": "(2nd Boss) Zu",
+      "acquiringTips": "Zu will only use the ability when you break the eggs at the perimeter. Only 2 eggs need to be broken.\nThe spell has no cast bar, but is animated as a body slam against the top aggro'd player.",
+      "territoryType": 160
+    }
+  },
+  "5": {
+    "name": "Drill Cannons",
+    "icon": "72216",
+    "source": {
+      "info": "Lvl. 50 Magitek Vanguard H-2",
+      "acquiringTips": "Drill Cannon is used only when enemies are at 50% or below HP.",
+      "territoryType": 147,
+      "xCoord": 16.0,
+      "yCoord": 15.0,
+      "type": 2
+    }
+  },
+  "6": {
+    "name": "High Voltage",
+    "icon": "72205",
+    "source": {
+      "info": "(1st Boss) ADS",
+      "acquiringTips": null,
+      "territoryType": 241
+    }
+  },
+  "7": {
+    "name": "Loom",
+    "icon": "72219",
+    "source": {
+      "info": "(Trash) Baalzephon",
+      "acquiringTips": "Loom is a teleport ability, move out of melee range while engaged to trigger the cast.",
+      "territoryType": 363,
+      "type": 13
+    }
+  },
+  "8": {
+    "name": "Final Sting",
+    "icon": "72225",
+    "source": {
+      "info": "Lvl. 13. Killer Wespe",
+      "acquiringTips": "Wait for the enemy to cast Final Sting. Tag it (ie, hit it at least once), but do not kill it.\nMake sure you keep your HP high or full since Final Sting will kill the enemy using it. You don't need to worry about how to kill the target, but you do need to be concerned about staying alive! If you die, you will not learn the spell.",
+      "territoryType": 134,
+      "xCoord": 15.0,
+      "yCoord": 15.0,
+      "type": 2
+    }
+  },
+  "9": {
+    "name": "Song Of Torment",
+    "icon": "72204",
+    "source": {
+      "info": "(Last Boss) Siren",
+      "acquiringTips": "Song of Torment is used in the Phase 1 of battle.",
+      "territoryType": 160
+    }
+  },
+  "10": {
+    "name": "Glower",
+    "icon": "72222",
+    "source": {
+      "info": "(2nd Boss) Coincounter",
+      "acquiringTips": "Glower is used midway during the fight. Be sure to wait for the one that goes in a straight line, not in a wide arc.",
+      "territoryType": 172
+    }
+  },
+  "11": {
+    "name": "Plaincracker",
+    "icon": "72209",
+    "source": {
+      "info": "Lvl. 34 Basalt Golem",
+      "acquiringTips": "Enemies tend to use this move semi-frequently. As long as you don't stand too close, you should be able to learn this easily.",
+      "territoryType": 180,
+      "xCoord": 14.0,
+      "yCoord": 16.0,
+      "type": 2
+    }
+  },
+  "12": {
+    "name": "Bristle",
+    "icon": "72211",
+    "source": {
+      "info": "Lvl. 20 Wild Boar",
+      "acquiringTips": null,
+      "territoryType": 152,
+      "xCoord": 18.0,
+      "yCoord": 24.0,
+      "type": 2
+    }
+  },
+  "13": {
+    "name": "White Wind",
+    "icon": "72224",
+    "source": {
+      "info": "Available after learning 10 spells.",
+      "acquiringTips": null,
+      "type": 3
+    }
+  },
+  "14": {
+    "name": "Level 5 Petrify",
+    "icon": "72232",
+    "source": {
+      "info": "(Trash) Manor Sentry",
+      "acquiringTips": "There is a Manor Sentry enemy just outside the first boss room of Haukke Manor. More importantly, it will use Level 5 Petrify regardless of its health status. So you can choose to run this unsync'd and just run to the first boss room and hope to learn it, or form a sync'd party and just make it this far to guarantee learning it.",
+      "territoryType": 1040
+    }
+  },
+  "15": {
+    "name": "Sharpened Knife",
+    "icon": "72218",
+    "source": {
+      "info": "(Last Boss) Tonberry King",
+      "acquiringTips": null,
+      "territoryType": 159
+    }
+  },
+  "16": {
+    "name": "Ice Spikes",
+    "icon": "72236",
+    "source": {
+      "info": "Lvl. 9 Trickster Imp",
+      "acquiringTips": "Used very early in the fight when encountered.",
+      "territoryType": 148,
+      "xCoord": 27.0,
+      "yCoord": 24.0,
+      "type": 2
+    }
+  },
+  "17": {
+    "name": "Blood Drain",
+    "icon": "72213",
+    "source": {
+      "info": "Lvl. 7 Cave Bat",
+      "acquiringTips": null,
+      "region": 222,
+      "xCoord": 27.0,
+      "yCoord": 16.0,
+      "type": 2
+    }
+  },
+  "18": {
+    "name": "Acorn Bomb",
+    "icon": "72210",
+    "source": {
+      "info": "Lvl 12-17 Treant Sapling",
+      "acquiringTips": null,
+      "territoryType": 154,
+      "xCoord": 24.0,
+      "yCoord": 28.0,
+      "type": 2
+    }
+  },
+  "19": {
+    "name": "Bomb Toss",
+    "icon": "72214",
+    "source": {
+      "info": "Lvl. 5-7 Goblin Fisher",
+      "acquiringTips": null,
+      "territoryType": 134,
+      "xCoord": 23.0,
+      "yCoord": 21.0,
+      "type": 2
+    }
+  },
+  "20": {
+    "name": "Off-guard",
+    "icon": "72229",
+    "source": {
+      "info": "Available after learning 5 spells.",
+      "acquiringTips": null,
+      "type": 3
+    }
+  },
+  "21": {
+    "name": "Self-destruct",
+    "icon": "72226",
+    "source": {
+      "info": "Lvl. 12 Glide Bomb",
+      "acquiringTips": "Be sure to wait until the enemy uses Self-Destruct to kill itself. Do NOT kill it beforehand, only tag it (ie, hit it at least once).",
+      "territoryType": 140,
+      "xCoord": 27.5,
+      "yCoord": 17.0,
+      "type": 2
+    }
+  },
+  "22": {
+    "name": "Transfusion",
+    "icon": "72227",
+    "source": {
+      "info": "Available after learning 20 spells.",
+      "acquiringTips": null,
+      "type": 3
+    }
+  },
+  "23": {
+    "name": "Faze",
+    "icon": "72221",
+    "source": {
+      "info": "Lvl. 32 Qiqirn Gullroaster",
+      "acquiringTips": null,
+      "territoryType": 141,
+      "xCoord": 26.0,
+      "yCoord": 32.0,
+      "type": 2
+    }
+  },
+  "24": {
+    "name": "Flying Sardine",
+    "icon": "72241",
+    "source": {
+      "info": "Lvl. 30 Apkallu",
+      "acquiringTips": null,
+      "territoryType": 137,
+      "xCoord": 27.0,
+      "yCoord": 35.0,
+      "type": 2
+    }
+  },
+  "25": {
+    "name": "Snort",
+    "icon": "72201",
+    "source": {
+      "info": "Typhon",
+      "acquiringTips": "Typhon will use Snort around 3~3.5min of the fight.\"Severe snort\" or \"snortassault\" will not count towards the learning of the spell.",
+      "territoryType": 142
+    }
+  },
+  "26": {
+    "name": "4-tonze Weight",
+    "icon": "72202",
+    "source": {
+      "info": "Ultros",
+      "acquiringTips": "This is used in the Phase 2 of the battle when Ultros is below 80% HP.",
+      "territoryType": 142
+    }
+  },
+  "27": {
+    "name": "The Look",
+    "icon": "72217",
+    "source": {
+      "info": "(Last Boss) Anantaboga",
+      "acquiringTips": "The Look is used by Anantaboga in the beginning of the battle.",
+      "territoryType": 167
+    }
+  },
+  "28": {
+    "name": "Bad Breath",
+    "icon": "72206",
+    "source": {
+      "info": "Lvl. 31 Stroper",
+      "acquiringTips": null,
+      "territoryType": 148,
+      "xCoord": 12.0,
+      "yCoord": 23.0,
+      "type": 2
+    }
+  },
+  "29": {
+    "name": "Diamondback",
+    "icon": "72242",
+    "source": {
+      "info": "(2nd Boss) Cuca Fera",
+      "acquiringTips": "Cuca Fera actually CAN be damaged heavily without use of the cannons. Use Missile to half his HP over and over till he's low enough to where you can kill him with standard skills. Alternatively, Level 5 Death can be used to finish the battle off instantly; just ensure Cuca Fera has used Diamondback first.",
+      "territoryType": 365
+    }
+  },
+  "30": {
+    "name": "Mighty Guard",
+    "icon": "72235",
+    "source": {
+      "info": "Available after learning 10 spells.",
+      "acquiringTips": null,
+      "type": 3
+    }
+  },
+  "31": {
+    "name": "Sticky Tongue",
+    "icon": "72230",
+    "source": {
+      "info": "Lvl. 22 Laughing Gigantoad",
+      "acquiringTips": "Sticky Tongue is the first move used by the Toad when you attack from a distance.",
+      "territoryType": 140,
+      "xCoord": 14.0,
+      "yCoord": 6.0,
+      "type": 2
+    }
+  },
+  "32": {
+    "name": "Toad Oil",
+    "icon": "72228",
+    "source": {
+      "info": "Lvl. 24 Giggling Gigantoad",
+      "acquiringTips": "Toad Oil will be used when you're in melee range of the enemy.",
+      "territoryType": 140,
+      "xCoord": 15.0,
+      "yCoord": 7.0,
+      "type": 2
+    }
+  },
+  "33": {
+    "name": "The Ram's Voice",
+    "icon": "72237",
+    "source": {
+      "info": "(Last Boss) Chimera",
+      "acquiringTips": "Will always start with The Ram's Voice and then follow up with The Dragon's Voice or vice-versa.",
+      "territoryType": 170
+    }
+  },
+  "34": {
+    "name": "The Dragon's Voice",
+    "icon": "72238",
+    "source": {
+      "info": "(Last Boss) Chimera",
+      "acquiringTips": "The enemy will always start with The Ram's Voice and then follow up with The Dragon's Voice or vice-versa.",
+      "territoryType": 170
+    }
+  },
+  "35": {
+    "name": "Missile",
+    "icon": "72223",
+    "source": {
+      "info": "(First Part) Enkidu",
+      "acquiringTips": "Enkidu casts Missile during the Chicken debuff cast by Gilgamesh.\nCleanse the minimise debuffs ASAP, reduce Enkidu to between 40% and 50% HP, and then wait until Chicken/Missile are cast.",
+      "territoryType": 396
+    }
+  },
+  "36": {
+    "name": "1000 Needles",
+    "icon": "72215",
+    "source": {
+      "info": "Lvl. 26 Sabotender Bailaor",
+      "acquiringTips": "Helpful Hint: You can find one that's close enough to pull up to the Lvl. 35 Brass Blade at the entrance to Little Ala Mhigo. The little guy will help you beat them if you're struggling!",
+      "territoryType": 146,
+      "xCoord": 16.0,
+      "yCoord": 15.0,
+      "type": 2
+    }
+  },
+  "37": {
+    "name": "Ink Jet",
+    "icon": "72240",
+    "source": {
+      "info": "(Last Boss) Kraken",
+      "acquiringTips": "Kraken's attack is called Ink Blast and is an AoE attack. Simply dodge them and focus on killing the main body and Kraken arms, not the tentacles.",
+      "territoryType": 387
+    }
+  },
+  "38": {
+    "name": "Fire Angon",
+    "icon": "72243",
+    "source": {
+      "info": "(1st Boss) Frumious Koheel Ja",
+      "acquiringTips": "Will cast Blazing Angon, which is the spears he tosses to the ground. Destroy those to keep from occasional flame damage.",
+      "territoryType": 188
+    }
+  },
+  "39": {
+    "name": "Moon Flute",
+    "icon": "72233",
+    "source": {
+      "info": "Clear 10 stages in The Masked Carnivale",
+      "acquiringTips": null,
+      "type": 3
+    }
+  },
+  "40": {
+    "name": "Tail Screw",
+    "icon": "72231",
+    "source": {
+      "info": "(1st Boss) Karlabos",
+      "acquiringTips": "This can potentially kill a Blue Mage in one shot if they afflicted with Slime. Be sure this is removed in order to survive and stay alive to learn the spell.",
+      "territoryType": 387
+    }
+  },
+  "41": {
+    "name": "Mind Blast",
+    "icon": "72272",
+    "source": {
+      "info": "(Last Boss) Galvanth the Dominator",
+      "acquiringTips": "Getting from Galvanth is guaranteed, regardless of what the unrestricted party option is set to.",
+      "territoryType": 373
+    }
+  },
+  "42": {
+    "name": "Doom",
+    "icon": "72234",
+    "source": {
+      "info": "Clear 20 Stages in The Masked Carnivale",
+      "acquiringTips": null,
+      "type": 3
+    }
+  },
+  "43": {
+    "name": "Peculiar Light",
+    "icon": "72239",
+    "source": {
+      "info": "Lvl. 45 Lentic Mudpuppy",
+      "acquiringTips": null,
+      "territoryType": 156,
+      "xCoord": 13.0,
+      "yCoord": 10.0,
+      "type": 2
+    }
+  },
+  "44": {
+    "name": "Feather Rain",
+    "icon": "72244",
+    "source": {
+      "info": "Garuda",
+      "acquiringTips": "When Garuda disappears, the random AoE circles that follows after are the spell.",
+      "territoryType": 297
+    }
+  },
+  "45": {
+    "name": "Eruption",
+    "icon": "72245",
+    "source": {
+      "info": "Ifrit",
+      "acquiringTips": null,
+      "territoryType": 295
+    }
+  },
+  "46": {
+    "name": "Mountain Buster",
+    "icon": "72246",
+    "source": {
+      "info": "Titan",
+      "acquiringTips": "Spell has no cast timer and is only cast late in the fight, so it's possible to kill Titan without having seen this. Watch your combat log and flying text!",
+      "territoryType": 296
+    }
+  },
+  "47": {
+    "name": "Shock Strike",
+    "icon": "72247",
+    "source": {
+      "info": "Ramuh",
+      "acquiringTips": "Shock Strike is a frequent cast for Ramuh, so no need to worry if he's cast it.",
+      "territoryType": 375
+    }
+  },
+  "48": {
+    "name": "Glass Dance",
+    "icon": "72248",
+    "source": {
+      "info": "Shiva",
+      "acquiringTips": "Shiva casts Glass Dance after bringing out her bow late in the fight. After her add phase, burn her to 10% or so and wait for her to say \"Arrows of frost--\", perform the bow-drawing animation, and actually cast Glass Dance.!",
+      "territoryType": 378
+    }
+  },
+  "49": {
+    "name": "Veil Of The Whorl",
+    "icon": "72249",
+    "source": {
+      "info": "Leviathan",
+      "acquiringTips": null,
+      "territoryType": 359
+    }
+  },
+  "50": {
+    "name": "Alpine Draft",
+    "icon": "72251",
+    "source": {
+      "info": "(Last Boss) Opinicus",
+      "acquiringTips": null,
+      "territoryType": 434
+    }
+  },
+  "51": {
+    "name": "Protean Wave",
+    "icon": "72252",
+    "source": {
+      "info": "(Boss) Living Liquid",
+      "acquiringTips": null,
+      "territoryType": 444
+    }
+  },
+  "52": {
+    "name": "Northerlies",
+    "icon": "72253",
+    "source": {
+      "info": "Lvl. 51 Lone Yeti",
+      "acquiringTips": null,
+      "territoryType": 397,
+      "xCoord": 20.0,
+      "yCoord": 31.0,
+      "type": 2
+    }
+  },
+  "53": {
+    "name": "Electrogenesis",
+    "icon": "72254",
+    "source": {
+      "info": "Lvl. 50 Conodont",
+      "acquiringTips": null,
+      "territoryType": 401,
+      "xCoord": 26.0,
+      "yCoord": 33.0,
+      "type": 2
+    }
+  },
+  "54": {
+    "name": "Kaltstrahl",
+    "icon": "72255",
+    "source": {
+      "info": "(1st Boss) Faust",
+      "acquiringTips": null,
+      "territoryType": 442
+    }
+  },
+  "55": {
+    "name": "Abyssal Transfixion",
+    "icon": "72256",
+    "source": {
+      "info": "(2nd Boss) Ash",
+      "acquiringTips": null,
+      "territoryType": 350,
+      "type": 13
+    }
+  },
+  "56": {
+    "name": "Chirp",
+    "icon": "72257",
+    "source": {
+      "info": "Lvl. 50 Paissa",
+      "acquiringTips": null,
+      "territoryType": 401,
+      "xCoord": 24.0,
+      "yCoord": 33.0,
+      "type": 2
+    }
+  },
+  "57": {
+    "name": "Eerie Soundwave",
+    "icon": "72258",
+    "source": {
+      "info": "Lvl. 59 Empuse",
+      "acquiringTips": "Cast a buff on yourself (ex: Bristle) and the Empuse will try to remove it (Circular Telegraph) if you are in melee range.",
+      "territoryType": 402,
+      "xCoord": 29.0,
+      "yCoord": 12.0,
+      "type": 2
+    }
+  },
+  "58": {
+    "name": "Pom Cure",
+    "icon": "72259",
+    "source": {
+      "info": "(White Mage) Furryfoot Kupli Kipp",
+      "acquiringTips": "This spell is still obtainable since the rework of trial Thornmarch (Hard).\nWhen the Furryfoot Kupli Kipp (WHM Moogle) spawns, you must simply damage its companion (but not kill it) and then wait. After a few minutes, the Moogle should cast Pom Cure.",
+      "territoryType": 1067
+    }
+  },
+  "59": {
+    "name": "Gobskin",
+    "icon": "72260",
+    "source": {
+      "info": "(Trash) Alexandrian Hider",
+      "acquiringTips": "Trash mob appearing in the second and third pack respectively.",
+      "territoryType": 581,
+      "type": 13
+    }
+  },
+  "60": {
+    "name": "Magic Hammer",
+    "icon": "72261",
+    "source": {
+      "info": "(3rd Boss) Apanda",
+      "acquiringTips": null,
+      "territoryType": 578
+    }
+  },
+  "61": {
+    "name": "Avail",
+    "icon": "72262",
+    "source": {
+      "info": "(2nd Boss) Queen Hawk",
+      "acquiringTips": null,
+      "territoryType": 788
+    }
+  },
+  "62": {
+    "name": "Frog Legs",
+    "icon": "72263",
+    "source": {
+      "info": "Lvl. 59 Poroggo",
+      "acquiringTips": "Standing in melee range makes the enemy more likely to use Frog Legs.",
+      "territoryType": 399,
+      "xCoord": 12.0,
+      "yCoord": 34.0,
+      "type": 2
+    }
+  },
+  "63": {
+    "name": "Sonic Boom",
+    "icon": "72264",
+    "source": {
+      "info": "(2nd Boss) Zu",
+      "acquiringTips": "This attack doesn't have a visible cast bar. You will know that the monster already used it because you will have a debuff called Windburn.",
+      "territoryType": 160
+    }
+  },
+  "64": {
+    "name": "Whistle",
+    "icon": "72265",
+    "source": {
+      "info": "Lvl. 56 Dhalmel",
+      "acquiringTips": null,
+      "territoryType": 401,
+      "xCoord": 16.0,
+      "yCoord": 32.0,
+      "type": 2
+    }
+  },
+  "65": {
+    "name": "White Knight's Tour",
+    "icon": "72266",
+    "source": {
+      "info": "(Trash) White Knight",
+      "acquiringTips": null,
+      "territoryType": 1066
+    }
+  },
+  "66": {
+    "name": "Black Knight's Tour",
+    "icon": "72267",
+    "source": {
+      "info": "(Trash) Black Knight",
+      "acquiringTips": null,
+      "territoryType": 1066
+    }
+  },
+  "67": {
+    "name": "Level 5 Death",
+    "icon": "72268",
+    "source": {
+      "info": "(Trash) Page 64",
+      "acquiringTips": "If Page 64 won't cast, try standing far enough away for everyone to untether.",
+      "territoryType": 1109
+    }
+  },
+  "68": {
+    "name": "Launcher",
+    "icon": "72269",
+    "source": {
+      "info": "(2nd Boss) Armored Weapon",
+      "acquiringTips": null,
+      "territoryType": 1114
+    }
+  },
+  "69": {
+    "name": "Perpetual Ray",
+    "icon": "72270",
+    "source": {
+      "info": "The Manipulator",
+      "acquiringTips": null,
+      "territoryType": 445
+    }
+  },
+  "70": {
+    "name": "Cactguard",
+    "icon": "72271",
+    "source": {
+      "info": "(2nd Boss - Trash) Sabotender Gaurdia",
+      "acquiringTips": "Sabotender Gaurdia will spawn during the last phase of the fight against Sabotender Emperatriz (the 2nd boss of the dungeon).\nOnce a diamond shaped barrier appears around the boss, the spell has been cast.",
+      "territoryType": 367
+    }
+  },
+  "71": {
+    "name": "Revenge Blast",
+    "icon": "72272",
+    "source": {
+      "info": "Available after learning 50 spells.",
+      "acquiringTips": null,
+      "type": 3
+    }
+  },
+  "72": {
+    "name": "Angel Whisper",
+    "icon": "72273",
+    "source": {
+      "info": "Clear 30 Stages in The Masked Carnivale",
+      "acquiringTips": null,
+      "type": 3
+    }
+  },
+  "73": {
+    "name": "Exuviation",
+    "icon": "72274",
+    "source": {
+      "info": "Lvl. 57-58 Abalathian Wamoura",
+      "acquiringTips": "If acquiring this from Abalathian Wamoura, you may need to pull at least two enemies so that the Abalathian Wamoura has a target to cast Exuviation on.\nExample: Pull a Window Wamoura along with an Abalathian Wamoura, then use Aqua Breath (or a similar spell that causes a debuff) on the Window Wamoura that entices the Abalathian Wamoura to cast Exuviation.",
+      "territoryType": 401,
+      "xCoord": 10.0,
+      "yCoord": 17.0,
+      "type": 2
+    }
+  },
+  "74": {
+    "name": "Reflux",
+    "icon": "72275",
+    "source": {
+      "info": "Lvl. 56 Cloud Wyvern",
+      "acquiringTips": null,
+      "territoryType": 400,
+      "xCoord": 26.0,
+      "yCoord": 28.0,
+      "type": 2
+    }
+  },
+  "75": {
+    "name": "Devour",
+    "icon": "72276",
+    "source": {
+      "info": "(Last Boss) Caduceus",
+      "acquiringTips": null,
+      "territoryType": 241
+    }
+  },
+  "76": {
+    "name": "Condensed Libra",
+    "icon": "72277",
+    "source": {
+      "info": "(Trash) Mechanoscribe",
+      "acquiringTips": null,
+      "territoryType": 578
+    }
+  },
+  "77": {
+    "name": "Aetheric Mimicry",
+    "icon": "72278",
+    "source": {
+      "info": "(1st Boss) Ghrah Luminary",
+      "acquiringTips": "Ghrah Luminary will summon a monster called \"Corruption\". Killing the corruption is enough to obtain Aetheric Mimicry.",
+      "territoryType": 510
+    }
+  },
+  "78": {
+    "name": "Surpanakha",
+    "icon": "72279",
+    "source": {
+      "info": "Ravana",
+      "acquiringTips": null,
+      "territoryType": 432
+    }
+  },
+  "79": {
+    "name": "Quasar",
+    "icon": "72280",
+    "source": {
+      "info": "Sophia",
+      "acquiringTips": null,
+      "territoryType": 576
+    }
+  },
+  "80": {
+    "name": "J Kick",
+    "icon": "72281",
+    "source": {
+      "info": "(Last Phase) Brute Justice",
+      "acquiringTips": "Naturally performs J Kick at the start of the boss group attack. Be aware of all the mechanics and dodge or heal through all the attacks.",
+      "territoryType": 523
+    }
+  },
+  "81": {
+    "name": "Triple Trident",
+    "icon": "72282",
+    "source": {
+      "info": "Lvl. 67 Ebisu Catfish",
+      "acquiringTips": null,
+      "territoryType": 614,
+      "xCoord": 28.0,
+      "yCoord": 6.0,
+      "type": 2
+    }
+  },
+  "82": {
+    "name": "Tingle",
+    "icon": "72283",
+    "source": {
+      "info": "Lvl. 67 Ebisu Catfish",
+      "acquiringTips": null,
+      "territoryType": 614,
+      "xCoord": 28.0,
+      "yCoord": 6.0,
+      "type": 2
+    }
+  },
+  "83": {
+    "name": "Tatami-gaeshi",
+    "icon": "72284",
+    "source": {
+      "info": "(2nd Boss) Dojun-maru",
+      "acquiringTips": null,
+      "territoryType": 662
+    }
+  },
+  "84": {
+    "name": "Cold Fog",
+    "icon": "72285",
+    "source": {
+      "info": "(Last Boss) Mist Dragon",
+      "acquiringTips": "When the Mist Dragon begins casting Vaporize, it will summon 3 Draconic Regards (white dragon heads). You must leave at least one head alive in order for the cast to go off, otherwise the Mist Dragon will cast White Death instead and you will not get the spell.\nUse Diamondback or other mitigation to help survive the damage.",
+      "territoryType": 789
+    }
+  },
+  "85": {
+    "name": "Stotram",
+    "icon": "72286",
+    "source": {
+      "info": "Lakshmi",
+      "acquiringTips": "Stotram is used early on as a party wide unavoidable attack that damages the party and heals adds, so nothing needs to be done to make it be cast.",
+      "territoryType": 719
+    }
+  },
+  "86": {
+    "name": "Saintly Beam",
+    "icon": "72287",
+    "source": {
+      "info": "Phantom Train",
+      "acquiringTips": "This attack targets a different number of people throughout the fight with a marker and creates a large spotlight shining on the ground, exploding into light. The attack is guaranteed to happen early in the fight, so nothing needs to be done to make it be cast.\nIt's important to not get kidnapped by the ghosts when the Phantom Train is killed. If you are taken away by the ghost when the train dies, you will not acquire the ability.",
+      "territoryType": 748
+    }
+  },
+  "87": {
+    "name": "Feculent Flood",
+    "icon": "72288",
+    "source": {
+      "info": "(Last Boss) Tokkapchi",
+      "acquiringTips": "This attack occurs midway through the Tokkapchi fight, so you may have to wait for it to cast it before killing it. Tokkapchi targets the Mud Slime it has periodically been creating during the fight (the one you should be managing the position of) with a cone shaped AoE attack.",
+      "territoryType": 788
+    }
+  },
+  "88": {
+    "name": "Angel's Snack",
+    "icon": "72289",
+    "source": {
+      "info": "Available after reaching level 70",
+      "acquiringTips": null,
+      "type": 3
+    }
+  },
+  "89": {
+    "name": "Chelonian Gate",
+    "icon": "72290",
+    "source": {
+      "info": "(Last Boss) Genbu",
+      "acquiringTips": null,
+      "territoryType": 742
+    }
+  },
+  "90": {
+    "name": "The Rose of Destruction",
+    "icon": "72291",
+    "source": {
+      "info": "(Last Boss) Ivon Coeurlfish",
+      "acquiringTips": null,
+      "territoryType": 663
+    }
+  },
+  "91": {
+    "name": "Basic Instinct",
+    "icon": "72292",
+    "source": {
+      "info": "Lvl. 24 Master Coeurl",
+      "acquiringTips": "Master Coeurl uses this immediately. Wait for it to finish casting before slaying it.",
+      "territoryType": 139,
+      "xCoord": 8.9,
+      "yCoord": 21.4,
+      "type": 2
+    }
+  },
+  "92": {
+    "name": "Ultravibration",
+    "icon": "72293",
+    "source": {
+      "info": "Lvl. 68 Kongamato",
+      "acquiringTips": null,
+      "territoryType": 620,
+      "xCoord": 11.0,
+      "yCoord": 25.0,
+      "type": 2
+    }
+  },
+  "93": {
+    "name": "Blaze",
+    "icon": "72293",
+    "source": {
+      "info": "Alte Roite",
+      "acquiringTips": null,
+      "territoryType": 691
+    }
+  },
+  "94": {
+    "name": "Mustard Bomb",
+    "icon": "72295",
+    "source": {
+      "info": "Omega",
+      "acquiringTips": null,
+      "territoryType": 800
+    }
+  },
+  "95": {
+    "name": "Dragon Force",
+    "icon": "72296",
+    "source": {
+      "info": "Available after learning 100 spells.",
+      "acquiringTips": null,
+      "type": 3
+    }
+  },
+  "96": {
+    "name": "Aetherial Spark",
+    "icon": "72297",
+    "source": {
+      "info": "Lvl. 69 Salt Dhruva",
+      "acquiringTips": null,
+      "territoryType": 621,
+      "xCoord": 22.0,
+      "yCoord": 22.0,
+      "type": 2
+    }
+  },
+  "97": {
+    "name": "Hydro Pull",
+    "icon": "72298",
+    "source": {
+      "info": "(1st Boss) Kelpie",
+      "acquiringTips": null,
+      "territoryType": 731
+    }
+  },
+  "98": {
+    "name": "Malediction of Water",
+    "icon": "72299",
+    "source": {
+      "info": "(Corridor Wave) Sai Taisui",
+      "acquiringTips": null,
+      "territoryType": 768
+    }
+  },
+  "99": {
+    "name": "Choco Meteor",
+    "icon": "72300",
+    "source": {
+      "info": "Lvl. 53 Courser Chocobo",
+      "acquiringTips": "Courser Chocobo will cast this after attacking a few times. Be sure to get out of the way as it can cause heavy damage!",
+      "territoryType": 398,
+      "xCoord": 37.5,
+      "yCoord": 23.7,
+      "type": 2
+    }
+  },
+  "100": {
+    "name": "Matra Magic",
+    "icon": "72301",
+    "source": {
+      "info": "Available after learning 100 spells.",
+      "acquiringTips": null,
+      "type": 3
+    }
+  },
+  "101": {
+    "name": "Peripheral Synthesis",
+    "icon": "72302",
+    "source": {
+      "info": "Omega",
+      "acquiringTips": null,
+      "territoryType": 800
+    }
+  },
+  "102": {
+    "name": "Both Ends",
+    "icon": "72303",
+    "source": {
+      "info": "(Last Boss) Qitian Dasheng",
+      "acquiringTips": null,
+      "territoryType": 768
+    }
+  },
+  "103": {
+    "name": "Phantom Flurry",
+    "icon": "72304",
+    "source": {
+      "info": "Suzaku",
+      "acquiringTips": null,
+      "territoryType": 810
+    }
+  },
+  "104": {
+    "name": "Nightbloom",
+    "icon": "72305",
+    "source": {
+      "info": "Tsukuyomi",
+      "acquiringTips": null,
+      "territoryType": 778
+    }
+  }
+}

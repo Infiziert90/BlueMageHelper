@@ -9,8 +9,14 @@ This repository is for development! If you just want to use this addon, you'll n
 This plugin expands the information provided by the Blue Mage Spellbook's "Where to Learn" section for each spell, telling which monster you'll have to defeat, its level, and its coordinates if it can be 
 found in the open world.
 
+## Spell book
+A small guide book to help on your journey.
+![book](BlueMageHelper/images/spellbook.png)
+
+Coords: click to open your map with flag on the location.
+Same location: click skills to open there page.
+
 ### Planned Features
 - Alternate locations and monsters
 - Marking enemies with unlockable spells 
-- Clickable locations to mark them on the world map
 
