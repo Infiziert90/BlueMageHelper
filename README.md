@@ -13,7 +13,7 @@ found in the open world.
 A small guide book to help on your journey.  
 ![book](BlueMageHelper/images/spellbook.png)
 
-Coords: click to open your map with flag on the location.
+Coords: click to open your map with flag on the location.  
 Same location: click skills to open there page.
 
 ### Planned Features

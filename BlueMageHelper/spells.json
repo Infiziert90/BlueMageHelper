@@ -114,8 +114,8 @@
       "info": "Lvl. 20 Wild Boar",
       "acquiringTips": null,
       "territoryType": 152,
-      "xCoord": 18.0,
-      "yCoord": 24.0,
+      "xCoord": 18.3,
+      "yCoord": 24.7,
       "type": 2
     }
   },
@@ -153,8 +153,8 @@
       "info": "Lvl. 9 Trickster Imp",
       "acquiringTips": "Used very early in the fight when encountered.",
       "territoryType": 148,
-      "xCoord": 27.0,
-      "yCoord": 24.0,
+      "xCoord": 27.3,
+      "yCoord": 24.8,
       "type": 2
     }
   },
@@ -164,7 +164,7 @@
     "source": {
       "info": "Lvl. 7 Cave Bat",
       "acquiringTips": null,
-      "region": 222,
+      "territoryType": 135,
       "xCoord": 27.0,
       "yCoord": 16.0,
       "type": 2
@@ -177,8 +177,8 @@
       "info": "Lvl 12-17 Treant Sapling",
       "acquiringTips": null,
       "territoryType": 154,
-      "xCoord": 24.0,
-      "yCoord": 28.0,
+      "xCoord": 30.0,
+      "yCoord": 26.5,
       "type": 2
     }
   },
@@ -189,8 +189,8 @@
       "info": "Lvl. 5-7 Goblin Fisher",
       "acquiringTips": null,
       "territoryType": 134,
-      "xCoord": 23.0,
-      "yCoord": 21.0,
+      "xCoord": 23.8,
+      "yCoord": 21.6,
       "type": 2
     }
   },
@@ -230,7 +230,7 @@
     "source": {
       "info": "Lvl. 32 Qiqirn Gullroaster",
       "acquiringTips": null,
-      "territoryType": 141,
+      "territoryType": 137,
       "xCoord": 26.0,
       "yCoord": 32.0,
       "type": 2
@@ -243,7 +243,7 @@
       "info": "Lvl. 30 Apkallu",
       "acquiringTips": null,
       "territoryType": 137,
-      "xCoord": 27.0,
+      "xCoord": 30.0,
       "yCoord": 35.0,
       "type": 2
     }
@@ -282,8 +282,8 @@
       "info": "Lvl. 31 Stroper",
       "acquiringTips": null,
       "territoryType": 148,
-      "xCoord": 12.0,
-      "yCoord": 23.0,
+      "xCoord": 13.7,
+      "yCoord": 22.7,
       "type": 2
     }
   },
@@ -309,11 +309,11 @@
     "name": "Sticky Tongue",
     "icon": "72230",
     "source": {
-      "info": "Lvl. 22 Laughing Gigantoad",
+      "info": "Lvl. 23 Laughing Toad",
       "acquiringTips": "Sticky Tongue is the first move used by the Toad when you attack from a distance.",
       "territoryType": 140,
-      "xCoord": 14.0,
-      "yCoord": 6.0,
+      "xCoord": 15.2,
+      "yCoord": 6.4,
       "type": 2
     }
   },
@@ -324,8 +324,8 @@
       "info": "Lvl. 24 Giggling Gigantoad",
       "acquiringTips": "Toad Oil will be used when you're in melee range of the enemy.",
       "territoryType": 140,
-      "xCoord": 15.0,
-      "yCoord": 7.0,
+      "xCoord": 15.2,
+      "yCoord": 6.4,
       "type": 2
     }
   },
@@ -363,8 +363,8 @@
       "info": "Lvl. 26 Sabotender Bailaor",
       "acquiringTips": "Helpful Hint: You can find one that's close enough to pull up to the Lvl. 35 Brass Blade at the entrance to Little Ala Mhigo. The little guy will help you beat them if you're struggling!",
       "territoryType": 146,
-      "xCoord": 16.0,
-      "yCoord": 15.0,
+      "xCoord": 16.3,
+      "yCoord": 15.7,
       "type": 2
     }
   },
@@ -406,11 +406,11 @@
   },
   "41": {
     "name": "Mind Blast",
-    "icon": "72272",
+    "icon": "72212",
     "source": {
       "info": "(Last Boss) Galvanth the Dominator",
       "acquiringTips": "Getting from Galvanth is guaranteed, regardless of what the unrestricted party option is set to.",
-      "territoryType": 373
+      "territoryType": 1037
     }
   },
   "42": {
@@ -429,8 +429,8 @@
       "info": "Lvl. 45 Lentic Mudpuppy",
       "acquiringTips": null,
       "territoryType": 156,
-      "xCoord": 13.0,
-      "yCoord": 10.0,
+      "xCoord": 13.1,
+      "yCoord": 10.4,
       "type": 2
     }
   },
@@ -475,7 +475,7 @@
     "icon": "72248",
     "source": {
       "info": "Shiva",
-      "acquiringTips": "Shiva casts Glass Dance after bringing out her bow late in the fight. After her add phase, burn her to 10% or so and wait for her to say \"Arrows of frost--\", perform the bow-drawing animation, and actually cast Glass Dance.!",
+      "acquiringTips": "Shiva casts Glass Dance after bringing out her bow late in the fight. After her add phase, burn her to 10% or so and wait for her to say \"Arrows of frost--\", perform the bow-drawing animation, and actually cast Glass Dance!",
       "territoryType": 378
     }
   },
@@ -545,7 +545,7 @@
     "source": {
       "info": "(2nd Boss) Ash",
       "acquiringTips": null,
-      "territoryType": 350,
+      "territoryType": 1040,
       "type": 13
     }
   },
@@ -568,8 +568,8 @@
       "info": "Lvl. 59 Empuse",
       "acquiringTips": "Cast a buff on yourself (ex: Bristle) and the Empuse will try to remove it (Circular Telegraph) if you are in melee range.",
       "territoryType": 402,
-      "xCoord": 29.0,
-      "yCoord": 12.0,
+      "xCoord": 29.5,
+      "yCoord": 12.2,
       "type": 2
     }
   },
@@ -607,7 +607,7 @@
     "source": {
       "info": "(2nd Boss) Queen Hawk",
       "acquiringTips": null,
-      "territoryType": 788
+      "territoryType": 511
     }
   },
   "62": {
@@ -638,8 +638,8 @@
       "info": "Lvl. 56 Dhalmel",
       "acquiringTips": null,
       "territoryType": 401,
-      "xCoord": 16.0,
-      "yCoord": 32.0,
+      "xCoord": 17.0,
+      "yCoord": 32.5,
       "type": 2
     }
   },
@@ -734,8 +734,8 @@
       "info": "Lvl. 56 Cloud Wyvern",
       "acquiringTips": null,
       "territoryType": 400,
-      "xCoord": 26.0,
-      "yCoord": 28.0,
+      "xCoord": 24.0,
+      "yCoord": 28.5,
       "type": 2
     }
   },
@@ -908,8 +908,8 @@
       "info": "Lvl. 68 Kongamato",
       "acquiringTips": null,
       "territoryType": 620,
-      "xCoord": 11.0,
-      "yCoord": 25.0,
+      "xCoord": 13.5,
+      "yCoord": 26.2,
       "type": 2
     }
   },
@@ -947,8 +947,8 @@
       "info": "Lvl. 69 Salt Dhruva",
       "acquiringTips": null,
       "territoryType": 621,
-      "xCoord": 22.0,
-      "yCoord": 22.0,
+      "xCoord": 22.4,
+      "yCoord": 22.8,
       "type": 2
     }
   },

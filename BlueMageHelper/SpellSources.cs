@@ -87,6 +87,7 @@ public class SpellSource
         {
             // Ul'dah - Steps of Thal - (x12.5, y12.9)
             TerritoryType = Plugin.Data.GetExcelSheet<TerritoryType>()!.GetRow(131)!;
+            PlaceName = TerritoryType.PlaceName.Value!.Name;
             MapLink = new MapLinkPayload(TerritoryType.RowId, TerritoryType.Map.Row, 12.5f, 12.9f);
         }
     }
@@ -101,8 +102,8 @@ public class SpellSource
     {
         var text = Type switch
         {
-            RegionType.OpenWorld => $"{MapLink!.PlaceName} - {MapLink!.CoordinateString}",
-            RegionType.Buy => "Ul'dah - Steps of Thal - (x12.5, y12.9)",
+            RegionType.OpenWorld => $"{MapLink!.PlaceName} {MapLink!.CoordinateString}",
+            RegionType.Buy => $"{MapLink!.PlaceName} {MapLink!.CoordinateString}",
             RegionType.Dungeon => $"{TerritoryType.PlaceName.Value!.Name}",
             _ => ""
         };

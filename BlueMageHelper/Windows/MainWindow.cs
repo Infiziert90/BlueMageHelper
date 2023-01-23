@@ -11,7 +11,7 @@ namespace BlueMageHelper.Windows;
 public class MainWindow : Window, IDisposable
 {
     private Plugin Plugin;
-    private int selectedSpell;
+    private int selectedSpell = 1; // 0 is the first learned blu skill
     private static Vector2 size = new(80, 80);
 
     public MainWindow(Plugin plugin) : base("Spell book", ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse)
