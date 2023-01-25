@@ -12,6 +12,7 @@ using Dalamud.Data;
 using Dalamud.Game.Command;
 using Dalamud.Game.Text.SeStringHandling.Payloads;
 using Dalamud.Interface.Windowing;
+using Dalamud.Loc;
 using FFXIVClientStructs.FFXIV.Client.UI.Agent;
 using FFXIVClientStructs.FFXIV.Component.GUI;
 using Lumina.Excel.GeneratedSheets;
@@ -33,6 +34,7 @@ namespace BlueMageHelper
         private Framework Framework { get; init; }
         private GameGui GameGui { get; init; }
         public WindowSystem WindowSystem = new("Blue Mage Helper");
+        public Localization Loc { get; init; }
         
         private const int blank_text_textnode_index = 54;
         private const int spell_number_textnode_index = 62;
@@ -70,6 +72,7 @@ namespace BlueMageHelper
             Framework.Update += AOZNotebook_addon_manager;
             
             TexturesCache.Initialize();
+            //Loc = new Localization(PluginInterface);
             
             try
             {
@@ -79,7 +82,7 @@ namespace BlueMageHelper
             }
             catch (Exception e)
             {
-                PluginLog.Error("There was a problem accessing the spell listx.");
+                PluginLog.Error("There was a problem building the Grimoire.");
                 PluginLog.Error(e.Message);
             }
         }
@@ -146,7 +149,7 @@ namespace BlueMageHelper
         
         private void OnCommand(string command, string args)
         {
-            WindowSystem.GetWindow("Spell book")!.IsOpen = true;
+            WindowSystem.GetWindow("Grimoire")!.IsOpen = true;
         }
         
         private void DrawUI()
@@ -207,6 +210,7 @@ namespace BlueMageHelper
 
             foreach (var (key, value) in sorted)
             {
+                PluginLog.Information("---------------");
                 PluginLog.Information($"Key: {key}");
                 PluginLog.Information($"Icon: {value.Icon}");
                 PluginLog.Information($"Name: {value.Name}");

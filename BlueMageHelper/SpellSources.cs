@@ -37,6 +37,7 @@ public class SpellSource
 
     public bool IsDuty = false;
     public string DutyName = "";
+    public string DutyMinLevel = "1";
     public string PlaceName = "";
     
     public SpellSource(string info, string acquiringTips = "")
@@ -62,6 +63,7 @@ public class SpellSource
             {
                 IsDuty = true;
                 DutyName = Helper.ToTitleCaseExtended(content.Name, 0);
+                DutyMinLevel = content.ClassJobLevelRequired.ToString();
             }
         }
         

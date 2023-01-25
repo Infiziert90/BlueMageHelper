@@ -14,7 +14,7 @@ public class MainWindow : Window, IDisposable
     private int selectedSpell = 1; // 0 is the first learned blu skill
     private static Vector2 size = new(80, 80);
 
-    public MainWindow(Plugin plugin) : base("Spell book", ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse)
+    public MainWindow(Plugin plugin) : base("Grimoire", ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse)
     {
         SizeConstraints = new WindowSizeConstraints
         {
@@ -32,16 +32,16 @@ public class MainWindow : Window, IDisposable
         var keyList = Sources.Keys.ToList();
         var stringList = Sources.Select(x => $"{x.Key} - {x.Value.Name}").ToArray();
         ImGui.Combo("##spellSelector", ref selectedSpell, stringList, stringList.Length);
-        if (selectedSpell + 1 < stringList.Length)
-        {
-            ImGui.SameLine();
-            if (Dalamud.Interface.Components.ImGuiComponents.IconButton(1, FontAwesomeIcon.Plus)) selectedSpell++;
-        }
-        if (selectedSpell > 0)
-        {
-            ImGui.SameLine();
-            if (Dalamud.Interface.Components.ImGuiComponents.IconButton(0, FontAwesomeIcon.Minus)) selectedSpell--;
-        }
+
+        ImGui.SameLine();
+        if (selectedSpell == 0) ImGui.BeginDisabled();
+        if (Dalamud.Interface.Components.ImGuiComponents.IconButton(0, FontAwesomeIcon.ArrowLeft)) selectedSpell--;
+        if (selectedSpell == 0) ImGui.EndDisabled();
+        
+        ImGui.SameLine();
+        if (selectedSpell + 1 == stringList.Length) ImGui.BeginDisabled();
+        if (Dalamud.Interface.Components.ImGuiComponents.IconButton(1, FontAwesomeIcon.ArrowRight)) selectedSpell++;
+        if (selectedSpell + 1 == stringList.Length) ImGui.EndDisabled();
 
         ImGuiHelpers.ScaledDummy(10);
         ImGui.Separator();
@@ -54,6 +54,7 @@ public class MainWindow : Window, IDisposable
             ImGuiHelpers.ScaledDummy(10);
             
             ImGui.BeginChild("Content", new Vector2(0, -30), false, 0);
+            ImGui.TextUnformatted($"Min Lvl: {spell.Source.DutyMinLevel}");
             if (spell.Source.Info != "")
             {
                 ImGui.TextUnformatted($"{(spell.Source.Type != RegionType.Buy ? "Mob" : "Info")}: {spell.Source.Info}");
