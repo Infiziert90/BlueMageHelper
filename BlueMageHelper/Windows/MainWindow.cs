@@ -54,7 +54,10 @@ public class MainWindow : Window, IDisposable
             ImGuiHelpers.ScaledDummy(10);
             
             ImGui.BeginChild("Content", new Vector2(0, -30), false, 0);
-            ImGui.TextUnformatted($"Min Lvl: {spell.Source.DutyMinLevel}");
+            if (spell.Source.Type != RegionType.Buy)
+            {
+                ImGui.TextUnformatted($"Min Lvl: {spell.Source.DutyMinLevel}");
+            }
             if (spell.Source.Info != "")
             {
                 ImGui.TextUnformatted($"{(spell.Source.Type != RegionType.Buy ? "Mob" : "Info")}: {spell.Source.Info}");
