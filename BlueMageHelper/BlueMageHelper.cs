@@ -142,6 +142,8 @@ namespace BlueMageHelper
 
         public void Dispose()
         {
+			TexturesCache.Instance?.Dispose();
+			
             WindowSystem.RemoveAllWindows();
             CommandManager.RemoveHandler(CommandName);
             Framework.Update -= AOZNotebook_addon_manager;

@@ -545,7 +545,7 @@
     "source": {
       "info": "(2nd Boss) Ash",
       "acquiringTips": null,
-      "territoryType": 1040,
+      "territoryType": 350,
       "type": 13
     }
   },
@@ -915,7 +915,7 @@
   },
   "93": {
     "name": "Blaze",
-    "icon": "72293",
+    "icon": "72294",
     "source": {
       "info": "Alte Roite",
       "acquiringTips": null,
