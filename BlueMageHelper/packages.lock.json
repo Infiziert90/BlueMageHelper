@@ -2,23 +2,11 @@
   "version": 1,
   "dependencies": {
     "net7.0-windows7.0": {
-      "Dalamud.Loc": {
-        "type": "Direct",
-        "requested": "[1.0.3, )",
-        "resolved": "1.0.3",
-        "contentHash": "EOuF/6fCmcGpslKeW7gPgt1yOMv9JdC+W+7SEVWwLsyZo/W13RqsPiSYpMXmZbV2byjdavweZVxF3dNziRZOdA=="
-      },
       "DalamudPackager": {
         "type": "Direct",
         "requested": "[2.1.10, )",
         "resolved": "2.1.10",
         "contentHash": "S6NrvvOnLgT4GDdgwuKVJjbFo+8ZEj+JsEYk9ojjOR/MMfv1dIFpT8aRJQfI24rtDcw1uF+GnSSMN4WW1yt7fw=="
-      },
-      "Newtonsoft.Json": {
-        "type": "Direct",
-        "requested": "[13.0.2, )",
-        "resolved": "13.0.2",
-        "contentHash": "R2pZ3B0UjeyHShm9vG+Tu0EBb2lC8b0dFzV9gVn50ofHXh9Smjk6kTn7A/FdAsC8B5cKib1OnGYOXxRBz5XQDg=="
       }
     }
   }

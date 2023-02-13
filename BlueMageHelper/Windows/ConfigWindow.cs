@@ -21,10 +21,10 @@ public class ConfigWindow : Window, IDisposable
 
     public override void Draw()
     {
-        var configValue = Configuration.show_hint_even_if_unlocked;
+        var configValue = Configuration.ShowHintEvenIfUnlocked;
         if (ImGui.Checkbox("Show hint even if a spell is already unlocked.", ref configValue))
         {
-            Configuration.show_hint_even_if_unlocked = configValue;
+            Configuration.ShowHintEvenIfUnlocked = configValue;
             Configuration.Save();
         }
     }
