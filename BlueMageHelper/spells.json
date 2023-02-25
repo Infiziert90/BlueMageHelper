@@ -1,1030 +1,1498 @@
 {
   "1": {
-    "name": "Water Cannon",
-    "icon": "72203",
-    "source": {
-      "info": "Become a Blue Mage",
-      "acquiringTips": null
-    }
+    "Name": "Water Cannon",
+    "Icon": 72203,
+    "Sources": [
+      {
+        "Info": "Become a Blue Mage",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "2": {
-    "name": "Flame Thrower",
-    "icon": "72220",
-    "source": {
-      "info": "(Last Boss) Gobmachine G-VI",
-      "acquiringTips": null,
-      "territoryType": 362
-    }
+    "Name": "Flame Thrower",
+    "Icon": 72220,
+    "Sources": [
+      {
+        "Info": "(Last Boss) Gobmachine G-VI",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 362,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "Einhander",
+        "AcquiringTips": "Einhander will only use Flame Thrower if it has the weapon in its talons. If it is holding the gatling gun, it will not cast it.",
+        "Type": 13,
+        "TerritoryTypeID": 1063,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "Omega",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 800,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "3": {
-    "name": "Aqua Breath",
-    "icon": "72208",
-    "source": {
-      "info": "Ultros",
-      "acquiringTips": "Aqua Breath is the signature attack of Ultros. He will use it frequently.",
-      "territoryType": 142
-    }
+    "Name": "Aqua Breath",
+    "Icon": 72208,
+    "Sources": [
+      {
+        "Info": "Ultros",
+        "AcquiringTips": "Aqua Breath is the signature attack of Ultros. He will use it frequently.",
+        "Type": 99,
+        "TerritoryTypeID": 142,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "Leviathan",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 359,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "4": {
-    "name": "Flying Frenzy",
-    "icon": "72207",
-    "source": {
-      "info": "(2nd Boss) Zu",
-      "acquiringTips": "Zu will only use the ability when you break the eggs at the perimeter. Only 2 eggs need to be broken.\nThe spell has no cast bar, but is animated as a body slam against the top aggro'd player.",
-      "territoryType": 160
-    }
+    "Name": "Flying Frenzy",
+    "Icon": 72207,
+    "Sources": [
+      {
+        "Info": "(2nd Boss) Zu",
+        "AcquiringTips": "Zu will only use the ability when you break the eggs at the perimeter. Only 2 eggs need to be broken.\nThe spell has no cast bar, but is animated as a body slam against the top aggro'd player.",
+        "Type": 99,
+        "TerritoryTypeID": 160,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "Cornu",
+        "AcquiringTips": "The spell has no cast bar, but is animated as a body slam against the top aggro'd player.",
+        "Type": 100,
+        "TerritoryTypeID": 180,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "5": {
-    "name": "Drill Cannons",
-    "icon": "72216",
-    "source": {
-      "info": "Lvl. 50 Magitek Vanguard H-2",
-      "acquiringTips": "Drill Cannon is used only when enemies are at 50% or below HP.",
-      "territoryType": 147,
-      "xCoord": 16.0,
-      "yCoord": 15.0,
-      "type": 2
-    }
+    "Name": "Drill Cannons",
+    "Icon": 72216,
+    "Sources": [
+      {
+        "Info": "Lvl. 50 Magitek Vanguard H-2",
+        "AcquiringTips": "Drill Cannon is used only when enemies are at 50% or below HP.",
+        "Type": 2,
+        "TerritoryTypeID": 147,
+        "xCoord": 16.0,
+        "yCoord": 15.0
+      },
+      {
+        "Info": "(2nd Boss) Magitek Vangob G-III",
+        "AcquiringTips": "Drill Cannon is used only when enemies are at 50% or below HP.",
+        "Type": 13,
+        "TerritoryTypeID": 362,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "6": {
-    "name": "High Voltage",
-    "icon": "72205",
-    "source": {
-      "info": "(1st Boss) ADS",
-      "acquiringTips": null,
-      "territoryType": 241
-    }
+    "Name": "High Voltage",
+    "Icon": 72205,
+    "Sources": [
+      {
+        "Info": "(1st Boss) ADS",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 241,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "7": {
-    "name": "Loom",
-    "icon": "72219",
-    "source": {
-      "info": "(Trash) Baalzephon",
-      "acquiringTips": "Loom is a teleport ability, move out of melee range while engaged to trigger the cast.",
-      "territoryType": 363,
-      "type": 13
-    }
+    "Name": "Loom",
+    "Icon": 72219,
+    "Sources": [
+      {
+        "Info": "(Trash) Baalzephon",
+        "AcquiringTips": "Loom is a teleport ability, move out of melee range while engaged to trigger the cast.",
+        "Type": 13,
+        "TerritoryTypeID": 363,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "8": {
-    "name": "Final Sting",
-    "icon": "72225",
-    "source": {
-      "info": "Lvl. 13. Killer Wespe",
-      "acquiringTips": "Wait for the enemy to cast Final Sting. Tag it (ie, hit it at least once), but do not kill it.\nMake sure you keep your HP high or full since Final Sting will kill the enemy using it. You don't need to worry about how to kill the target, but you do need to be concerned about staying alive! If you die, you will not learn the spell.",
-      "territoryType": 134,
-      "xCoord": 15.0,
-      "yCoord": 15.0,
-      "type": 2
-    }
+    "Name": "Final Sting",
+    "Icon": 72225,
+    "Sources": [
+      {
+        "Info": "Lvl. 13. Killer Wespe",
+        "AcquiringTips": "Wait for the enemy to cast Final Sting. Tag it (ie, hit it at least once), but do not kill it.\nMake sure you keep your HP high or full since Final Sting will kill the enemy using it. You don't need to worry about how to kill the target, but you do need to be concerned about staying alive! If you die, you will not learn the spell.",
+        "Type": 2,
+        "TerritoryTypeID": 134,
+        "xCoord": 15.0,
+        "yCoord": 15.0
+      }
+    ]
   },
   "9": {
-    "name": "Song Of Torment",
-    "icon": "72204",
-    "source": {
-      "info": "(Last Boss) Siren",
-      "acquiringTips": "Song of Torment is used in the Phase 1 of battle.",
-      "territoryType": 160
-    }
+    "Name": "Song Of Torment",
+    "Icon": 72204,
+    "Sources": [
+      {
+        "Info": "(Last Boss) Siren",
+        "AcquiringTips": "Song of Torment is used in the Phase 1 of battle.",
+        "Type": 99,
+        "TerritoryTypeID": 160,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "10": {
-    "name": "Glower",
-    "icon": "72222",
-    "source": {
-      "info": "(2nd Boss) Coincounter",
-      "acquiringTips": "Glower is used midway during the fight. Be sure to wait for the one that goes in a straight line, not in a wide arc.",
-      "territoryType": 172
-    }
+    "Name": "Glower",
+    "Icon": 72222,
+    "Sources": [
+      {
+        "Info": "(2nd Boss) Coincounter",
+        "AcquiringTips": "Glower is used midway during the fight. Be sure to wait for the one that goes in a straight line, not in a wide arc.",
+        "Type": 99,
+        "TerritoryTypeID": 172,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "11": {
-    "name": "Plaincracker",
-    "icon": "72209",
-    "source": {
-      "info": "Lvl. 34 Basalt Golem",
-      "acquiringTips": "Enemies tend to use this move semi-frequently. As long as you don't stand too close, you should be able to learn this easily.",
-      "territoryType": 180,
-      "xCoord": 14.0,
-      "yCoord": 16.0,
-      "type": 2
-    }
+    "Name": "Plaincracker",
+    "Icon": 72209,
+    "Sources": [
+      {
+        "Info": "Lvl. 34 Basalt Golem",
+        "AcquiringTips": "Enemies tend to use this move semi-frequently. As long as you don't stand too close, you should be able to learn this easily.",
+        "Type": 2,
+        "TerritoryTypeID": 180,
+        "xCoord": 14.0,
+        "yCoord": 16.0
+      }
+    ]
   },
   "12": {
-    "name": "Bristle",
-    "icon": "72211",
-    "source": {
-      "info": "Lvl. 20 Wild Boar",
-      "acquiringTips": null,
-      "territoryType": 152,
-      "xCoord": 18.3,
-      "yCoord": 24.7,
-      "type": 2
-    }
+    "Name": "Bristle",
+    "Icon": 72211,
+    "Sources": [
+      {
+        "Info": "Lvl. 20 Wild Boar",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 152,
+        "xCoord": 18.3,
+        "yCoord": 24.7
+      }
+    ]
   },
   "13": {
-    "name": "White Wind",
-    "icon": "72224",
-    "source": {
-      "info": "Available after learning 10 spells.",
-      "acquiringTips": null,
-      "type": 3
-    }
+    "Name": "White Wind",
+    "Icon": 72224,
+    "Sources": [
+      {
+        "Info": "Available after learning 10 spells.",
+        "AcquiringTips": "",
+        "Type": 3,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "14": {
-    "name": "Level 5 Petrify",
-    "icon": "72232",
-    "source": {
-      "info": "(Trash) Manor Sentry",
-      "acquiringTips": "There is a Manor Sentry enemy just outside the first boss room of Haukke Manor. More importantly, it will use Level 5 Petrify regardless of its health status. So you can choose to run this unsync'd and just run to the first boss room and hope to learn it, or form a sync'd party and just make it this far to guarantee learning it.",
-      "territoryType": 1040
-    }
+    "Name": "Level 5 Petrify",
+    "Icon": 72232,
+    "Sources": [
+      {
+        "Info": "(Trash) Manor Sentry",
+        "AcquiringTips": "There is a Manor Sentry enemy just outside the first boss room of Haukke Manor. More importantly, it will use Level 5 Petrify regardless of its health status. So you can choose to run this unsync'd and just run to the first boss room and hope to learn it, or form a sync'd party and just make it this far to guarantee learning it.",
+        "Type": 99,
+        "TerritoryTypeID": 1040,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "15": {
-    "name": "Sharpened Knife",
-    "icon": "72218",
-    "source": {
-      "info": "(Last Boss) Tonberry King",
-      "acquiringTips": null,
-      "territoryType": 159
-    }
+    "Name": "Sharpened Knife",
+    "Icon": 72218,
+    "Sources": [
+      {
+        "Info": "(Last Boss) Tonberry King",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 159,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "16": {
-    "name": "Ice Spikes",
-    "icon": "72236",
-    "source": {
-      "info": "Lvl. 9 Trickster Imp",
-      "acquiringTips": "Used very early in the fight when encountered.",
-      "territoryType": 148,
-      "xCoord": 27.3,
-      "yCoord": 24.8,
-      "type": 2
-    }
+    "Name": "Ice Spikes",
+    "Icon": 72236,
+    "Sources": [
+      {
+        "Info": "Lvl. 9 Trickster Imp",
+        "AcquiringTips": "Used very early in the fight when encountered.",
+        "Type": 2,
+        "TerritoryTypeID": 148,
+        "xCoord": 27.3,
+        "yCoord": 24.8
+      }
+    ]
   },
   "17": {
-    "name": "Blood Drain",
-    "icon": "72213",
-    "source": {
-      "info": "Lvl. 7 Cave Bat",
-      "acquiringTips": null,
-      "territoryType": 135,
-      "xCoord": 27.0,
-      "yCoord": 16.0,
-      "type": 2
-    }
+    "Name": "Blood Drain",
+    "Icon": 72213,
+    "Sources": [
+      {
+        "Info": "Lvl. 7 Cave Bat",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 135,
+        "xCoord": 27.0,
+        "yCoord": 16.0
+      }
+    ]
   },
   "18": {
-    "name": "Acorn Bomb",
-    "icon": "72210",
-    "source": {
-      "info": "Lvl 12-17 Treant Sapling",
-      "acquiringTips": null,
-      "territoryType": 154,
-      "xCoord": 30.0,
-      "yCoord": 26.5,
-      "type": 2
-    }
+    "Name": "Acorn Bomb",
+    "Icon": 72210,
+    "Sources": [
+      {
+        "Info": "Lvl 12-17 Treant Sapling",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 154,
+        "xCoord": 30.0,
+        "yCoord": 26.5
+      }
+    ]
   },
   "19": {
-    "name": "Bomb Toss",
-    "icon": "72214",
-    "source": {
-      "info": "Lvl. 5-7 Goblin Fisher",
-      "acquiringTips": null,
-      "territoryType": 134,
-      "xCoord": 23.8,
-      "yCoord": 21.6,
-      "type": 2
-    }
+    "Name": "Bomb Toss",
+    "Icon": 72214,
+    "Sources": [
+      {
+        "Info": "Lvl. 5-7 Goblin Fisher",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 134,
+        "xCoord": 23.8,
+        "yCoord": 21.6
+      }
+    ]
   },
   "20": {
-    "name": "Off-guard",
-    "icon": "72229",
-    "source": {
-      "info": "Available after learning 5 spells.",
-      "acquiringTips": null,
-      "type": 3
-    }
+    "Name": "Off-guard",
+    "Icon": 72229,
+    "Sources": [
+      {
+        "Info": "Available after learning 5 spells.",
+        "AcquiringTips": "",
+        "Type": 3,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "21": {
-    "name": "Self-destruct",
-    "icon": "72226",
-    "source": {
-      "info": "Lvl. 12 Glide Bomb",
-      "acquiringTips": "Be sure to wait until the enemy uses Self-Destruct to kill itself. Do NOT kill it beforehand, only tag it (ie, hit it at least once).",
-      "territoryType": 140,
-      "xCoord": 27.5,
-      "yCoord": 17.0,
-      "type": 2
-    }
+    "Name": "Self-destruct",
+    "Icon": 72226,
+    "Sources": [
+      {
+        "Info": "Lvl. 12 Glide Bomb",
+        "AcquiringTips": "Be sure to wait until the enemy uses Self-Destruct to kill itself. Do NOT kill it beforehand, only tag it (ie, hit it at least once).",
+        "Type": 2,
+        "TerritoryTypeID": 140,
+        "xCoord": 27.5,
+        "yCoord": 17.0
+      }
+    ]
   },
   "22": {
-    "name": "Transfusion",
-    "icon": "72227",
-    "source": {
-      "info": "Available after learning 20 spells.",
-      "acquiringTips": null,
-      "type": 3
-    }
+    "Name": "Transfusion",
+    "Icon": 72227,
+    "Sources": [
+      {
+        "Info": "Available after learning 20 spells.",
+        "AcquiringTips": "",
+        "Type": 3,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "23": {
-    "name": "Faze",
-    "icon": "72221",
-    "source": {
-      "info": "Lvl. 32 Qiqirn Gullroaster",
-      "acquiringTips": null,
-      "territoryType": 137,
-      "xCoord": 26.0,
-      "yCoord": 32.0,
-      "type": 2
-    }
+    "Name": "Faze",
+    "Icon": 72221,
+    "Sources": [
+      {
+        "Info": "Lvl. 32 Qiqirn Gullroaster",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 137,
+        "xCoord": 26.0,
+        "yCoord": 32.0
+      }
+    ]
   },
   "24": {
-    "name": "Flying Sardine",
-    "icon": "72241",
-    "source": {
-      "info": "Lvl. 30 Apkallu",
-      "acquiringTips": null,
-      "territoryType": 137,
-      "xCoord": 30.0,
-      "yCoord": 35.0,
-      "type": 2
-    }
+    "Name": "Flying Sardine",
+    "Icon": 72241,
+    "Sources": [
+      {
+        "Info": "Lvl. 30 Apkallu",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 137,
+        "xCoord": 30.0,
+        "yCoord": 35.0
+      }
+    ]
   },
   "25": {
-    "name": "Snort",
-    "icon": "72201",
-    "source": {
-      "info": "Typhon",
-      "acquiringTips": "Typhon will use Snort around 3~3.5min of the fight.\"Severe snort\" or \"snortassault\" will not count towards the learning of the spell.",
-      "territoryType": 142
-    }
+    "Name": "Snort",
+    "Icon": 72201,
+    "Sources": [
+      {
+        "Info": "Typhon",
+        "AcquiringTips": "Typhon will use Snort around 3~3.5min of the fight.\"Severe snort\" or \"snortassault\" will not count towards the learning of the spell.",
+        "Type": 99,
+        "TerritoryTypeID": 142,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "26": {
-    "name": "4-tonze Weight",
-    "icon": "72202",
-    "source": {
-      "info": "Ultros",
-      "acquiringTips": "This is used in the Phase 2 of the battle when Ultros is below 80% HP.",
-      "territoryType": 142
-    }
+    "Name": "4-tonze Weight",
+    "Icon": 72202,
+    "Sources": [
+      {
+        "Info": "Ultros",
+        "AcquiringTips": "This is used in the Phase 2 of the battle when Ultros is below 80% HP.",
+        "Type": 99,
+        "TerritoryTypeID": 142,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "27": {
-    "name": "The Look",
-    "icon": "72217",
-    "source": {
-      "info": "(Last Boss) Anantaboga",
-      "acquiringTips": "The Look is used by Anantaboga in the beginning of the battle.",
-      "territoryType": 167
-    }
+    "Name": "The Look",
+    "Icon": 72217,
+    "Sources": [
+      {
+        "Info": "(Last Boss) Anantaboga",
+        "AcquiringTips": "The Look is used by Anantaboga in the beginning of the battle.",
+        "Type": 99,
+        "TerritoryTypeID": 167,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "28": {
-    "name": "Bad Breath",
-    "icon": "72206",
-    "source": {
-      "info": "Lvl. 31 Stroper",
-      "acquiringTips": null,
-      "territoryType": 148,
-      "xCoord": 13.7,
-      "yCoord": 22.7,
-      "type": 2
-    }
+    "Name": "Bad Breath",
+    "Icon": 72206,
+    "Sources": [
+      {
+        "Info": "Lvl. 31 Stroper",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 148,
+        "xCoord": 13.7,
+        "yCoord": 22.7
+      }
+    ]
   },
   "29": {
-    "name": "Diamondback",
-    "icon": "72242",
-    "source": {
-      "info": "(2nd Boss) Cuca Fera",
-      "acquiringTips": "Cuca Fera actually CAN be damaged heavily without use of the cannons. Use Missile to half his HP over and over till he's low enough to where you can kill him with standard skills. Alternatively, Level 5 Death can be used to finish the battle off instantly; just ensure Cuca Fera has used Diamondback first.",
-      "territoryType": 365
-    }
+    "Name": "Diamondback",
+    "Icon": 72242,
+    "Sources": [
+      {
+        "Info": "(2nd Boss) Cuca Fera",
+        "AcquiringTips": "Cuca Fera actually CAN be damaged heavily without use of the cannons. Use Missile to half his HP over and over till he's low enough to where you can kill him with standard skills. Alternatively, Level 5 Death can be used to finish the battle off instantly; just ensure Cuca Fera has used Diamondback first.",
+        "Type": 99,
+        "TerritoryTypeID": 365,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "30": {
-    "name": "Mighty Guard",
-    "icon": "72235",
-    "source": {
-      "info": "Available after learning 10 spells.",
-      "acquiringTips": null,
-      "type": 3
-    }
+    "Name": "Mighty Guard",
+    "Icon": 72235,
+    "Sources": [
+      {
+        "Info": "Available after learning 10 spells.",
+        "AcquiringTips": "",
+        "Type": 3,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "31": {
-    "name": "Sticky Tongue",
-    "icon": "72230",
-    "source": {
-      "info": "Lvl. 23 Laughing Toad",
-      "acquiringTips": "Sticky Tongue is the first move used by the Toad when you attack from a distance.",
-      "territoryType": 140,
-      "xCoord": 15.2,
-      "yCoord": 6.4,
-      "type": 2
-    }
+    "Name": "Sticky Tongue",
+    "Icon": 72230,
+    "Sources": [
+      {
+        "Info": "Lvl. 23 Laughing Toad",
+        "AcquiringTips": "Sticky Tongue is the first move used by the Toad when you attack from a distance.",
+        "Type": 2,
+        "TerritoryTypeID": 140,
+        "xCoord": 15.2,
+        "yCoord": 6.4
+      }
+    ]
   },
   "32": {
-    "name": "Toad Oil",
-    "icon": "72228",
-    "source": {
-      "info": "Lvl. 24 Giggling Gigantoad",
-      "acquiringTips": "Toad Oil will be used when you're in melee range of the enemy.",
-      "territoryType": 140,
-      "xCoord": 15.2,
-      "yCoord": 6.4,
-      "type": 2
-    }
+    "Name": "Toad Oil",
+    "Icon": 72228,
+    "Sources": [
+      {
+        "Info": "Lvl. 24 Giggling Gigantoad",
+        "AcquiringTips": "Toad Oil will be used when you're in melee range of the enemy.",
+        "Type": 2,
+        "TerritoryTypeID": 140,
+        "xCoord": 15.2,
+        "yCoord": 6.4
+      }
+    ]
   },
   "33": {
-    "name": "The Ram's Voice",
-    "icon": "72237",
-    "source": {
-      "info": "(Last Boss) Chimera",
-      "acquiringTips": "Will always start with The Ram's Voice and then follow up with The Dragon's Voice or vice-versa.",
-      "territoryType": 170
-    }
+    "Name": "The Ram's Voice",
+    "Icon": 72237,
+    "Sources": [
+      {
+        "Info": "(Last Boss) Chimera",
+        "AcquiringTips": "Will always start with The Ram's Voice and then follow up with The Dragon's Voice or vice-versa.",
+        "Type": 99,
+        "TerritoryTypeID": 170,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "34": {
-    "name": "The Dragon's Voice",
-    "icon": "72238",
-    "source": {
-      "info": "(Last Boss) Chimera",
-      "acquiringTips": "The enemy will always start with The Ram's Voice and then follow up with The Dragon's Voice or vice-versa.",
-      "territoryType": 170
-    }
+    "Name": "The Dragon's Voice",
+    "Icon": 72238,
+    "Sources": [
+      {
+        "Info": "(Last Boss) Chimera",
+        "AcquiringTips": "The enemy will always start with The Ram's Voice and then follow up with The Dragon's Voice or vice-versa.",
+        "Type": 99,
+        "TerritoryTypeID": 170,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "35": {
-    "name": "Missile",
-    "icon": "72223",
-    "source": {
-      "info": "(First Part) Enkidu",
-      "acquiringTips": "Enkidu casts Missile during the Chicken debuff cast by Gilgamesh.\nCleanse the minimise debuffs ASAP, reduce Enkidu to between 40% and 50% HP, and then wait until Chicken/Missile are cast.",
-      "territoryType": 396
-    }
+    "Name": "Missile",
+    "Icon": 72223,
+    "Sources": [
+      {
+        "Info": "(First Part) Enkidu",
+        "AcquiringTips": "Enkidu casts Missile during the Chicken debuff cast by Gilgamesh.\nCleanse the minimise debuffs ASAP, reduce Enkidu to between 40% and 50% HP, and then wait until Chicken/Missile are cast.",
+        "Type": 99,
+        "TerritoryTypeID": 396,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "36": {
-    "name": "1000 Needles",
-    "icon": "72215",
-    "source": {
-      "info": "Lvl. 26 Sabotender Bailaor",
-      "acquiringTips": "Helpful Hint: You can find one that's close enough to pull up to the Lvl. 35 Brass Blade at the entrance to Little Ala Mhigo. The little guy will help you beat them if you're struggling!",
-      "territoryType": 146,
-      "xCoord": 16.3,
-      "yCoord": 15.7,
-      "type": 2
-    }
+    "Name": "1000 Needles",
+    "Icon": 72215,
+    "Sources": [
+      {
+        "Info": "Lvl. 26 Sabotender Bailaor",
+        "AcquiringTips": "Helpful Hint: You can find one that's close enough to pull up to the Lvl. 35 Brass Blade at the entrance to Little Ala Mhigo. The little guy will help you beat them if you're struggling!",
+        "Type": 2,
+        "TerritoryTypeID": 146,
+        "xCoord": 16.3,
+        "yCoord": 15.7
+      }
+    ]
   },
   "37": {
-    "name": "Ink Jet",
-    "icon": "72240",
-    "source": {
-      "info": "(Last Boss) Kraken",
-      "acquiringTips": "Kraken's attack is called Ink Blast and is an AoE attack. Simply dodge them and focus on killing the main body and Kraken arms, not the tentacles.",
-      "territoryType": 387
-    }
+    "Name": "Ink Jet",
+    "Icon": 72240,
+    "Sources": [
+      {
+        "Info": "(Last Boss) Kraken",
+        "AcquiringTips": "Kraken's attack is called Ink Blast and is an AoE attack. Simply dodge them and focus on killing the main body and Kraken arms, not the tentacles.",
+        "Type": 99,
+        "TerritoryTypeID": 387,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "38": {
-    "name": "Fire Angon",
-    "icon": "72243",
-    "source": {
-      "info": "(1st Boss) Frumious Koheel Ja",
-      "acquiringTips": "Will cast Blazing Angon, which is the spears he tosses to the ground. Destroy those to keep from occasional flame damage.",
-      "territoryType": 188
-    }
+    "Name": "Fire Angon",
+    "Icon": 72243,
+    "Sources": [
+      {
+        "Info": "(1st Boss) Frumious Koheel Ja",
+        "AcquiringTips": "Will cast Blazing Angon, which is the spears he tosses to the ground. Destroy those to keep from occasional flame damage.",
+        "Type": 99,
+        "TerritoryTypeID": 188,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "39": {
-    "name": "Moon Flute",
-    "icon": "72233",
-    "source": {
-      "info": "Clear 10 stages in The Masked Carnivale",
-      "acquiringTips": null,
-      "type": 3
-    }
+    "Name": "Moon Flute",
+    "Icon": 72233,
+    "Sources": [
+      {
+        "Info": "Clear 10 stages in The Masked Carnivale",
+        "AcquiringTips": "",
+        "Type": 3,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "40": {
-    "name": "Tail Screw",
-    "icon": "72231",
-    "source": {
-      "info": "(1st Boss) Karlabos",
-      "acquiringTips": "This can potentially kill a Blue Mage in one shot if they afflicted with Slime. Be sure this is removed in order to survive and stay alive to learn the spell.",
-      "territoryType": 387
-    }
+    "Name": "Tail Screw",
+    "Icon": 72231,
+    "Sources": [
+      {
+        "Info": "(1st Boss) Karlabos",
+        "AcquiringTips": "This can potentially kill a Blue Mage in one shot if they afflicted with Slime. Be sure this is removed in order to survive and stay alive to learn the spell.",
+        "Type": 99,
+        "TerritoryTypeID": 387,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "41": {
-    "name": "Mind Blast",
-    "icon": "72212",
-    "source": {
-      "info": "(Last Boss) Galvanth the Dominator",
-      "acquiringTips": "Getting from Galvanth is guaranteed, regardless of what the unrestricted party option is set to.",
-      "territoryType": 1037
-    }
+    "Name": "Mind Blast",
+    "Icon": 72212,
+    "Sources": [
+      {
+        "Info": "(Last Boss) Galvanth the Dominator",
+        "AcquiringTips": "Getting from Galvanth is guaranteed, regardless of what the unrestricted party option is set to.",
+        "Type": 99,
+        "TerritoryTypeID": 1037,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "42": {
-    "name": "Doom",
-    "icon": "72234",
-    "source": {
-      "info": "Clear 20 Stages in The Masked Carnivale",
-      "acquiringTips": null,
-      "type": 3
-    }
+    "Name": "Doom",
+    "Icon": 72234,
+    "Sources": [
+      {
+        "Info": "Clear 20 Stages in The Masked Carnivale",
+        "AcquiringTips": "",
+        "Type": 3,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "43": {
-    "name": "Peculiar Light",
-    "icon": "72239",
-    "source": {
-      "info": "Lvl. 45 Lentic Mudpuppy",
-      "acquiringTips": null,
-      "territoryType": 156,
-      "xCoord": 13.1,
-      "yCoord": 10.4,
-      "type": 2
-    }
+    "Name": "Peculiar Light",
+    "Icon": 72239,
+    "Sources": [
+      {
+        "Info": "Lvl. 45 Lentic Mudpuppy",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 156,
+        "xCoord": 13.1,
+        "yCoord": 10.4
+      }
+    ]
   },
   "44": {
-    "name": "Feather Rain",
-    "icon": "72244",
-    "source": {
-      "info": "Garuda",
-      "acquiringTips": "When Garuda disappears, the random AoE circles that follows after are the spell.",
-      "territoryType": 297
-    }
+    "Name": "Feather Rain",
+    "Icon": 72244,
+    "Sources": [
+      {
+        "Info": "Garuda",
+        "AcquiringTips": "When Garuda disappears, the random AoE circles that follows after are the spell.",
+        "Type": 99,
+        "TerritoryTypeID": 297,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "45": {
-    "name": "Eruption",
-    "icon": "72245",
-    "source": {
-      "info": "Ifrit",
-      "acquiringTips": null,
-      "territoryType": 295
-    }
+    "Name": "Eruption",
+    "Icon": 72245,
+    "Sources": [
+      {
+        "Info": "Ifrit",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 295,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "46": {
-    "name": "Mountain Buster",
-    "icon": "72246",
-    "source": {
-      "info": "Titan",
-      "acquiringTips": "Spell has no cast timer and is only cast late in the fight, so it's possible to kill Titan without having seen this. Watch your combat log and flying text!",
-      "territoryType": 296
-    }
+    "Name": "Mountain Buster",
+    "Icon": 72246,
+    "Sources": [
+      {
+        "Info": "Titan",
+        "AcquiringTips": "Spell has no cast timer and is only cast late in the fight, so it's possible to kill Titan without having seen this. Watch your combat log and flying text!",
+        "Type": 99,
+        "TerritoryTypeID": 296,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "47": {
-    "name": "Shock Strike",
-    "icon": "72247",
-    "source": {
-      "info": "Ramuh",
-      "acquiringTips": "Shock Strike is a frequent cast for Ramuh, so no need to worry if he's cast it.",
-      "territoryType": 375
-    }
+    "Name": "Shock Strike",
+    "Icon": 72247,
+    "Sources": [
+      {
+        "Info": "Ramuh",
+        "AcquiringTips": "Shock Strike is a frequent cast for Ramuh, so no need to worry if he's cast it.",
+        "Type": 99,
+        "TerritoryTypeID": 375,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "48": {
-    "name": "Glass Dance",
-    "icon": "72248",
-    "source": {
-      "info": "Shiva",
-      "acquiringTips": "Shiva casts Glass Dance after bringing out her bow late in the fight. After her add phase, burn her to 10% or so and wait for her to say \"Arrows of frost--\", perform the bow-drawing animation, and actually cast Glass Dance!",
-      "territoryType": 378
-    }
+    "Name": "Glass Dance",
+    "Icon": 72248,
+    "Sources": [
+      {
+        "Info": "Shiva",
+        "AcquiringTips": "Shiva casts Glass Dance after bringing out her bow late in the fight. After her add phase, burn her to 10% or so and wait for her to say \"Arrows of frost--\", perform the bow-drawing animation, and actually cast Glass Dance!",
+        "Type": 99,
+        "TerritoryTypeID": 378,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "49": {
-    "name": "Veil Of The Whorl",
-    "icon": "72249",
-    "source": {
-      "info": "Leviathan",
-      "acquiringTips": null,
-      "territoryType": 359
-    }
+    "Name": "Veil Of The Whorl",
+    "Icon": 72249,
+    "Sources": [
+      {
+        "Info": "Leviathan",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 359,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "50": {
-    "name": "Alpine Draft",
-    "icon": "72251",
-    "source": {
-      "info": "(Last Boss) Opinicus",
-      "acquiringTips": null,
-      "territoryType": 434
-    }
+    "Name": "Alpine Draft",
+    "Icon": 72251,
+    "Sources": [
+      {
+        "Info": "(Last Boss) Opinicus",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 434,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "51": {
-    "name": "Protean Wave",
-    "icon": "72252",
-    "source": {
-      "info": "(Boss) Living Liquid",
-      "acquiringTips": null,
-      "territoryType": 444
-    }
+    "Name": "Protean Wave",
+    "Icon": 72252,
+    "Sources": [
+      {
+        "Info": "(Boss) Living Liquid",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 444,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "52": {
-    "name": "Northerlies",
-    "icon": "72253",
-    "source": {
-      "info": "Lvl. 51 Lone Yeti",
-      "acquiringTips": null,
-      "territoryType": 397,
-      "xCoord": 20.0,
-      "yCoord": 31.0,
-      "type": 2
-    }
+    "Name": "Northerlies",
+    "Icon": 72253,
+    "Sources": [
+      {
+        "Info": "Lvl. 51 Lone Yeti",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 397,
+        "xCoord": 20.0,
+        "yCoord": 31.0
+      }
+    ]
   },
   "53": {
-    "name": "Electrogenesis",
-    "icon": "72254",
-    "source": {
-      "info": "Lvl. 50 Conodont",
-      "acquiringTips": null,
-      "territoryType": 401,
-      "xCoord": 26.0,
-      "yCoord": 33.0,
-      "type": 2
-    }
+    "Name": "Electrogenesis",
+    "Icon": 72254,
+    "Sources": [
+      {
+        "Info": "Lvl. 50 Conodont",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 401,
+        "xCoord": 26.0,
+        "yCoord": 33.0
+      }
+    ]
   },
   "54": {
-    "name": "Kaltstrahl",
-    "icon": "72255",
-    "source": {
-      "info": "(1st Boss) Faust",
-      "acquiringTips": null,
-      "territoryType": 442
-    }
+    "Name": "Kaltstrahl",
+    "Icon": 72255,
+    "Sources": [
+      {
+        "Info": "(1st Boss) Faust",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 442,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "55": {
-    "name": "Abyssal Transfixion",
-    "icon": "72256",
-    "source": {
-      "info": "(2nd Boss) Ash",
-      "acquiringTips": null,
-      "territoryType": 350,
-      "type": 13
-    }
+    "Name": "Abyssal Transfixion",
+    "Icon": 72256,
+    "Sources": [
+      {
+        "Info": "(2nd Boss) Ash",
+        "AcquiringTips": "",
+        "Type": 13,
+        "TerritoryTypeID": 350,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "56": {
-    "name": "Chirp",
-    "icon": "72257",
-    "source": {
-      "info": "Lvl. 50 Paissa",
-      "acquiringTips": null,
-      "territoryType": 401,
-      "xCoord": 24.0,
-      "yCoord": 33.0,
-      "type": 2
-    }
+    "Name": "Chirp",
+    "Icon": 72257,
+    "Sources": [
+      {
+        "Info": "Lvl. 50 Paissa",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 401,
+        "xCoord": 24.0,
+        "yCoord": 33.0
+      }
+    ]
   },
   "57": {
-    "name": "Eerie Soundwave",
-    "icon": "72258",
-    "source": {
-      "info": "Lvl. 59 Empuse",
-      "acquiringTips": "Cast a buff on yourself (ex: Bristle) and the Empuse will try to remove it (Circular Telegraph) if you are in melee range.",
-      "territoryType": 402,
-      "xCoord": 29.5,
-      "yCoord": 12.2,
-      "type": 2
-    }
+    "Name": "Eerie Soundwave",
+    "Icon": 72258,
+    "Sources": [
+      {
+        "Info": "Lvl. 59 Empuse",
+        "AcquiringTips": "Cast a buff on yourself (ex: Bristle) and the Empuse will try to remove it (Circular Telegraph) if you are in melee range.",
+        "Type": 2,
+        "TerritoryTypeID": 402,
+        "xCoord": 29.5,
+        "yCoord": 12.2
+      }
+    ]
   },
   "58": {
-    "name": "Pom Cure",
-    "icon": "72259",
-    "source": {
-      "info": "(White Mage) Furryfoot Kupli Kipp",
-      "acquiringTips": "This spell is still obtainable since the rework of trial Thornmarch (Hard).\nWhen the Furryfoot Kupli Kipp (WHM Moogle) spawns, you must simply damage its companion (but not kill it) and then wait. After a few minutes, the Moogle should cast Pom Cure.",
-      "territoryType": 1067
-    }
+    "Name": "Pom Cure",
+    "Icon": 72259,
+    "Sources": [
+      {
+        "Info": "(White Mage) Furryfoot Kupli Kipp",
+        "AcquiringTips": "This spell is still obtainable since the rework of trial Thornmarch (Hard).\nWhen the Furryfoot Kupli Kipp (WHM Moogle) spawns, you must simply damage its companion (but not kill it) and then wait. After a few minutes, the Moogle should cast Pom Cure.",
+        "Type": 99,
+        "TerritoryTypeID": 1067,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "59": {
-    "name": "Gobskin",
-    "icon": "72260",
-    "source": {
-      "info": "(Trash) Alexandrian Hider",
-      "acquiringTips": "Trash mob appearing in the second and third pack respectively.",
-      "territoryType": 581,
-      "type": 13
-    }
+    "Name": "Gobskin",
+    "Icon": 72260,
+    "Sources": [
+      {
+        "Info": "(Trash) Alexandrian Hider",
+        "AcquiringTips": "Trash mob appearing in the second and third pack respectively.",
+        "Type": 13,
+        "TerritoryTypeID": 581,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "60": {
-    "name": "Magic Hammer",
-    "icon": "72261",
-    "source": {
-      "info": "(3rd Boss) Apanda",
-      "acquiringTips": null,
-      "territoryType": 578
-    }
+    "Name": "Magic Hammer",
+    "Icon": 72261,
+    "Sources": [
+      {
+        "Info": "(3rd Boss) Apanda",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 578,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "61": {
-    "name": "Avail",
-    "icon": "72262",
-    "source": {
-      "info": "(2nd Boss) Queen Hawk",
-      "acquiringTips": null,
-      "territoryType": 511
-    }
+    "Name": "Avail",
+    "Icon": 72262,
+    "Sources": [
+      {
+        "Info": "(2nd Boss) Queen Hawk",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 511,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "62": {
-    "name": "Frog Legs",
-    "icon": "72263",
-    "source": {
-      "info": "Lvl. 59 Poroggo",
-      "acquiringTips": "Standing in melee range makes the enemy more likely to use Frog Legs.",
-      "territoryType": 399,
-      "xCoord": 12.0,
-      "yCoord": 34.0,
-      "type": 2
-    }
+    "Name": "Frog Legs",
+    "Icon": 72263,
+    "Sources": [
+      {
+        "Info": "Lvl. 59 Poroggo",
+        "AcquiringTips": "Standing in melee range makes the enemy more likely to use Frog Legs.",
+        "Type": 2,
+        "TerritoryTypeID": 399,
+        "xCoord": 12.0,
+        "yCoord": 34.0
+      }
+    ]
   },
   "63": {
-    "name": "Sonic Boom",
-    "icon": "72264",
-    "source": {
-      "info": "(2nd Boss) Zu",
-      "acquiringTips": "This attack doesn't have a visible cast bar. You will know that the monster already used it because you will have a debuff called Windburn.",
-      "territoryType": 160
-    }
+    "Name": "Sonic Boom",
+    "Icon": 72264,
+    "Sources": [
+      {
+        "Info": "(2nd Boss) Zu",
+        "AcquiringTips": "This attack doesn't have a visible cast bar. You will know that the monster already used it because you will have a debuff called Windburn.",
+        "Type": 99,
+        "TerritoryTypeID": 160,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "64": {
-    "name": "Whistle",
-    "icon": "72265",
-    "source": {
-      "info": "Lvl. 56 Dhalmel",
-      "acquiringTips": null,
-      "territoryType": 401,
-      "xCoord": 17.0,
-      "yCoord": 32.5,
-      "type": 2
-    }
+    "Name": "Whistle",
+    "Icon": 72265,
+    "Sources": [
+      {
+        "Info": "Lvl. 56 Dhalmel",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 401,
+        "xCoord": 17.0,
+        "yCoord": 32.5
+      }
+    ]
   },
   "65": {
-    "name": "White Knight's Tour",
-    "icon": "72266",
-    "source": {
-      "info": "(Trash) White Knight",
-      "acquiringTips": null,
-      "territoryType": 1066
-    }
+    "Name": "White Knight's Tour",
+    "Icon": 72266,
+    "Sources": [
+      {
+        "Info": "(Trash) White Knight",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 1066,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "66": {
-    "name": "Black Knight's Tour",
-    "icon": "72267",
-    "source": {
-      "info": "(Trash) Black Knight",
-      "acquiringTips": null,
-      "territoryType": 1066
-    }
+    "Name": "Black Knight's Tour",
+    "Icon": 72267,
+    "Sources": [
+      {
+        "Info": "(Trash) Black Knight",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 1066,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "67": {
-    "name": "Level 5 Death",
-    "icon": "72268",
-    "source": {
-      "info": "(Trash) Page 64",
-      "acquiringTips": "If Page 64 won't cast, try standing far enough away for everyone to untether.",
-      "territoryType": 1109
-    }
+    "Name": "Level 5 Death",
+    "Icon": 72268,
+    "Sources": [
+      {
+        "Info": "(Trash) Page 64",
+        "AcquiringTips": "If Page 64 won't cast, try standing far enough away for everyone to untether.",
+        "Type": 99,
+        "TerritoryTypeID": 1109,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "68": {
-    "name": "Launcher",
-    "icon": "72269",
-    "source": {
-      "info": "(2nd Boss) Armored Weapon",
-      "acquiringTips": null,
-      "territoryType": 1114
-    }
+    "Name": "Launcher",
+    "Icon": 72269,
+    "Sources": [
+      {
+        "Info": "(2nd Boss) Armored Weapon",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 1114,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "69": {
-    "name": "Perpetual Ray",
-    "icon": "72270",
-    "source": {
-      "info": "The Manipulator",
-      "acquiringTips": null,
-      "territoryType": 445
-    }
+    "Name": "Perpetual Ray",
+    "Icon": 72270,
+    "Sources": [
+      {
+        "Info": "The Manipulator",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 445,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "70": {
-    "name": "Cactguard",
-    "icon": "72271",
-    "source": {
-      "info": "(2nd Boss - Trash) Sabotender Gaurdia",
-      "acquiringTips": "Sabotender Gaurdia will spawn during the last phase of the fight against Sabotender Emperatriz (the 2nd boss of the dungeon).\nOnce a diamond shaped barrier appears around the boss, the spell has been cast.",
-      "territoryType": 367
-    }
+    "Name": "Cactguard",
+    "Icon": 72271,
+    "Sources": [
+      {
+        "Info": "(2nd Boss - Trash) Sabotender Gaurdia",
+        "AcquiringTips": "Sabotender Gaurdia will spawn during the last phase of the fight against Sabotender Emperatriz (the 2nd boss of the dungeon).\nOnce a diamond shaped barrier appears around the boss, the spell has been cast.",
+        "Type": 99,
+        "TerritoryTypeID": 367,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "71": {
-    "name": "Revenge Blast",
-    "icon": "72272",
-    "source": {
-      "info": "Available after learning 50 spells.",
-      "acquiringTips": null,
-      "type": 3
-    }
+    "Name": "Revenge Blast",
+    "Icon": 72272,
+    "Sources": [
+      {
+        "Info": "Available after learning 50 spells.",
+        "AcquiringTips": "",
+        "Type": 3,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "72": {
-    "name": "Angel Whisper",
-    "icon": "72273",
-    "source": {
-      "info": "Clear 30 Stages in The Masked Carnivale",
-      "acquiringTips": null,
-      "type": 3
-    }
+    "Name": "Angel Whisper",
+    "Icon": 72273,
+    "Sources": [
+      {
+        "Info": "Clear 30 Stages in The Masked Carnivale",
+        "AcquiringTips": "",
+        "Type": 3,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "73": {
-    "name": "Exuviation",
-    "icon": "72274",
-    "source": {
-      "info": "Lvl. 57-58 Abalathian Wamoura",
-      "acquiringTips": "If acquiring this from Abalathian Wamoura, you may need to pull at least two enemies so that the Abalathian Wamoura has a target to cast Exuviation on.\nExample: Pull a Window Wamoura along with an Abalathian Wamoura, then use Aqua Breath (or a similar spell that causes a debuff) on the Window Wamoura that entices the Abalathian Wamoura to cast Exuviation.",
-      "territoryType": 401,
-      "xCoord": 10.0,
-      "yCoord": 17.0,
-      "type": 2
-    }
+    "Name": "Exuviation",
+    "Icon": 72274,
+    "Sources": [
+      {
+        "Info": "Lvl. 57-58 Abalathian Wamoura",
+        "AcquiringTips": "If acquiring this from Abalathian Wamoura, you may need to pull at least two enemies so that the Abalathian Wamoura has a target to cast Exuviation on.\nExample: Pull a Window Wamoura along with an Abalathian Wamoura, then use Aqua Breath (or a similar spell that causes a debuff) on the Window Wamoura that entices the Abalathian Wamoura to cast Exuviation.",
+        "Type": 2,
+        "TerritoryTypeID": 401,
+        "xCoord": 10.0,
+        "yCoord": 17.0
+      }
+    ]
   },
   "74": {
-    "name": "Reflux",
-    "icon": "72275",
-    "source": {
-      "info": "Lvl. 56 Cloud Wyvern",
-      "acquiringTips": null,
-      "territoryType": 400,
-      "xCoord": 24.0,
-      "yCoord": 28.5,
-      "type": 2
-    }
+    "Name": "Reflux",
+    "Icon": 72275,
+    "Sources": [
+      {
+        "Info": "Lvl. 56 Cloud Wyvern",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 400,
+        "xCoord": 24.0,
+        "yCoord": 28.5
+      }
+    ]
   },
   "75": {
-    "name": "Devour",
-    "icon": "72276",
-    "source": {
-      "info": "(Last Boss) Caduceus",
-      "acquiringTips": null,
-      "territoryType": 241
-    }
+    "Name": "Devour",
+    "Icon": 72276,
+    "Sources": [
+      {
+        "Info": "(Last Boss) Caduceus",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 241,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "76": {
-    "name": "Condensed Libra",
-    "icon": "72277",
-    "source": {
-      "info": "(Trash) Mechanoscribe",
-      "acquiringTips": null,
-      "territoryType": 578
-    }
+    "Name": "Condensed Libra",
+    "Icon": 72277,
+    "Sources": [
+      {
+        "Info": "(Trash) Mechanoscribe",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 578,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "77": {
-    "name": "Aetheric Mimicry",
-    "icon": "72278",
-    "source": {
-      "info": "(1st Boss) Ghrah Luminary",
-      "acquiringTips": "Ghrah Luminary will summon a monster called \"Corruption\". Killing the corruption is enough to obtain Aetheric Mimicry.",
-      "territoryType": 510
-    }
+    "Name": "Aetheric Mimicry",
+    "Icon": 72278,
+    "Sources": [
+      {
+        "Info": "(1st Boss) Ghrah Luminary",
+        "AcquiringTips": "Ghrah Luminary will summon a monster called \"Corruption\". Killing the corruption is enough to obtain Aetheric Mimicry.",
+        "Type": 99,
+        "TerritoryTypeID": 510,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "78": {
-    "name": "Surpanakha",
-    "icon": "72279",
-    "source": {
-      "info": "Ravana",
-      "acquiringTips": null,
-      "territoryType": 432
-    }
+    "Name": "Surpanakha",
+    "Icon": 72279,
+    "Sources": [
+      {
+        "Info": "Ravana",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 432,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "79": {
-    "name": "Quasar",
-    "icon": "72280",
-    "source": {
-      "info": "Sophia",
-      "acquiringTips": null,
-      "territoryType": 576
-    }
+    "Name": "Quasar",
+    "Icon": 72280,
+    "Sources": [
+      {
+        "Info": "Sophia",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 576,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "80": {
-    "name": "J Kick",
-    "icon": "72281",
-    "source": {
-      "info": "(Last Phase) Brute Justice",
-      "acquiringTips": "Naturally performs J Kick at the start of the boss group attack. Be aware of all the mechanics and dodge or heal through all the attacks.",
-      "territoryType": 523
-    }
+    "Name": "J Kick",
+    "Icon": 72281,
+    "Sources": [
+      {
+        "Info": "(Last Phase) Brute Justice",
+        "AcquiringTips": "Naturally performs J Kick at the start of the boss group attack. Be aware of all the mechanics and dodge or heal through all the attacks.",
+        "Type": 99,
+        "TerritoryTypeID": 523,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "81": {
-    "name": "Triple Trident",
-    "icon": "72282",
-    "source": {
-      "info": "Lvl. 67 Ebisu Catfish",
-      "acquiringTips": null,
-      "territoryType": 614,
-      "xCoord": 28.0,
-      "yCoord": 6.0,
-      "type": 2
-    }
+    "Name": "Triple Trident",
+    "Icon": 72282,
+    "Sources": [
+      {
+        "Info": "Lvl. 67 Ebisu Catfish",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 614,
+        "xCoord": 28.0,
+        "yCoord": 6.0
+      }
+    ]
   },
   "82": {
-    "name": "Tingle",
-    "icon": "72283",
-    "source": {
-      "info": "Lvl. 67 Ebisu Catfish",
-      "acquiringTips": null,
-      "territoryType": 614,
-      "xCoord": 28.0,
-      "yCoord": 6.0,
-      "type": 2
-    }
+    "Name": "Tingle",
+    "Icon": 72283,
+    "Sources": [
+      {
+        "Info": "Lvl. 67 Ebisu Catfish",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 614,
+        "xCoord": 28.0,
+        "yCoord": 6.0
+      }
+    ]
   },
   "83": {
-    "name": "Tatami-gaeshi",
-    "icon": "72284",
-    "source": {
-      "info": "(2nd Boss) Dojun-maru",
-      "acquiringTips": null,
-      "territoryType": 662
-    }
+    "Name": "Tatami-gaeshi",
+    "Icon": 72284,
+    "Sources": [
+      {
+        "Info": "(2nd Boss) Dojun-maru",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 662,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "84": {
-    "name": "Cold Fog",
-    "icon": "72285",
-    "source": {
-      "info": "(Last Boss) Mist Dragon",
-      "acquiringTips": "When the Mist Dragon begins casting Vaporize, it will summon 3 Draconic Regards (white dragon heads). You must leave at least one head alive in order for the cast to go off, otherwise the Mist Dragon will cast White Death instead and you will not get the spell.\nUse Diamondback or other mitigation to help survive the damage.",
-      "territoryType": 789
-    }
+    "Name": "Cold Fog",
+    "Icon": 72285,
+    "Sources": [
+      {
+        "Info": "(Last Boss) Mist Dragon",
+        "AcquiringTips": "When the Mist Dragon begins casting Vaporize, it will summon 3 Draconic Regards (white dragon heads). You must leave at least one head alive in order for the cast to go off, otherwise the Mist Dragon will cast White Death instead and you will not get the spell.\nUse Diamondback or other mitigation to help survive the damage.",
+        "Type": 99,
+        "TerritoryTypeID": 789,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "85": {
-    "name": "Stotram",
-    "icon": "72286",
-    "source": {
-      "info": "Lakshmi",
-      "acquiringTips": "Stotram is used early on as a party wide unavoidable attack that damages the party and heals adds, so nothing needs to be done to make it be cast.",
-      "territoryType": 719
-    }
+    "Name": "Stotram",
+    "Icon": 72286,
+    "Sources": [
+      {
+        "Info": "Lakshmi",
+        "AcquiringTips": "Stotram is used early on as a party wide unavoidable attack that damages the party and heals adds, so nothing needs to be done to make it be cast.",
+        "Type": 99,
+        "TerritoryTypeID": 719,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "86": {
-    "name": "Saintly Beam",
-    "icon": "72287",
-    "source": {
-      "info": "Phantom Train",
-      "acquiringTips": "This attack targets a different number of people throughout the fight with a marker and creates a large spotlight shining on the ground, exploding into light. The attack is guaranteed to happen early in the fight, so nothing needs to be done to make it be cast.\nIt's important to not get kidnapped by the ghosts when the Phantom Train is killed. If you are taken away by the ghost when the train dies, you will not acquire the ability.",
-      "territoryType": 748
-    }
+    "Name": "Saintly Beam",
+    "Icon": 72287,
+    "Sources": [
+      {
+        "Info": "Phantom Train",
+        "AcquiringTips": "This attack targets a different number of people throughout the fight with a marker and creates a large spotlight shining on the ground, exploding into light. The attack is guaranteed to happen early in the fight, so nothing needs to be done to make it be cast.\nIt's important to not get kidnapped by the ghosts when the Phantom Train is killed. If you are taken away by the ghost when the train dies, you will not acquire the ability.",
+        "Type": 99,
+        "TerritoryTypeID": 748,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "87": {
-    "name": "Feculent Flood",
-    "icon": "72288",
-    "source": {
-      "info": "(Last Boss) Tokkapchi",
-      "acquiringTips": "This attack occurs midway through the Tokkapchi fight, so you may have to wait for it to cast it before killing it. Tokkapchi targets the Mud Slime it has periodically been creating during the fight (the one you should be managing the position of) with a cone shaped AoE attack.",
-      "territoryType": 788
-    }
+    "Name": "Feculent Flood",
+    "Icon": 72288,
+    "Sources": [
+      {
+        "Info": "(Last Boss) Tokkapchi",
+        "AcquiringTips": "This attack occurs midway through the Tokkapchi fight, so you may have to wait for it to cast it before killing it. Tokkapchi targets the Mud Slime it has periodically been creating during the fight (the one you should be managing the position of) with a cone shaped AoE attack.",
+        "Type": 99,
+        "TerritoryTypeID": 788,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "88": {
-    "name": "Angel's Snack",
-    "icon": "72289",
-    "source": {
-      "info": "Available after reaching level 70",
-      "acquiringTips": null,
-      "type": 3
-    }
+    "Name": "Angel's Snack",
+    "Icon": 72289,
+    "Sources": [
+      {
+        "Info": "Available after reaching level 70",
+        "AcquiringTips": "",
+        "Type": 3,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "89": {
-    "name": "Chelonian Gate",
-    "icon": "72290",
-    "source": {
-      "info": "(Last Boss) Genbu",
-      "acquiringTips": null,
-      "territoryType": 742
-    }
+    "Name": "Chelonian Gate",
+    "Icon": 72290,
+    "Sources": [
+      {
+        "Info": "(Last Boss) Genbu",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 742,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "90": {
-    "name": "The Rose of Destruction",
-    "icon": "72291",
-    "source": {
-      "info": "(Last Boss) Ivon Coeurlfish",
-      "acquiringTips": null,
-      "territoryType": 663
-    }
+    "Name": "The Rose of Destruction",
+    "Icon": 72291,
+    "Sources": [
+      {
+        "Info": "(Last Boss) Ivon Coeurlfish",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 663,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "91": {
-    "name": "Basic Instinct",
-    "icon": "72292",
-    "source": {
-      "info": "Lvl. 24 Master Coeurl",
-      "acquiringTips": "Master Coeurl uses this immediately. Wait for it to finish casting before slaying it.",
-      "territoryType": 139,
-      "xCoord": 8.9,
-      "yCoord": 21.4,
-      "type": 2
-    }
+    "Name": "Basic Instinct",
+    "Icon": 72292,
+    "Sources": [
+      {
+        "Info": "Lvl. 24 Master Coeurl",
+        "AcquiringTips": "Master Coeurl uses this immediately. Wait for it to finish casting before slaying it.",
+        "Type": 2,
+        "TerritoryTypeID": 139,
+        "xCoord": 8.9,
+        "yCoord": 21.4
+      }
+    ]
   },
   "92": {
-    "name": "Ultravibration",
-    "icon": "72293",
-    "source": {
-      "info": "Lvl. 68 Kongamato",
-      "acquiringTips": null,
-      "territoryType": 620,
-      "xCoord": 13.5,
-      "yCoord": 26.2,
-      "type": 2
-    }
+    "Name": "Ultravibration",
+    "Icon": 72293,
+    "Sources": [
+      {
+        "Info": "Lvl. 68 Kongamato",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 620,
+        "xCoord": 13.5,
+        "yCoord": 26.2
+      }
+    ]
   },
   "93": {
-    "name": "Blaze",
-    "icon": "72294",
-    "source": {
-      "info": "Alte Roite",
-      "acquiringTips": null,
-      "territoryType": 691
-    }
+    "Name": "Blaze",
+    "Icon": 72294,
+    "Sources": [
+      {
+        "Info": "Alte Roite",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 691,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "94": {
-    "name": "Mustard Bomb",
-    "icon": "72295",
-    "source": {
-      "info": "Omega",
-      "acquiringTips": null,
-      "territoryType": 800
-    }
+    "Name": "Mustard Bomb",
+    "Icon": 72295,
+    "Sources": [
+      {
+        "Info": "Omega",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 800,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "95": {
-    "name": "Dragon Force",
-    "icon": "72296",
-    "source": {
-      "info": "Available after learning 100 spells.",
-      "acquiringTips": null,
-      "type": 3
-    }
+    "Name": "Dragon Force",
+    "Icon": 72296,
+    "Sources": [
+      {
+        "Info": "Available after learning 100 spells.",
+        "AcquiringTips": "",
+        "Type": 3,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "96": {
-    "name": "Aetherial Spark",
-    "icon": "72297",
-    "source": {
-      "info": "Lvl. 69 Salt Dhruva",
-      "acquiringTips": null,
-      "territoryType": 621,
-      "xCoord": 22.4,
-      "yCoord": 22.8,
-      "type": 2
-    }
+    "Name": "Aetherial Spark",
+    "Icon": 72297,
+    "Sources": [
+      {
+        "Info": "Lvl. 69 Salt Dhruva",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 621,
+        "xCoord": 22.4,
+        "yCoord": 22.8
+      }
+    ]
   },
   "97": {
-    "name": "Hydro Pull",
-    "icon": "72298",
-    "source": {
-      "info": "(1st Boss) Kelpie",
-      "acquiringTips": null,
-      "territoryType": 731
-    }
+    "Name": "Hydro Pull",
+    "Icon": 72298,
+    "Sources": [
+      {
+        "Info": "(1st Boss) Kelpie",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 731,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "98": {
-    "name": "Malediction of Water",
-    "icon": "72299",
-    "source": {
-      "info": "(Corridor Wave) Sai Taisui",
-      "acquiringTips": null,
-      "territoryType": 768
-    }
+    "Name": "Malediction of Water",
+    "Icon": 72299,
+    "Sources": [
+      {
+        "Info": "(Corridor Wave) Sai Taisui",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 768,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "99": {
-    "name": "Choco Meteor",
-    "icon": "72300",
-    "source": {
-      "info": "Lvl. 53 Courser Chocobo",
-      "acquiringTips": "Courser Chocobo will cast this after attacking a few times. Be sure to get out of the way as it can cause heavy damage!",
-      "territoryType": 398,
-      "xCoord": 37.5,
-      "yCoord": 23.7,
-      "type": 2
-    }
+    "Name": "Choco Meteor",
+    "Icon": 72300,
+    "Sources": [
+      {
+        "Info": "Lvl. 53 Courser Chocobo",
+        "AcquiringTips": "Courser Chocobo will cast this after attacking a few times. Be sure to get out of the way as it can cause heavy damage!",
+        "Type": 2,
+        "TerritoryTypeID": 398,
+        "xCoord": 37.5,
+        "yCoord": 23.7
+      }
+    ]
   },
   "100": {
-    "name": "Matra Magic",
-    "icon": "72301",
-    "source": {
-      "info": "Available after learning 100 spells.",
-      "acquiringTips": null,
-      "type": 3
-    }
+    "Name": "Matra Magic",
+    "Icon": 72301,
+    "Sources": [
+      {
+        "Info": "Available after learning 100 spells.",
+        "AcquiringTips": "",
+        "Type": 3,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "101": {
-    "name": "Peripheral Synthesis",
-    "icon": "72302",
-    "source": {
-      "info": "Omega",
-      "acquiringTips": null,
-      "territoryType": 800
-    }
+    "Name": "Peripheral Synthesis",
+    "Icon": 72302,
+    "Sources": [
+      {
+        "Info": "Omega",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 800,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "102": {
-    "name": "Both Ends",
-    "icon": "72303",
-    "source": {
-      "info": "(Last Boss) Qitian Dasheng",
-      "acquiringTips": null,
-      "territoryType": 768
-    }
+    "Name": "Both Ends",
+    "Icon": 72303,
+    "Sources": [
+      {
+        "Info": "(Last Boss) Qitian Dasheng",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 768,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "103": {
-    "name": "Phantom Flurry",
-    "icon": "72304",
-    "source": {
-      "info": "Suzaku",
-      "acquiringTips": null,
-      "territoryType": 810
-    }
+    "Name": "Phantom Flurry",
+    "Icon": 72304,
+    "Sources": [
+      {
+        "Info": "Suzaku",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 810,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   },
   "104": {
-    "name": "Nightbloom",
-    "icon": "72305",
-    "source": {
-      "info": "Tsukuyomi",
-      "acquiringTips": null,
-      "territoryType": 778
-    }
+    "Name": "Nightbloom",
+    "Icon": 72305,
+    "Sources": [
+      {
+        "Info": "Tsukuyomi",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 778,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   }
 }

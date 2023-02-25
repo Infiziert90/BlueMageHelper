@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Runtime.Serialization;
 using Dalamud.Game.Text.SeStringHandling.Payloads;
 using Dalamud.Logging;
 using FFXIVClientStructs.FFXIV.Component.GUI;
 using Lumina.Excel.GeneratedSheets;
-using Newtonsoft.Json.Linq;
 
 namespace BlueMageHelper;
 
@@ -14,16 +14,13 @@ public class Spell
 {
     public string Name;
     public uint Icon;
-    public SpellSource Source;
+    public readonly List<SpellSource> Sources = new();
 
-    public Spell(JToken j)
-    {
-        Name = (string) j["name"] ?? "";
-        Icon = (uint) int.Parse((string) j["icon"] ?? "0");
-
-        var s = j["source"];
-        Source = new SpellSource(j["source"]);
-    }
+    [SuppressMessage("ReSharper", "UnusedMember.Global")]
+    public Spell() { }
+    
+    public SpellSource Source => Sources[0];
+    public bool HasMultipleSources => Sources.Count > 1;
 }
 
 public class SpellSource
@@ -32,33 +29,34 @@ public class SpellSource
     public string AcquiringTips = "";
     
     public RegionType Type = RegionType.Default;
-    public TerritoryType TerritoryType = null;
-    public MapLinkPayload? MapLink = null;
-
-    public bool IsDuty = false;
-    public string DutyName = "";
-    public string DutyMinLevel = "1";
-    public string PlaceName = "";
+    public uint TerritoryTypeID = 0;
+    public float xCoord = 0;
+    public float yCoord = 0;
     
-    public SpellSource(string info, string acquiringTips = "")
-    {
-        Info = info;
-        AcquiringTips = acquiringTips;
-    }
+    [NonSerialized] public TerritoryType TerritoryType = null;
+    [NonSerialized] public MapLinkPayload? MapLink = null;
 
-    public SpellSource(JToken source)
-    {
-        Info = (string) source["info"] ?? "";
-        AcquiringTips = (string) source["acquiringTips"] ?? "";
-        Type = source["type"]?.ToObject<RegionType>() ?? RegionType.Default;
+    [NonSerialized] public bool IsDuty = false;
+    [NonSerialized] public string DutyName = "";
+    [NonSerialized] public string DutyMinLevel = "1";
+    [NonSerialized] public string PlaceName = "";
+    
+    [SuppressMessage("ReSharper", "UnusedMember.Global")]
+    public SpellSource() { }
 
-        if (source["territoryType"] != null)
+    public SpellSource(string info) { Info = info; }
+    
+    [OnDeserialized]
+    [SuppressMessage("ReSharper", "UnusedMember.Global")]
+    public void Initialize(StreamingContext _)
+    {
+        if (TerritoryTypeID != 0)
         {
-            TerritoryType = Plugin.Data.GetExcelSheet<TerritoryType>()!.GetRow((uint) source["territoryType"])!;
+            TerritoryType = Plugin.Data.GetExcelSheet<TerritoryType>()!.GetRow(TerritoryTypeID)!;
             PlaceName = TerritoryType.PlaceName.Value!.Name;
             
-            var contentSheet = Plugin.Data.GetExcelSheet<ContentFinderCondition>()!;
-            var content = contentSheet.FirstOrDefault(x => x.TerritoryType.Row == TerritoryType.RowId);
+            var content = Plugin.Data.GetExcelSheet<ContentFinderCondition>()!
+                .FirstOrDefault(content => content.TerritoryType.Row == TerritoryType.RowId);
             if (content != null && content.Name != "")
             {
                 IsDuty = true;
@@ -69,21 +67,13 @@ public class SpellSource
         
         if (Type == RegionType.OpenWorld && TerritoryType != null)
         {
-            if (source["xCoord"] == null || source["yCoord"] == null)
-            {
-                throw new Exception($"Missing xCoord or yCoord for RegionType OpenWorld for {Info}.");
-            }
-
-            var xCoord = (float) source["xCoord"];
-            var yCoord = (float) source["yCoord"];
+            if (xCoord == 0 || yCoord == 0)
+                throw new Exception($"Missing xCoord or yCoord with RegionType OpenWorld for {Info}.");
+        
             try
-            {
-                MapLink = new MapLinkPayload(TerritoryType.RowId, TerritoryType.Map.Row, xCoord, yCoord);
-            }
+            { MapLink = new MapLinkPayload(TerritoryType.RowId, TerritoryType.Map.Row, xCoord, yCoord); }
             catch
-            {
-                PluginLog.Error($"MapLink creation failed for {Info}.");
-            }
+            { PluginLog.Error($"MapLink creation failed for {Info}."); }
         } 
         else if (Type == RegionType.Buy)
         {
@@ -123,22 +113,12 @@ public enum RegionType
     Dungeon = 13,
     Fate = 26,
     
+    // non PartIDs
     Default = 99,
+    Hunt = 100,
 }
 
 public static class SpellSources
 {
-    public static Dictionary<string, Spell> Sources = new();
-    
-    public static void Load(string path)
-    {
-        JObject spell_sources;
-        var json_string = File.ReadAllText(path);
-        spell_sources = JObject.Parse(json_string);
-
-        foreach (var (key, spell) in spell_sources)
-        {
-            Sources.Add(key, new Spell(spell));
-        }
-    }
+    public static Dictionary<string, Spell> Spells = new();
 }

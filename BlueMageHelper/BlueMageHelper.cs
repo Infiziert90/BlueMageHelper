@@ -14,6 +14,7 @@ using Dalamud.Game.Text.SeStringHandling.Payloads;
 using Dalamud.Interface.Windowing;
 using FFXIVClientStructs.FFXIV.Component.GUI;
 using Lumina.Excel.GeneratedSheets;
+using Newtonsoft.Json;
 using static BlueMageHelper.SpellSources;
 
 namespace BlueMageHelper
@@ -78,7 +79,8 @@ namespace BlueMageHelper
             {
                 PluginLog.Debug("Loading Spell Sources.");
                 var path = Path.Combine(PluginInterface.AssemblyLocation.Directory?.FullName!, "spells.json");
-                SpellSources.Load(path);
+                var jsonString = File.ReadAllText(path);
+                Spells = JsonConvert.DeserializeObject<Dictionary<string, Spell>>(jsonString);
             }
             catch (Exception e)
             {
@@ -133,7 +135,7 @@ namespace BlueMageHelper
         }
 
         private static SpellSource GetHintText(string spellNumber) =>
-            Sources.TryGetValue(spellNumber, out var spell) ? spell.Source : new SpellSource($"No data #{spellNumber}");
+            Spells.TryGetValue(spellNumber, out var spell) ? spell.Source : new SpellSource($"No data #{spellNumber}");
         
         public void Dispose()
         {
@@ -152,23 +154,21 @@ namespace BlueMageHelper
         #region internal
         private void PrintTerris()
         {
-            var mapSheet = Data.GetExcelSheet<TerritoryType>();
+            var mapSheet = Data.GetExcelSheet<TerritoryType>()!;
             var contentSheet = Data.GetExcelSheet<ContentFinderCondition>()!;
             foreach (var match in mapSheet)
             {
-                if (match.Map.IsValueCreated && match.Map.Value!.PlaceName.Value!.Name != "")
-                {
-                    if (match.RowId == 0) continue;
-                    PluginLog.Information("---------------");
-                    PluginLog.Information(match.Map.Value!.PlaceName.Value!.Name);
-                    PluginLog.Information($"TerriID: {match.RowId}");
-                    PluginLog.Information($"MapID: {match.Map.Row}");
+                if (match.RowId == 0) continue;
+                if (match.Map.Value!.PlaceName.Value!.Name == "") continue;
+                PluginLog.Information("---------------");
+                PluginLog.Information(match.Map.Value!.PlaceName.Value!.Name);
+                PluginLog.Information($"TerriID: {match.RowId}");
+                PluginLog.Information($"MapID: {match.Map.Row}");
 
-                    var content = contentSheet.FirstOrDefault(x => x.TerritoryType.Row == match.RowId);
-                    if (content == null) continue;
-                    if (Helper.ToTitleCaseExtended(content.Name, 0) == "") continue;
-                    PluginLog.Information($"Duty: {Helper.ToTitleCaseExtended(content.Name, 0)}");
-                }
+                var content = contentSheet.FirstOrDefault(x => x.TerritoryType.Row == match.RowId);
+                if (content == null) continue;
+                if (Helper.ToTitleCaseExtended(content.Name, 0) == "") continue;
+                PluginLog.Information($"Duty: {Helper.ToTitleCaseExtended(content.Name, 0)}");
             }
         }        
         

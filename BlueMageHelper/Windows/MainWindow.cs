@@ -11,7 +11,8 @@ namespace BlueMageHelper.Windows;
 public class MainWindow : Window, IDisposable
 {
     private Plugin Plugin;
-    private int selectedSpell = 1; // 0 is the first learned blu skill
+    private int selectedSpellNumber = 1; // 0 is the first learned blu skill
+    private int selectedSource = 0;
     private static Vector2 size = new(80, 80);
 
     public MainWindow(Plugin plugin) : base("Grimoire", ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse)
@@ -29,52 +30,61 @@ public class MainWindow : Window, IDisposable
 
     public override void Draw()
     {
-        var keyList = Sources.Keys.ToList();
-        var stringList = Sources.Select(x => $"{x.Key} - {x.Value.Name}").ToArray();
-        ImGui.Combo("##spellSelector", ref selectedSpell, stringList, stringList.Length);
-        DrawArrows(ref selectedSpell, stringList.Length, 0);
+        var currentSpell = selectedSpellNumber;
+        var keyList = Spells.Keys.ToList();
+        var stringList = Spells.Select(x => $"{x.Key} - {x.Value.Name}").ToArray();
+        ImGui.Combo("##spellSelector", ref selectedSpellNumber, stringList, stringList.Length);
+        DrawArrows(ref selectedSpellNumber, stringList.Length, 0);
+
+        if (currentSpell != selectedSpellNumber) selectedSource = 0;
 
         ImGuiHelpers.ScaledDummy(10);
         ImGui.Separator();
         ImGuiHelpers.ScaledDummy(5);
 
-        if (!Sources.Any()) return;
+        if (!Spells.Any()) return;
         
-        var spell = Sources[keyList[selectedSpell]];
-        DrawIcon(spell.Icon);
+        var selectedSpell = Spells[keyList[selectedSpellNumber]];
+        DrawIcon(selectedSpell.Icon);
         ImGuiHelpers.ScaledDummy(10);
         
         ImGui.BeginChild("Content", new Vector2(0, -30), false, 0);
-        if (spell.Source.Type != RegionType.Buy)
+        var source = selectedSpell.Sources[selectedSource];
+        if (selectedSpell.HasMultipleSources)
         {
-            ImGui.TextUnformatted($"Min Lvl: {spell.Source.DutyMinLevel}");
+            var sourcesList = selectedSpell.Sources.Select(x => $"{x.Info} ").ToArray();
+            ImGui.Combo("##sourcesSelector", ref selectedSource, sourcesList, sourcesList.Length);
+            DrawArrows(ref selectedSource, selectedSpell.Sources.Count, 2);
+            source = selectedSpell.Sources[selectedSource];
+        }
+        else
+        {
+            ImGui.TextUnformatted($"{(source.Type != RegionType.Buy ? "Mob" : "Info")}: {source.Info}");
         }
         
-        if (spell.Source.Info != "")
-        {
-            ImGui.TextUnformatted($"{(spell.Source.Type != RegionType.Buy ? "Mob" : "Info")}: {spell.Source.Info}");
-        }
+        if (source.Type == RegionType.Hunt) 
+            ImGui.TextUnformatted($"Note: Rank A Elite Mark");
         
-        if (spell.Source.TerritoryType != null)
-        {
-            ImGui.TextUnformatted(!spell.Source.IsDuty
-                ? $"Region: {spell.Source.PlaceName}"
-                : $"Duty: {spell.Source.DutyName}");
-        }
+        if (source.Type != RegionType.Buy) 
+            ImGui.TextUnformatted($"Min Lvl: {source.DutyMinLevel}");
         
-        if (spell.Source.MapLink != null)
+        if (source.TerritoryType != null) 
+            ImGui.TextUnformatted(!source.IsDuty ? $"Region: {source.PlaceName}" : $"Duty: {source.DutyName}");
+        
+        if (source.MapLink != null)
         {
-            if (ImGui.Selectable($"Coords: {spell.Source.MapLink.CoordinateString}##mapCoords"))
+            if (ImGui.Selectable($"Coords: {source.MapLink.CoordinateString}##mapCoords"))
             {
-                Plugin.SetMapMarker(spell.Source.MapLink);
+                Plugin.SetMapMarker(source.MapLink);
             }
         }
 
-        if (spell.Source.TerritoryType != null && spell.Source.Type != RegionType.Buy)
+        if (source.TerritoryType != null && source.Type != RegionType.Buy)
         {
-            var combos = Sources
-                .Where(x => x.Key != keyList[selectedSpell])
-                .Where(x => spell.Source.CompareTerritory(x.Value.Source))
+            var combos = Spells
+                .Where(key => key.Key != keyList[selectedSpellNumber])
+                .Where(spell => spell.Value.Sources
+                    .Any(spellSource => source.CompareTerritory(spellSource)))
                 .ToArray();
             if (combos.Any())
             {
@@ -86,19 +96,20 @@ public class MainWindow : Window, IDisposable
                 {
                     if (ImGui.Selectable($"{key} - {value.Name}"))
                     {
-                        selectedSpell = keyList.FindIndex(x => x == key);
+                        selectedSource = value.Sources.FindIndex(x => x.TerritoryTypeID == source.TerritoryTypeID);
+                        selectedSpellNumber = int.Parse(key) - 1;
                     }
                 }
             }
         }
 
-        if (spell.Source.AcquiringTips != "")
+        if (source.AcquiringTips != "")
         {
             ImGuiHelpers.ScaledDummy(5);
             ImGui.Separator();
             ImGuiHelpers.ScaledDummy(5);
             ImGui.TextUnformatted($"Acquisition Tips:");
-            foreach (var tip in spell.Source.AcquiringTips.Split("\n"))
+            foreach (var tip in source.AcquiringTips.Split("\n"))
             {
                 ImGui.Bullet();
                 ImGui.PushTextWrapPos();

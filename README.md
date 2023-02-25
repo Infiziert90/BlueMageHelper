@@ -13,10 +13,9 @@ found in the open world.
 A small guide book to help on your journey.  
 ![book](BlueMageHelper/images/spellbook.png)
 
-Coords: click to open your map with flag on the location.  
-Same location: click skills to open there page.
+Coords: Click on it to open your map with flag on the location.  
+Same location: Click on the skill to open its page.
 
 ### Planned Features
-- Alternate locations and monsters
 - Marking enemies with unlockable spells 
 
