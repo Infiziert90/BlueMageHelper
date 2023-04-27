@@ -9,9 +9,11 @@ using System.IO;
 using System.Linq;
 using BlueMageHelper.Windows;
 using Dalamud.Data;
+using Dalamud.Game.ClientState;
 using Dalamud.Game.Command;
 using Dalamud.Game.Text.SeStringHandling.Payloads;
 using Dalamud.Interface.Windowing;
+using FFXIVClientStructs.FFXIV.Client.Game.UI;
 using FFXIVClientStructs.FFXIV.Component.GUI;
 using Lumina.Excel.GeneratedSheets;
 using Newtonsoft.Json;
@@ -22,11 +24,13 @@ namespace BlueMageHelper
     public sealed class Plugin : IDalamudPlugin
     {
         [PluginService] public static DataManager Data { get; set; } = null!;
-        
+
         public string Name => "Blue Mage Helper";
         private const string CommandName = "/spellbook";
-        
+
         public static DalamudPluginInterface PluginInterface { get; private set; } = null!;
+        public readonly ClientState ClientState = null!;
+
         public Configuration Configuration { get; init; }
         private CommandManager CommandManager { get; init; }
         private Framework Framework { get; init; }
@@ -34,47 +38,51 @@ namespace BlueMageHelper
         public WindowSystem WindowSystem = new("Blue Mage Helper");
         public MainWindow MainWindow = null!;
         public ConfigWindow ConfigWindow = null!;
-        
+
         private const int BlankTextTextnodeIndex = 54;
         private const int SpellNumberTextnodeIndex = 62;
         private const int RegionTextnodeIndex = 57;
         private const int RegionImageIndex = 56;
         private const int UnlearnedNodeIndex = 63;
-        
+
         private string lastSeenSpell = string.Empty;
         private string lastOrgText = string.Empty;
-        
+
+        public Dictionary<string, bool> UnlockedSpells = new();
+
         public Plugin(
             [RequiredVersion("1.0")] DalamudPluginInterface pluginInterface,
             [RequiredVersion("1.0")] Framework framework,
             [RequiredVersion("1.0")] GameGui gameGui,
-            [RequiredVersion("1.0")] CommandManager commandManager)
+            [RequiredVersion("1.0")] CommandManager commandManager,
+            [RequiredVersion("1.0")] ClientState clientState)
         {
             PluginInterface = pluginInterface;
             Framework = framework;
             GameGui = gameGui;
             CommandManager = commandManager;
-            
+            ClientState = clientState;
+
             Configuration = PluginInterface.GetPluginConfig() as Configuration ?? new Configuration();
             Configuration.Initialize(PluginInterface);
 
             MainWindow = new MainWindow(this);
             ConfigWindow = new ConfigWindow(this);
-            
+
             WindowSystem.AddWindow(MainWindow);
             WindowSystem.AddWindow(ConfigWindow);
-            
+
             CommandManager.AddHandler(CommandName, new CommandInfo(OnCommand)
             {
                 HelpMessage = "Opens a small guide book"
             });
-            
+
             PluginInterface.UiBuilder.Draw += DrawUI;
             PluginInterface.UiBuilder.OpenConfigUi += DrawConfigUI;
             Framework.Update += AozNotebookAddonManager;
-            
+
             TexturesCache.Initialize();
-            
+
             try
             {
                 PluginLog.Debug("Loading Spell Sources.");
@@ -87,6 +95,25 @@ namespace BlueMageHelper
                 PluginLog.Error("There was a problem building the Grimoire.");
                 PluginLog.Error(e.Message);
             }
+
+            ClientState.Login += OnLogin;
+
+            if (ClientState.IsLoggedIn)
+                OnLogin(null, null);
+        }
+
+        private void OnLogin(object _, EventArgs __)
+        {
+            if (ClientState.LocalPlayer == null)
+                return;
+
+            UnlockedSpells.Clear();
+
+            var aozActionTransients = Data.GetExcelSheet<AozActionTransient>()!.Skip(1);
+            var aozActions = Data.GetExcelSheet<AozAction>()!.Skip(1);
+
+            foreach (var (transient, action) in aozActionTransients.Zip(aozActions).OrderBy(pair => pair.First.Number))
+                UnlockedSpells.Add(transient.Number.ToString(), SpellUnlocked(action.Action.Value!.UnlockLink));
         }
 
         private void AozNotebookAddonManager(Framework framework)
@@ -121,35 +148,38 @@ namespace BlueMageHelper
             AtkImageNode* regionImage = (AtkImageNode*)spellbookBaseNode->UldManager.NodeList[RegionImageIndex];
             var spellNumberString = spellNumberTextnode->NodeText.ToString();
             spellNumberString = spellNumberString[1..]; // Remove the # from the spell number
-            
+
             // Try to preserve last seen org text
             if (spellNumberString != lastSeenSpell) lastOrgText = emptyTextnode->NodeText.ToString();
             lastSeenSpell = spellNumberString;
-            
+
             var spellSource = GetHintText(spellNumberString);
             emptyTextnode->SetText($"{(lastOrgText != "" ? $"{lastOrgText}\n" : "")}{spellSource.Info}");
             emptyTextnode->AtkResNode.ToggleVisibility(true);
-            
+
             // Change region if needed
             spellSource.SetRegion(region, regionImage);
         }
 
         private static SpellSource GetHintText(string spellNumber) =>
             Spells.TryGetValue(spellNumber, out var spell) ? spell.Source : new SpellSource($"No data #{spellNumber}");
-        
+
         public void Dispose()
         {
 			TexturesCache.Instance?.Dispose();
-			
+
             WindowSystem.RemoveAllWindows();
             CommandManager.RemoveHandler(CommandName);
             Framework.Update -= AozNotebookAddonManager;
+            ClientState.Login -= OnLogin;
         }
-        
+
         private void OnCommand(string command, string args) => MainWindow.IsOpen = true;
         private void DrawUI() => WindowSystem.Draw();
         private void DrawConfigUI() => ConfigWindow.IsOpen = true;
         public void SetMapMarker(MapLinkPayload map) => GameGui.OpenMapWithMapLink(map);
+
+        private unsafe bool SpellUnlocked(uint unlockLink) => UIState.Instance()->IsUnlockLinkUnlockedOrQuestCompleted(unlockLink);
 
         #region internal
         private void PrintTerris()
@@ -170,10 +200,10 @@ namespace BlueMageHelper
                 if (Helper.ToTitleCaseExtended(content.Name, 0) == "") continue;
                 PluginLog.Information($"Duty: {Helper.ToTitleCaseExtended(content.Name, 0)}");
             }
-        }        
-        
+        }
+
         private struct Skill { public string Name; public string Icon; }
-        
+
         private void PrintBlueSkills()
         {
             // skip the first non existing skill

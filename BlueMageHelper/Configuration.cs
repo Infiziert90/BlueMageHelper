@@ -9,7 +9,9 @@ namespace BlueMageHelper
     {
         public int Version { get; set; } = 0;
 
-        public bool ShowHintEvenIfUnlocked { get; set; } = false;
+        public bool ShowHintEvenIfUnlocked = false;
+        public bool ShowOnlyUnlearned = false;
+
 
         // the below exist just to make saving less cumbersome
 

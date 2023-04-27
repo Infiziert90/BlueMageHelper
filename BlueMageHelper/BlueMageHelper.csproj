@@ -5,7 +5,7 @@
 		<LangVersion>latest</LangVersion>
 		<PackageId>BlueMageHelper</PackageId>
 		<Authors>Infi, Sl0nderman</Authors>
-		<Version>2.0.4.0</Version>
+		<Version>2.0.5.0</Version>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -32,7 +32,7 @@
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 	</ItemGroup>
-	
+
 	<ItemGroup>
         <PackageReference Include="DalamudPackager" Version="2.1.10" />
     </ItemGroup>
@@ -41,7 +41,7 @@
 	<PropertyGroup>
 		<DalamudLibPath>$(appdata)\XIVLauncher\addon\Hooks\dev\</DalamudLibPath>
 	</PropertyGroup>
-	
+
 	<ItemGroup>
 		<Reference Include="Dalamud">
 		  <HintPath>$(DalamudLibPath)Dalamud.dll</HintPath>
@@ -72,7 +72,7 @@
 			<Private>false</Private>
 		</Reference>
 	</ItemGroup>
-	
+
 	<Target Name="PackagePlugin" AfterTargets="Build">
 		<DalamudPackager ProjectDir="$(ProjectDir)" OutputPath="$(OutputPath)" AssemblyName="$(AssemblyName)" />
 	</Target>

@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Numerics;
+using Dalamud.Interface;
+using Dalamud.Interface.Colors;
 using Dalamud.Interface.Windowing;
 using ImGuiNET;
 
@@ -9,11 +10,8 @@ public class ConfigWindow : Window, IDisposable
 {
     private Configuration Configuration;
 
-    public ConfigWindow(Plugin plugin) : base("Configuration", ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse)
+    public ConfigWindow(Plugin plugin) : base("Configuration", ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse)
     {
-        Size = new Vector2(290, 90);
-        SizeCondition = ImGuiCond.Always;
-
         Configuration = plugin.Configuration;
     }
 
@@ -21,11 +19,21 @@ public class ConfigWindow : Window, IDisposable
 
     public override void Draw()
     {
-        var configValue = Configuration.ShowHintEvenIfUnlocked;
-        if (ImGui.Checkbox("Show hint even if a spell is already unlocked.", ref configValue))
-        {
-            Configuration.ShowHintEvenIfUnlocked = configValue;
+        var changed = false;
+
+        ImGui.TextColored(ImGuiColors.DalamudViolet, "Vanilla Spellbook:");
+        ImGui.Indent(10.0f);
+        changed |= ImGui.Checkbox("Show hint even if a spell is already unlocked.", ref Configuration.ShowHintEvenIfUnlocked);
+        ImGui.Unindent(10.0f);
+
+        ImGuiHelpers.ScaledDummy(5.0f);
+
+        ImGui.TextColored(ImGuiColors.DalamudViolet, "Spellbook:");
+        ImGui.Indent(10.0f);
+        changed |= ImGui.Checkbox("Show only unlearned spells.", ref Configuration.ShowOnlyUnlearned);
+        ImGui.Unindent(10.0f);
+
+        if (changed)
             Configuration.Save();
-        }
     }
 }
