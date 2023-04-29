@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Timers;
 using BlueMageHelper.Windows;
 using Dalamud.Data;
 using Dalamud.Game.ClientState;
@@ -48,6 +49,12 @@ namespace BlueMageHelper
         private string lastSeenSpell = string.Empty;
         private string lastOrgText = string.Empty;
 
+        private List<AozAction> AozActionsCache = null!;
+        private List<AozActionTransient> AozTransientCache = null!;
+
+        private bool OnCooldown = false;
+        private readonly Timer Cooldown = new();
+
         public Dictionary<string, bool> UnlockedSpells = new();
 
         public Plugin(
@@ -62,6 +69,13 @@ namespace BlueMageHelper
             GameGui = gameGui;
             CommandManager = commandManager;
             ClientState = clientState;
+
+            AozActionsCache = Data.GetExcelSheet<AozAction>()!.Skip(1).ToList();
+            AozTransientCache = Data.GetExcelSheet<AozActionTransient>()!.Skip(1).ToList();
+
+            Cooldown.AutoReset = false;
+            Cooldown.Interval = 3 * 1000;
+            Cooldown.Elapsed += (_, __) => OnCooldown = false;
 
             Configuration = PluginInterface.GetPluginConfig() as Configuration ?? new Configuration();
             Configuration.Initialize(PluginInterface);
@@ -80,6 +94,7 @@ namespace BlueMageHelper
             PluginInterface.UiBuilder.Draw += DrawUI;
             PluginInterface.UiBuilder.OpenConfigUi += DrawConfigUI;
             Framework.Update += AozNotebookAddonManager;
+            Framework.Update += CheckLearnedSpells;
 
             TexturesCache.Initialize();
 
@@ -95,24 +110,25 @@ namespace BlueMageHelper
                 PluginLog.Error("There was a problem building the Grimoire.");
                 PluginLog.Error(e.Message);
             }
-
-            ClientState.Login += OnLogin;
-
-            if (ClientState.IsLoggedIn)
-                OnLogin(null, null);
         }
 
-        private void OnLogin(object _, EventArgs __)
+        private void CheckLearnedSpells(Framework framework)
         {
+            if (OnCooldown)
+                return;
+
+            OnCooldown = true;
+            Cooldown.Start();
+
+            if (!ClientState.IsLoggedIn)
+                return;
+
             if (ClientState.LocalPlayer == null)
                 return;
 
             UnlockedSpells.Clear();
 
-            var aozActionTransients = Data.GetExcelSheet<AozActionTransient>()!.Skip(1);
-            var aozActions = Data.GetExcelSheet<AozAction>()!.Skip(1);
-
-            foreach (var (transient, action) in aozActionTransients.Zip(aozActions).OrderBy(pair => pair.First.Number))
+            foreach (var (transient, action) in AozTransientCache.Zip(AozActionsCache).OrderBy(pair => pair.First.Number))
                 UnlockedSpells.Add(transient.Number.ToString(), SpellUnlocked(action.Action.Value!.UnlockLink));
         }
 
@@ -171,7 +187,7 @@ namespace BlueMageHelper
             WindowSystem.RemoveAllWindows();
             CommandManager.RemoveHandler(CommandName);
             Framework.Update -= AozNotebookAddonManager;
-            ClientState.Login -= OnLogin;
+            Framework.Update -= CheckLearnedSpells;
         }
 
         private void OnCommand(string command, string args) => MainWindow.IsOpen = true;
