@@ -40,11 +40,11 @@ namespace BlueMageHelper
         public MainWindow MainWindow = null!;
         public ConfigWindow ConfigWindow = null!;
 
-        private const int BlankTextTextnodeIndex = 54;
-        private const int SpellNumberTextnodeIndex = 62;
-        private const int RegionTextnodeIndex = 57;
-        private const int RegionImageIndex = 56;
-        private const int UnlearnedNodeIndex = 63;
+        private const int BlankTextTextnodeIndex = 49;
+        private const int SpellNumberTextnodeIndex = 57;
+        private const int RegionTextnodeIndex = 52;
+        private const int RegionImageIndex = 51;
+        private const int UnlearnedNodeIndex = 58;
 
         private string lastSeenSpell = string.Empty;
         private string lastOrgText = string.Empty;
@@ -70,8 +70,8 @@ namespace BlueMageHelper
             CommandManager = commandManager;
             ClientState = clientState;
 
-            AozActionsCache = Data.GetExcelSheet<AozAction>()!.Skip(1).ToList();
-            AozTransientCache = Data.GetExcelSheet<AozActionTransient>()!.Skip(1).ToList();
+            AozActionsCache = Data.GetExcelSheet<AozAction>()!.Where(a => a.Rank != 0).ToList();
+            AozTransientCache = Data.GetExcelSheet<AozActionTransient>()!.Where(a => a.Number != 0).ToList();
 
             Cooldown.AutoReset = false;
             Cooldown.Interval = 3 * 1000;

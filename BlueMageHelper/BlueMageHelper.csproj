@@ -5,7 +5,7 @@
 		<LangVersion>latest</LangVersion>
 		<PackageId>BlueMageHelper</PackageId>
 		<Authors>Infi, Sl0nderman</Authors>
-		<Version>2.0.5.1</Version>
+		<Version>2.0.6.0</Version>
 	</PropertyGroup>
 
 	<PropertyGroup>
