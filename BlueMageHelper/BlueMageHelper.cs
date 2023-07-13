@@ -7,7 +7,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Numerics;
+using System.Reflection;
 using System.Timers;
+using BlueMageHelper.IPC;
 using BlueMageHelper.Windows;
 using Dalamud.Data;
 using Dalamud.Game.ClientState;
@@ -16,26 +19,32 @@ using Dalamud.Game.Text.SeStringHandling.Payloads;
 using Dalamud.Interface.Windowing;
 using FFXIVClientStructs.FFXIV.Client.Game.UI;
 using FFXIVClientStructs.FFXIV.Component.GUI;
+using Lumina.Excel;
 using Lumina.Excel.GeneratedSheets;
 using Newtonsoft.Json;
+
 using static BlueMageHelper.SpellSources;
+using Map = Lumina.Excel.GeneratedSheets.Map;
 
 namespace BlueMageHelper
 {
     public sealed class Plugin : IDalamudPlugin
     {
-        [PluginService] public static DataManager Data { get; set; } = null!;
+        [PluginService] public static DataManager Data { get; private set; } = null!;
+        [PluginService] public static Framework Framework { get; private set; } = null!;
+        [PluginService] public static CommandManager Commands { get; private set; } = null!;
+        [PluginService] public static DalamudPluginInterface PluginInterface { get; private set; } = null!;
+        [PluginService] public static ClientState ClientState { get; private set; } = null!;
+        [PluginService] public static GameGui GameGui { get; private set; } = null!;
+        [PluginService] public static ChatGui ChatGui { get; private set; } = null!;
 
         public string Name => "Blue Mage Helper";
         private const string CommandName = "/spellbook";
 
-        public static DalamudPluginInterface PluginInterface { get; private set; } = null!;
-        public readonly ClientState ClientState = null!;
+        public static readonly string Authors = "Infi, Sl0nderman";
+        public static readonly string Version = Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? "Unknown";
 
         public Configuration Configuration { get; init; }
-        private CommandManager CommandManager { get; init; }
-        private Framework Framework { get; init; }
-        private GameGui GameGui { get; init; }
         public WindowSystem WindowSystem = new("Blue Mage Helper");
         public MainWindow MainWindow = null!;
         public ConfigWindow ConfigWindow = null!;
@@ -52,29 +61,29 @@ namespace BlueMageHelper
         private List<AozAction> AozActionsCache = null!;
         private List<AozActionTransient> AozTransientCache = null!;
 
-        private bool OnCooldown = false;
-        private readonly Timer Cooldown = new();
+        private bool OnCooldown;
+        private readonly Timer Cooldown = new(3 * 1000);
 
         public Dictionary<string, bool> UnlockedSpells = new();
 
-        public Plugin(
-            [RequiredVersion("1.0")] DalamudPluginInterface pluginInterface,
-            [RequiredVersion("1.0")] Framework framework,
-            [RequiredVersion("1.0")] GameGui gameGui,
-            [RequiredVersion("1.0")] CommandManager commandManager,
-            [RequiredVersion("1.0")] ClientState clientState)
-        {
-            PluginInterface = pluginInterface;
-            Framework = framework;
-            GameGui = gameGui;
-            CommandManager = commandManager;
-            ClientState = clientState;
+        private static ExcelSheet<Map> MapSheet = null!;
+        private static ExcelSheet<MapMarker> MapMarkerSheet = null!;
+        private static ExcelSheet<Aetheryte> AetheryteSheet = null!;
 
+        public static TeleportConsumer TeleportConsumer = null!;
+
+        public Plugin()
+        {
             AozActionsCache = Data.GetExcelSheet<AozAction>()!.Where(a => a.Rank != 0).ToList();
             AozTransientCache = Data.GetExcelSheet<AozActionTransient>()!.Where(a => a.Number != 0).ToList();
 
+            MapSheet = Data.GetExcelSheet<Map>()!;
+            MapMarkerSheet = Data.GetExcelSheet<MapMarker>()!;
+            AetheryteSheet = Data.GetExcelSheet<Aetheryte>()!;
+
+            TeleportConsumer = new TeleportConsumer();
+
             Cooldown.AutoReset = false;
-            Cooldown.Interval = 3 * 1000;
             Cooldown.Elapsed += (_, __) => OnCooldown = false;
 
             Configuration = PluginInterface.GetPluginConfig() as Configuration ?? new Configuration();
@@ -86,7 +95,7 @@ namespace BlueMageHelper
             WindowSystem.AddWindow(MainWindow);
             WindowSystem.AddWindow(ConfigWindow);
 
-            CommandManager.AddHandler(CommandName, new CommandInfo(OnCommand)
+            Commands.AddHandler(CommandName, new CommandInfo(OnCommand)
             {
                 HelpMessage = "Opens a small guide book"
             });
@@ -109,6 +118,12 @@ namespace BlueMageHelper
             {
                 PluginLog.Error("There was a problem building the Grimoire.");
                 PluginLog.Error(e.Message);
+                PluginLog.Error(e.StackTrace!);
+                if (e.InnerException != null)
+                {
+                    PluginLog.Error(e.InnerException.Message);
+                    PluginLog.Error(e.InnerException.StackTrace!);
+                }
             }
         }
 
@@ -185,7 +200,7 @@ namespace BlueMageHelper
 			TexturesCache.Instance?.Dispose();
 
             WindowSystem.RemoveAllWindows();
-            CommandManager.RemoveHandler(CommandName);
+            Commands.RemoveHandler(CommandName);
             Framework.Update -= AozNotebookAddonManager;
             Framework.Update -= CheckLearnedSpells;
         }
@@ -196,6 +211,46 @@ namespace BlueMageHelper
         public void SetMapMarker(MapLinkPayload map) => GameGui.OpenMapWithMapLink(map);
 
         private unsafe bool SpellUnlocked(uint unlockLink) => UIState.Instance()->IsUnlockLinkUnlockedOrQuestCompleted(unlockLink);
+
+        public static void TeleportToNearestAetheryte(SpellSource location)
+        {
+            var map = location.TerritoryType.Map.Value!;
+            var nearestAetheryteId = MapMarkerSheet
+                .Where(x => x.DataType == 3 && x.RowId == map.MapMarkerRange)
+                .Select(
+                    marker => new
+                    {
+                        distance = Vector2.DistanceSquared(
+                            new Vector2(location.xCoord, location.yCoord),
+                            ConvertLocationToRaw(marker.X, marker.Y, map.SizeFactor)),
+                        rowId = marker.DataKey
+                    })
+                .MinBy(x => x.distance).rowId;
+
+            // Support the unique case of aetheryte not being in the same map
+            var nearestAetheryte = location.TerritoryTypeID == 399
+                ? map.TerritoryType?.Value?.Aetheryte.Value
+                : AetheryteSheet.FirstOrDefault(x => x.IsAetheryte && x.Territory.Row == location.TerritoryTypeID && x.RowId == nearestAetheryteId);
+
+            if (nearestAetheryte == null)
+                return;
+
+            TeleportConsumer.UseTeleport(nearestAetheryte.RowId);
+        }
+
+
+        private static Vector2 ConvertLocationToRaw(int x, int y, float scale)
+        {
+            var num = scale / 100f;
+            return new Vector2(ConvertRawToMap((int)((x - 1024) * num * 1000f), scale), ConvertRawToMap((int)((y - 1024) * num * 1000f), scale));
+        }
+
+        private static float ConvertRawToMap(int pos, float scale)
+        {
+            var num1 = scale / 100f;
+            var num2 = (float)(pos * (double)num1 / 1000.0f);
+            return (40.96f / num1 * ((num2 + 1024.0f) / 2048.0f)) + 1.0f;
+        }
 
         #region internal
         private void PrintTerris()

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 using Dalamud.Interface;
 using Dalamud.Interface.Colors;
 using Dalamud.Interface.Windowing;
@@ -10,8 +11,14 @@ public class ConfigWindow : Window, IDisposable
 {
     private Configuration Configuration;
 
-    public ConfigWindow(Plugin plugin) : base("Configuration", ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse)
+    public ConfigWindow(Plugin plugin) : base("Configuration")
     {
+        SizeConstraints = new WindowSizeConstraints
+        {
+            MinimumSize = new Vector2(320, 460),
+            MaximumSize = new Vector2(float.MaxValue, float.MaxValue)
+        };
+
         Configuration = plugin.Configuration;
     }
 
@@ -19,6 +26,20 @@ public class ConfigWindow : Window, IDisposable
 
     public override void Draw()
     {
+        if (ImGui.BeginTabBar("##ConfigTabBar"))
+        {
+            General();
+
+            About();
+        }
+        ImGui.EndTabBar();
+    }
+
+    private void General()
+    {
+        if (!ImGui.BeginTabItem("General"))
+            return;
+
         var changed = false;
 
         ImGui.TextColored(ImGuiColors.DalamudViolet, "Vanilla Spellbook:");
@@ -35,5 +56,61 @@ public class ConfigWindow : Window, IDisposable
 
         if (changed)
             Configuration.Save();
+
+        ImGui.EndTabItem();
+    }
+
+    private static void About()
+    {
+        if (!ImGui.BeginTabItem("About"))
+            return;
+
+        var buttonHeight = ImGui.CalcTextSize("RRRR").Y + (20.0f * ImGuiHelpers.GlobalScale);
+        if (ImGui.BeginChild("AboutContent", new Vector2(0, -buttonHeight)))
+        {
+            ImGuiHelpers.ScaledDummy(5.0f);
+
+            ImGui.TextUnformatted("Author:");
+            ImGui.SameLine();
+            ImGui.TextColored(ImGuiColors.ParsedGold, Plugin.Authors);
+
+            ImGui.TextUnformatted("Discord:");
+            ImGui.SameLine();
+            ImGui.TextColored(ImGuiColors.ParsedGold, "@infi");
+
+            ImGui.TextUnformatted("Version:");
+            ImGui.SameLine();
+            ImGui.TextColored(ImGuiColors.ParsedOrange, Plugin.Version);
+        }
+
+        ImGui.EndChild();
+
+        ImGui.Separator();
+        ImGuiHelpers.ScaledDummy(1.0f);
+
+        if (ImGui.BeginChild("AboutBottomBar", new Vector2(0, 0), false, 0))
+        {
+            ImGui.PushStyleColor(ImGuiCol.Button, ImGuiColors.ParsedBlue);
+            if (ImGui.Button("Discord Thread"))
+                Dalamud.Utility.Util.OpenLink("https://canary.discord.com/channels/581875019861328007/1067487937735970846");
+            ImGui.PopStyleColor();
+
+            ImGui.SameLine();
+
+            ImGui.PushStyleColor(ImGuiCol.Button, ImGuiColors.DPSRed);
+            if (ImGui.Button("Issues"))
+                Dalamud.Utility.Util.OpenLink("https://github.com/Infiziert90/BlueMageHelper");
+            ImGui.PopStyleColor();
+
+            ImGui.SameLine();
+
+            ImGui.PushStyleColor(ImGuiCol.Button, new Vector4(0.12549f, 0.74902f, 0.33333f, 0.6f));
+            if (ImGui.Button("Ko-Fi Tip"))
+                Dalamud.Utility.Util.OpenLink("https://ko-fi.com/infiii");
+            ImGui.PopStyleColor();
+        }
+        ImGui.EndChild();
+
+        ImGui.EndTabItem();
     }
 }

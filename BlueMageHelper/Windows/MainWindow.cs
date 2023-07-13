@@ -81,8 +81,12 @@ public class MainWindow : Window, IDisposable
             ImGui.TextUnformatted($"{(source.Type != RegionType.Buy ? "Mob" : "Info")}: {source.Info}");
         }
 
-        if (source.Type == RegionType.Hunt)
+        if (source.Type == RegionType.ARank)
             ImGui.TextUnformatted($"Note: Rank A Elite Mark");
+        if (source.Type == RegionType.BRank)
+            ImGui.TextUnformatted($"Note: Rank B Elite Mark");
+        if (source.Type == RegionType.SRank)
+            ImGui.TextUnformatted($"Note: Rank S Elite Mark");
 
         if (source.Type != RegionType.Buy)
             ImGui.TextUnformatted($"Min Lvl: {source.DutyMinLevel}");
@@ -90,11 +94,24 @@ public class MainWindow : Window, IDisposable
         if (source.TerritoryType != null)
             ImGui.TextUnformatted(!source.IsDuty ? $"Region: {source.PlaceName}" : $"Duty: {source.DutyName}");
 
-        if (source.MapLink != null)
+        var isHunt = source.Type is RegionType.ARank or RegionType.BRank or RegionType.SRank;
+        if (source.MapLink != null || isHunt)
         {
-            if (ImGui.Selectable($"Coords: {source.MapLink.CoordinateString}##mapCoords"))
+            if (Plugin.TeleportConsumer.IsAvailable)
             {
-                Plugin.SetMapMarker(source.MapLink);
+                if (ImGui.Button("T"))
+                    Plugin.TeleportToNearestAetheryte(source);
+                ImGui.SameLine();
+            }
+
+            if (!isHunt)
+            {
+                if (ImGui.Selectable($"Coords: {source.MapLink.CoordinateString}##mapCoords"))
+                    Plugin.SetMapMarker(source.MapLink);
+            }
+            else
+            {
+                ImGui.Selectable($"Random Location##mapCoords");
             }
         }
 

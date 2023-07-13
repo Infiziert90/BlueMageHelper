@@ -120,6 +120,22 @@
         "TerritoryTypeID": 241,
         "xCoord": 0.0,
         "yCoord": 0.0
+      },
+      {
+        "Info": "(1st Boss) ADS",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 241,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "Beastial Node (Stage 15 Masked Carnivale - The Me Nobody Nodes)",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 796,
+        "xCoord": 0.0,
+        "yCoord": 0.0
       }
     ]
   },
@@ -132,6 +148,22 @@
         "AcquiringTips": "Loom is a teleport ability, move out of melee range while engaged to trigger the cast.",
         "Type": 13,
         "TerritoryTypeID": 363,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "Flame Sergeant Dalvag",
+        "AcquiringTips": "Engage Flame Sergeant Dalvag from range. If you are far enough, he will use Loom to start the fight.",
+        "Type": 101,
+        "TerritoryTypeID": 147,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "(Trash) Dantalion and (Trash) Phantom Knight",
+        "AcquiringTips": "",
+        "Type": 13,
+        "TerritoryTypeID": 373,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
@@ -148,6 +180,14 @@
         "TerritoryTypeID": 134,
         "xCoord": 15.0,
         "yCoord": 15.0
+      },
+      {
+        "Info": "Temple Bee (Trash Before & After 1st Boss)",
+        "AcquiringTips": "",
+        "Type": 13,
+        "TerritoryTypeID": 163,
+        "xCoord": 0.0,
+        "yCoord": 0.0
       }
     ]
   },
@@ -160,6 +200,14 @@
         "AcquiringTips": "Song of Torment is used in the Phase 1 of battle.",
         "Type": 99,
         "TerritoryTypeID": 160,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "Aglaope",
+        "AcquiringTips": "Attempting to get it from Aglaope solo is not recommended as it is a Level 80 Rank S enemy. The cast is also usually interrupted by players, preventing it from being learned.",
+        "Type": 102,
+        "TerritoryTypeID": 816,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
@@ -176,6 +224,14 @@
         "TerritoryTypeID": 172,
         "xCoord": 0.0,
         "yCoord": 0.0
+      },
+      {
+        "Info": "Brontes",
+        "AcquiringTips": "Brontes is usually killed fast but occasionally still gets the cast off in morning hours. Unless you have a plan to make it live long enough to cast it, you will have to get it from Coincounter.",
+        "Type": 102,
+        "TerritoryTypeID": 271,
+        "xCoord": 0.0,
+        "yCoord": 0.0
       }
     ]
   },
@@ -190,6 +246,46 @@
         "TerritoryTypeID": 180,
         "xCoord": 14.0,
         "yCoord": 16.0
+      },
+      {
+        "Info": "Lvl. 28 Clay Golem",
+        "AcquiringTips": "Enemies tend to use this move semi-frequently. As long as you don't stand too close, you should be able to learn this easily.",
+        "Type": 2,
+        "TerritoryTypeID": 240,
+        "xCoord": 19.0,
+        "yCoord": 29.0
+      },
+      {
+        "Info": "Lvl. 25 Stone Golem",
+        "AcquiringTips": "Enemies tend to use this move semi-frequently. As long as you don't stand too close, you should be able to learn this easily.",
+        "Type": 2,
+        "TerritoryTypeID": 240,
+        "xCoord": 17.0,
+        "yCoord": 28.0
+      },
+      {
+        "Info": "Lvl. 29  Sandstone Golem",
+        "AcquiringTips": "Enemies tend to use this move semi-frequently. As long as you don't stand too close, you should be able to learn this easily.",
+        "Type": 2,
+        "TerritoryTypeID": 146,
+        "xCoord": 24.0,
+        "yCoord": 13.0
+      },
+      {
+        "Info": "(2nd Boss) Gogmagolem",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 349,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "Azulmagia (Stage 25 Masked Carnivale - Dirty Rotten Azulmagia)",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 796,
+        "xCoord": 0.0,
+        "yCoord": 0.0
       }
     ]
   },
@@ -246,6 +342,14 @@
         "TerritoryTypeID": 159,
         "xCoord": 0.0,
         "yCoord": 0.0
+      },
+      {
+        "Info": "Marberry",
+        "AcquiringTips": "",
+        "Type": 100,
+        "TerritoryTypeID": 328,
+        "xCoord": 0.0,
+        "yCoord": 0.0
       }
     ]
   },
@@ -260,6 +364,30 @@
         "TerritoryTypeID": 148,
         "xCoord": 27.3,
         "yCoord": 24.8
+      },
+      {
+        "Info": "Lvl. 16 Vandalous Imp",
+        "AcquiringTips": "Used very early in the fight when encountered.",
+        "Type": 2,
+        "TerritoryTypeID": 494,
+        "xCoord": 14.4,
+        "yCoord": 18.7
+      },
+      {
+        "Info": "(2nd Boss) Manor Jester",
+        "AcquiringTips": "Used very early in the fight when encountered.",
+        "Type": 13,
+        "TerritoryTypeID": 1040,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "Azulmagia (Stage 25 Masked Carnivale - Dirty Rotten Azulmagia)",
+        "AcquiringTips": "Azulmagia will open with the spell as his barrier for Act 1 and will alternate it with his magic-counter barrier in Act 3 at certain intervals in the fight.",
+        "Type": 99,
+        "TerritoryTypeID": 796,
+        "xCoord": 0.0,
+        "yCoord": 0.0
       }
     ]
   },
@@ -274,6 +402,62 @@
         "TerritoryTypeID": 135,
         "xCoord": 27.0,
         "yCoord": 16.0
+      },
+      {
+        "Info": "Lvl. 5-7 Chigoe",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 148,
+        "xCoord": 25.0,
+        "yCoord": 20.0
+      },
+      {
+        "Info": "Lvl. 10-14 Sun Bat",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 314,
+        "xCoord": 26.0,
+        "yCoord": 18.0
+      },
+      {
+        "Info": "Lvl. 15 Dusk Bat",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 280,
+        "xCoord": 27.0,
+        "yCoord": 24.0
+      },
+      {
+        "Info": "Lvl 20-21 Black Bat",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 277,
+        "xCoord": 17.0,
+        "yCoord": 23.0
+      },
+      {
+        "Info": "Barbastelle",
+        "AcquiringTips": "",
+        "Type": 101,
+        "TerritoryTypeID": 265,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "Attic Bat (Trash before 1st Boss)",
+        "AcquiringTips": "",
+        "Type": 13,
+        "TerritoryTypeID": 1040,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "(Trash) Sand Bat",
+        "AcquiringTips": "",
+        "Type": 13,
+        "TerritoryTypeID": 170,
+        "xCoord": 0.0,
+        "yCoord": 0.0
       }
     ]
   },
@@ -288,6 +472,22 @@
         "TerritoryTypeID": 154,
         "xCoord": 30.0,
         "yCoord": 26.5
+      },
+      {
+        "Info": "Lvl 12-17 Treant Sapling",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 148,
+        "xCoord": 27.0,
+        "yCoord": 15.0
+      },
+      {
+        "Info": "Lvl 14 Treant Sapling",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 152,
+        "xCoord": 13.0,
+        "yCoord": 25.0
       }
     ]
   },
@@ -296,12 +496,36 @@
     "Icon": 72214,
     "Sources": [
       {
-        "Info": "Lvl. 5-7 Goblin Fisher",
+        "Info": "Lvl. 5-7 Goblin Fisher & Goblin Gambler",
         "AcquiringTips": "",
         "Type": 2,
         "TerritoryTypeID": 134,
         "xCoord": 23.8,
         "yCoord": 21.6
+      },
+      {
+        "Info": "Lvl. 58 Goblin Glider & Goblin Brandisher",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 399,
+        "xCoord": 29.0,
+        "yCoord": 23.0
+      },
+      {
+        "Info": "Slipkinx Steeljoints",
+        "AcquiringTips": "",
+        "Type": 100,
+        "TerritoryTypeID": 399,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "(1st Boss) Illuminati Commander",
+        "AcquiringTips": "",
+        "Type": 13,
+        "TerritoryTypeID": 362,
+        "xCoord": 0.0,
+        "yCoord": 0.0
       }
     ]
   },
@@ -330,6 +554,38 @@
         "TerritoryTypeID": 140,
         "xCoord": 27.5,
         "yCoord": 17.0
+      },
+      {
+        "Info": "(Trash) Blasting Cap & Flambeau",
+        "AcquiringTips": "Be sure to wait until the enemy uses Self-Destruct to kill itself. Do NOT kill it beforehand, only tag it (ie, hit it at least once).",
+        "Type": 13,
+        "TerritoryTypeID": 1038,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "(Trash) Gas Bomb",
+        "AcquiringTips": "Be sure to wait until the enemy uses Self-Destruct to kill itself. Do NOT kill it beforehand, only tag it (ie, hit it at least once).",
+        "Type": 13,
+        "TerritoryTypeID": 162,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "(Trash) Shrapnel",
+        "AcquiringTips": "Be sure to wait until the enemy uses Self-Destruct to kill itself. Do NOT kill it beforehand, only tag it (ie, hit it at least once).",
+        "Type": 13,
+        "TerritoryTypeID": 170,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "Arena Cherry Bomb (Stage 8 Masked Carnivale - The Bomb-edy of Errors)",
+        "AcquiringTips": "Be sure to wait until the enemy uses Self-Destruct to kill itself. Do NOT kill it beforehand, only tag it (ie, hit it at least once).",
+        "Type": 99,
+        "TerritoryTypeID": 796,
+        "xCoord": 0.0,
+        "yCoord": 0.0
       }
     ]
   },
@@ -358,6 +614,22 @@
         "TerritoryTypeID": 137,
         "xCoord": 26.0,
         "yCoord": 32.0
+      },
+      {
+        "Info": "Lvl. 9 Qiqirn Shellsweeper",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 141,
+        "xCoord": 16.0,
+        "yCoord": 19.0
+      },
+      {
+        "Info": "Lvl. 13 Qiqirn Eggdigger",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 135,
+        "xCoord": 18.0,
+        "yCoord": 35.0
       }
     ]
   },
@@ -372,6 +644,14 @@
         "TerritoryTypeID": 137,
         "xCoord": 30.0,
         "yCoord": 35.0
+      },
+      {
+        "Info": "Bloody Mary",
+        "AcquiringTips": "",
+        "Type": 101,
+        "TerritoryTypeID": 137,
+        "xCoord": 0.0,
+        "yCoord": 0.0
       }
     ]
   },
@@ -384,6 +664,22 @@
         "AcquiringTips": "Typhon will use Snort around 3~3.5min of the fight.\"Severe snort\" or \"snortassault\" will not count towards the learning of the spell.",
         "Type": 99,
         "TerritoryTypeID": 142,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "Typhon (Stage 20 Masked Carnivale - Miss Typhon)",
+        "AcquiringTips": "Typhon will use it as part of a devastating Fireball combo. Use Diamondback in order to survive this.",
+        "Type": 99,
+        "TerritoryTypeID": 796,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "Typhon (Stage 27 Masked Carnivale - Lock up Your Snorters)",
+        "AcquiringTips": "Typhon uses this after the bombs drop every time.",
+        "Type": 99,
+        "TerritoryTypeID": 796,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
@@ -414,6 +710,22 @@
         "TerritoryTypeID": 167,
         "xCoord": 0.0,
         "yCoord": 0.0
+      },
+      {
+        "Info": "(Trash) Bibliolater",
+        "AcquiringTips": "",
+        "Type": 13,
+        "TerritoryTypeID": 578,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "(Trash) Valefor",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 174,
+        "xCoord": 0.0,
+        "yCoord": 0.0
       }
     ]
   },
@@ -428,6 +740,38 @@
         "TerritoryTypeID": 148,
         "xCoord": 13.7,
         "yCoord": 22.7
+      },
+      {
+        "Info": "Lvl. 31 Halitostroper",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 148,
+        "xCoord": 15.0,
+        "yCoord": 21.0
+      },
+      {
+        "Info": "Lvl. 34 Stroper",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 153,
+        "xCoord": 20.0,
+        "yCoord": 28.0
+      },
+      {
+        "Info": "(Trash) Morbol",
+        "AcquiringTips": "",
+        "Type": 13,
+        "TerritoryTypeID": 172,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "Reflective Rebekkah (Stage 19 Masked Carnivale - On a Clear Day You Can Smell Forever)",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 796,
+        "xCoord": 0.0,
+        "yCoord": 0.0
       }
     ]
   },
@@ -470,6 +814,22 @@
         "TerritoryTypeID": 140,
         "xCoord": 15.2,
         "yCoord": 6.4
+      },
+      {
+        "Info": "Lvl. 14 Toxic Toad",
+        "AcquiringTips": "Sticky Tongue is the first move used by the Toad when you attack from a distance.",
+        "Type": 2,
+        "TerritoryTypeID": 141,
+        "xCoord": 27.0,
+        "yCoord": 19.0
+      },
+      {
+        "Info": "Lvl. 33 Gigantoad",
+        "AcquiringTips": "Sticky Tongue is the first move used by the Toad when you attack from a distance.",
+        "Type": 2,
+        "TerritoryTypeID": 137,
+        "xCoord": 18.0,
+        "yCoord": 26.0
       }
     ]
   },
@@ -498,6 +858,30 @@
         "TerritoryTypeID": 170,
         "xCoord": 0.0,
         "yCoord": 0.0
+      },
+      {
+        "Info": "Dhorme Chimera",
+        "AcquiringTips": "Will always start with The Ram's Voice and then follow up with The Dragon's Voice or vice-versa.",
+        "Type": 99,
+        "TerritoryTypeID": 369,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "Apademak (Stage 21 Masked Carnivale - Chimera on a Hot Tin Roof)",
+        "AcquiringTips": "Will always start with The Ram's Voice and then follow up with The Dragon's Voice or vice-versa.",
+        "Type": 99,
+        "TerritoryTypeID": 796,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "Azulmagia (Stage 25 Masked Carnivale - Dirty Rotten Azulmagia)",
+        "AcquiringTips": "Will always start with The Ram's Voice and then follow up with The Dragon's Voice or vice-versa.",
+        "Type": 99,
+        "TerritoryTypeID": 796,
+        "xCoord": 0.0,
+        "yCoord": 0.0
       }
     ]
   },
@@ -510,6 +894,30 @@
         "AcquiringTips": "The enemy will always start with The Ram's Voice and then follow up with The Dragon's Voice or vice-versa.",
         "Type": 99,
         "TerritoryTypeID": 170,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "Dhorme Chimera",
+        "AcquiringTips": "Will always start with The Ram's Voice and then follow up with The Dragon's Voice or vice-versa.",
+        "Type": 99,
+        "TerritoryTypeID": 369,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "Apademak (Stage 21 Masked Carnivale - Chimera on a Hot Tin Roof)",
+        "AcquiringTips": "Will always start with The Ram's Voice and then follow up with The Dragon's Voice or vice-versa.",
+        "Type": 99,
+        "TerritoryTypeID": 796,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "Azulmagia (Stage 25 Masked Carnivale - Dirty Rotten Azulmagia)",
+        "AcquiringTips": "Will always start with The Ram's Voice and then follow up with The Dragon's Voice or vice-versa.",
+        "Type": 99,
+        "TerritoryTypeID": 796,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
@@ -526,6 +934,14 @@
         "TerritoryTypeID": 396,
         "xCoord": 0.0,
         "yCoord": 0.0
+      },
+      {
+        "Info": "Guardian",
+        "AcquiringTips": "Guardian puts a red Prey marker on a player and fires a Missile at them that leaves a Burns debuff.",
+        "Type": 99,
+        "TerritoryTypeID": 750,
+        "xCoord": 0.0,
+        "yCoord": 0.0
       }
     ]
   },
@@ -540,6 +956,14 @@
         "TerritoryTypeID": 146,
         "xCoord": 16.3,
         "yCoord": 15.7
+      },
+      {
+        "Info": "(Trash) Sabotender Desertor",
+        "AcquiringTips": "",
+        "Type": 13,
+        "TerritoryTypeID": 170,
+        "xCoord": 0.0,
+        "yCoord": 0.0
       }
     ]
   },
@@ -596,6 +1020,38 @@
         "TerritoryTypeID": 387,
         "xCoord": 0.0,
         "yCoord": 0.0
+      },
+      {
+        "Info": "(Trash) Reflection of Karlabos",
+        "AcquiringTips": "This can potentially kill a Blue Mage in one shot if they afflicted with Slime. Be sure this is removed in order to survive and stay alive to learn the spell.",
+        "Type": 13,
+        "TerritoryTypeID": 626,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "Lvl. 61 Crag Claw",
+        "AcquiringTips": "This can potentially kill a Blue Mage in one shot if they afflicted with Slime. Be sure this is removed in order to survive and stay alive to learn the spell.",
+        "Type": 2,
+        "TerritoryTypeID": 620,
+        "xCoord": 25.0,
+        "yCoord": 11.0
+      },
+      {
+        "Info": "(Trash) Clay Claw",
+        "AcquiringTips": "This can potentially kill a Blue Mage in one shot if they afflicted with Slime. Be sure this is removed in order to survive and stay alive to learn the spell.",
+        "Type": 99,
+        "TerritoryTypeID": 444,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "Pterygotus",
+        "AcquiringTips": "This can potentially kill a Blue Mage in one shot if they afflicted with Slime. Be sure this is removed in order to survive and stay alive to learn the spell.",
+        "Type": 101,
+        "TerritoryTypeID": 399,
+        "xCoord": 0.0,
+        "yCoord": 0.0
       }
     ]
   },
@@ -608,6 +1064,14 @@
         "AcquiringTips": "Getting from Galvanth is guaranteed, regardless of what the unrestricted party option is set to.",
         "Type": 99,
         "TerritoryTypeID": 1037,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "Blaster",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 523,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
@@ -638,6 +1102,30 @@
         "TerritoryTypeID": 156,
         "xCoord": 13.1,
         "yCoord": 10.4
+      },
+      {
+        "Info": "(Trash) Surf Eft",
+        "AcquiringTips": "",
+        "Type": 13,
+        "TerritoryTypeID": 1041,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "(Second Boss) Hellbender",
+        "AcquiringTips": "",
+        "Type": 13,
+        "TerritoryTypeID": 1041,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "Lvl. 69 Loch Nanka",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 687,
+        "xCoord": 17.0,
+        "yCoord": 20.0
       }
     ]
   },
@@ -736,6 +1224,22 @@
         "TerritoryTypeID": 434,
         "xCoord": 0.0,
         "yCoord": 0.0
+      },
+      {
+        "Info": "Lvl. 59 Griffin",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 401,
+        "xCoord": 36.0,
+        "yCoord": 9.0
+      },
+      {
+        "Info": "Lvl. 68 True Griffin",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 620,
+        "xCoord": 27.0,
+        "yCoord": 25.0
       }
     ]
   },
@@ -748,6 +1252,14 @@
         "AcquiringTips": "",
         "Type": 99,
         "TerritoryTypeID": 444,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "Shikigami of the Undertow (Stage 29 Masked Carnivale Red, Fraught, and Blue)",
+        "AcquiringTips": "In Stage 29 of the Masked Carnivale, you can get Protean Wave not just from the boss, but also from the water column adds once they explode.",
+        "Type": 99,
+        "TerritoryTypeID": 796,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
@@ -764,6 +1276,22 @@
         "TerritoryTypeID": 397,
         "xCoord": 20.0,
         "yCoord": 31.0
+      },
+      {
+        "Info": "Lvl. 56 Slate Yeti",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 397,
+        "xCoord": 17.0,
+        "yCoord": 27.0
+      },
+      {
+        "Info": "(Trash) Yeti",
+        "AcquiringTips": "",
+        "Type": 13,
+        "TerritoryTypeID": 1062,
+        "xCoord": 0.0,
+        "yCoord": 0.0
       }
     ]
   },
@@ -778,6 +1306,14 @@
         "TerritoryTypeID": 401,
         "xCoord": 26.0,
         "yCoord": 33.0
+      },
+      {
+        "Info": "(Trash) Hikagiri",
+        "AcquiringTips": "",
+        "Type": 13,
+        "TerritoryTypeID": 616,
+        "xCoord": 0.0,
+        "yCoord": 0.0
       }
     ]
   },
@@ -792,6 +1328,14 @@
         "TerritoryTypeID": 442,
         "xCoord": 0.0,
         "yCoord": 0.0
+      },
+      {
+        "Info": "Jagd Doll",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 443,
+        "xCoord": 0.0,
+        "yCoord": 0.0
       }
     ]
   },
@@ -804,6 +1348,14 @@
         "AcquiringTips": "",
         "Type": 13,
         "TerritoryTypeID": 350,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "(Last Boss) Everliving Bibliotaph",
+        "AcquiringTips": "Fail the mechanic and summon the third set of mobs",
+        "Type": 13,
+        "TerritoryTypeID": 1109,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
@@ -834,6 +1386,22 @@
         "TerritoryTypeID": 402,
         "xCoord": 29.5,
         "yCoord": 12.2
+      },
+      {
+        "Info": "Enkidu",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 396,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "(2nd Boss) Arioch",
+        "AcquiringTips": "",
+        "Type": 13,
+        "TerritoryTypeID": 363,
+        "xCoord": 0.0,
+        "yCoord": 0.0
       }
     ]
   },
@@ -874,6 +1442,14 @@
         "AcquiringTips": "",
         "Type": 99,
         "TerritoryTypeID": 578,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "Epilogi (Stage 24 Masked Carnivale - Amazing Technicolor Pit Fiends)",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 796,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
@@ -918,6 +1494,14 @@
         "TerritoryTypeID": 160,
         "xCoord": 0.0,
         "yCoord": 0.0
+      },
+      {
+        "Info": "Lvl. 59 Anzu",
+        "AcquiringTips": "This attack doesn't have a visible cast bar. You will know that the monster already used it because you will have a debuff called Windburn.",
+        "Type": 2,
+        "TerritoryTypeID": 401,
+        "xCoord": 25.0,
+        "yCoord": 6.0
       }
     ]
   },
@@ -932,6 +1516,22 @@
         "TerritoryTypeID": 401,
         "xCoord": 17.0,
         "yCoord": 32.5
+      },
+      {
+        "Info": "Lvl. 68 Jhammel",
+        "AcquiringTips": "",
+        "Type": 2,
+        "TerritoryTypeID": 868,
+        "xCoord": 24.8,
+        "yCoord": 28.5
+      },
+      {
+        "Info": "(Trash) Dhalmel",
+        "AcquiringTips": "",
+        "Type": 13,
+        "TerritoryTypeID": 420,
+        "xCoord": 0.0,
+        "yCoord": 0.0
       }
     ]
   },
@@ -986,6 +1586,14 @@
         "AcquiringTips": "",
         "Type": 99,
         "TerritoryTypeID": 1114,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "(Trash) Doman Armored Weapon",
+        "AcquiringTips": "",
+        "Type": 13,
+        "TerritoryTypeID": 660,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
@@ -1058,6 +1666,14 @@
         "TerritoryTypeID": 401,
         "xCoord": 10.0,
         "yCoord": 17.0
+      },
+      {
+        "Info": "(Trash) Wamoura",
+        "AcquiringTips": "",
+        "Type": 13,
+        "TerritoryTypeID": 363,
+        "xCoord": 0.0,
+        "yCoord": 0.0
       }
     ]
   },
@@ -1086,6 +1702,30 @@
         "TerritoryTypeID": 241,
         "xCoord": 0.0,
         "yCoord": 0.0
+      },
+      {
+        "Info": "(1st Boss) Decaying Gourmand",
+        "AcquiringTips": "A party member is normally required if attempting to acquire it from Decaying Gourmand. If you get eaten, you will need an ally to get you out if you don't have any damage over time spells.\nThis spell can be obtained solo from Decaying Gourmand by reducing it to low HP, putting a damage over time effect on it, then being Devoured. So long as it gets the spell off, then dies from the DoT before killing you, you can learn it.",
+        "Type": 13,
+        "TerritoryTypeID": 363,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "Rafflesia",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 355,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "(Trash) Nullchu",
+        "AcquiringTips": "",
+        "Type": 13,
+        "TerritoryTypeID": 788,
+        "xCoord": 0.0,
+        "yCoord": 0.0
       }
     ]
   },
@@ -1098,6 +1738,14 @@
         "AcquiringTips": "",
         "Type": 99,
         "TerritoryTypeID": 578,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      },
+      {
+        "Info": "Arena Scribe (Stage 24 Masked Carnivale - Amazing Technicolor Pit Fiends)",
+        "AcquiringTips": "",
+        "Type": 99,
+        "TerritoryTypeID": 796,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
@@ -1170,6 +1818,14 @@
         "TerritoryTypeID": 614,
         "xCoord": 28.0,
         "yCoord": 6.0
+      },
+      {
+        "Info": "Gyorai Quickstrike",
+        "AcquiringTips": "",
+        "Type": 101,
+        "TerritoryTypeID": 614,
+        "xCoord": 0.0,
+        "yCoord": 0.0
       }
     ]
   },
@@ -1184,6 +1840,14 @@
         "TerritoryTypeID": 614,
         "xCoord": 28.0,
         "yCoord": 6.0
+      },
+      {
+        "Info": "Gyorai Quickstrike",
+        "AcquiringTips": "",
+        "Type": 101,
+        "TerritoryTypeID": 614,
+        "xCoord": 0.0,
+        "yCoord": 0.0
       }
     ]
   },
@@ -1310,6 +1974,14 @@
         "TerritoryTypeID": 139,
         "xCoord": 8.9,
         "yCoord": 21.4
+      },
+      {
+        "Info": "(1st Boss) Coeurl Smriti",
+        "AcquiringTips": "Coeurl Smriti casts it if both Coeurls don't die together.",
+        "Type": 13,
+        "TerritoryTypeID": 663,
+        "xCoord": 0.0,
+        "yCoord": 0.0
       }
     ]
   },
@@ -1324,6 +1996,14 @@
         "TerritoryTypeID": 620,
         "xCoord": 13.5,
         "yCoord": 26.2
+      },
+      {
+        "Info": "Gwas-y-neidr",
+        "AcquiringTips": "",
+        "Type": 101,
+        "TerritoryTypeID": 620,
+        "xCoord": 0.0,
+        "yCoord": 0.0
       }
     ]
   },
