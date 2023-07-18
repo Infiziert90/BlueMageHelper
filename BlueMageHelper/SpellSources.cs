@@ -42,6 +42,8 @@ public class SpellSource
     [NonSerialized] public string DutyMinLevel = "1";
     [NonSerialized] public string PlaceName = "";
 
+    [NonSerialized] public bool CurrentlyUnknown = false;
+
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public SpellSource() { }
 
@@ -78,7 +80,11 @@ public class SpellSource
         if (Type == RegionType.OpenWorld && TerritoryType != null)
         {
             if (xCoord == 0 || yCoord == 0)
-                throw new Exception($"Missing xCoord or yCoord with RegionType OpenWorld for {Info}.");
+            {
+                CurrentlyUnknown = true;
+                MapLink = new MapLinkPayload(TerritoryType.RowId, TerritoryType.Map.Row, 15, 15);
+                return;
+            }
 
             try
             {

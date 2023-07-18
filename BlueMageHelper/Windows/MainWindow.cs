@@ -114,12 +114,21 @@ public class MainWindow : Window, IDisposable
 
                 if (!isHunt)
                 {
-                    if (ImGui.Selectable($"Coords: {source.MapLink.CoordinateString}##mapCoords"))
-                        Plugin.SetMapMarker(source.MapLink);
+                    if (!source.CurrentlyUnknown)
+                    {
+                        if (ImGui.Selectable($"Coords: {source.MapLink.CoordinateString}##mapCoords"))
+                            Plugin.SetMapMarker(source.MapLink);
+                    }
+                    else
+                    {
+                        if (ImGui.Selectable($"Exact location currently unknown##mapCoords"))
+                            Plugin.SetMapMarker(source.MapLink);
+                    }
                 }
                 else
                 {
-                    ImGui.Selectable($"Random Location##mapCoords");
+                    if (ImGui.Selectable($"Random Location##mapCoords"))
+                        Plugin.SetMapMarker(source.MapLink);
                 }
             }
 

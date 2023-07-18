@@ -2182,8 +2182,8 @@
       {
         "Info": "",
         "AcquiringTips": "",
-        "Type": 999,
-        "TerritoryTypeID": 0,
+        "Type": 2,
+        "TerritoryTypeID": 870,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
@@ -2196,8 +2196,8 @@
       {
         "Info": "",
         "AcquiringTips": "",
-        "Type": 999,
-        "TerritoryTypeID": 0,
+        "Type": 13,
+        "TerritoryTypeID": 836,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
@@ -2210,8 +2210,8 @@
       {
         "Info": "",
         "AcquiringTips": "",
-        "Type": 999,
-        "TerritoryTypeID": 0,
+        "Type": 2,
+        "TerritoryTypeID": 872,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
@@ -2224,8 +2224,8 @@
       {
         "Info": "",
         "AcquiringTips": "",
-        "Type": 999,
-        "TerritoryTypeID": 0,
+        "Type": 2,
+        "TerritoryTypeID": 872,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
@@ -2252,8 +2252,8 @@
       {
         "Info": "",
         "AcquiringTips": "",
-        "Type": 999,
-        "TerritoryTypeID": 0,
+        "Type": 12,
+        "TerritoryTypeID": 916,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
@@ -2266,8 +2266,8 @@
       {
         "Info": "",
         "AcquiringTips": "",
-        "Type": 999,
-        "TerritoryTypeID": 0,
+        "Type": 12,
+        "TerritoryTypeID": 933,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
@@ -2280,8 +2280,8 @@
       {
         "Info": "",
         "AcquiringTips": "",
-        "Type": 999,
-        "TerritoryTypeID": 0,
+        "Type": 12,
+        "TerritoryTypeID": 884,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
@@ -2294,8 +2294,8 @@
       {
         "Info": "",
         "AcquiringTips": "",
-        "Type": 999,
-        "TerritoryTypeID": 0,
+        "Type": 99,
+        "TerritoryTypeID": 897,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
@@ -2308,8 +2308,8 @@
       {
         "Info": "",
         "AcquiringTips": "",
-        "Type": 999,
-        "TerritoryTypeID": 0,
+        "Type": 99,
+        "TerritoryTypeID": 845,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
@@ -2322,8 +2322,8 @@
       {
         "Info": "",
         "AcquiringTips": "",
-        "Type": 999,
-        "TerritoryTypeID": 0,
+        "Type": 99,
+        "TerritoryTypeID": 849,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
@@ -2336,8 +2336,8 @@
       {
         "Info": "",
         "AcquiringTips": "",
-        "Type": 999,
-        "TerritoryTypeID": 0,
+        "Type": 12,
+        "TerritoryTypeID": 822,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
@@ -2364,8 +2364,8 @@
       {
         "Info": "",
         "AcquiringTips": "",
-        "Type": 999,
-        "TerritoryTypeID": 0,
+        "Type": 99,
+        "TerritoryTypeID": 846,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
@@ -2378,8 +2378,8 @@
       {
         "Info": "",
         "AcquiringTips": "",
-        "Type": 999,
-        "TerritoryTypeID": 0,
+        "Type": 99,
+        "TerritoryTypeID": 945,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
@@ -2392,8 +2392,8 @@
       {
         "Info": "",
         "AcquiringTips": "",
-        "Type": 999,
-        "TerritoryTypeID": 0,
+        "Type": 12,
+        "TerritoryTypeID": 821,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
@@ -2406,8 +2406,8 @@
       {
         "Info": "",
         "AcquiringTips": "",
-        "Type": 999,
-        "TerritoryTypeID": 0,
+        "Type": 12,
+        "TerritoryTypeID": 884,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
@@ -2420,8 +2420,8 @@
       {
         "Info": "",
         "AcquiringTips": "",
-        "Type": 999,
-        "TerritoryTypeID": 0,
+        "Type": 12,
+        "TerritoryTypeID": 933,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
@@ -2434,8 +2434,8 @@
       {
         "Info": "",
         "AcquiringTips": "",
-        "Type": 999,
-        "TerritoryTypeID": 0,
+        "Type": 12,
+        "TerritoryTypeID": 838,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
@@ -2448,8 +2448,8 @@
       {
         "Info": "",
         "AcquiringTips": "",
-        "Type": 999,
-        "TerritoryTypeID": 0,
+        "Type": 99,
+        "TerritoryTypeID": 845,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
