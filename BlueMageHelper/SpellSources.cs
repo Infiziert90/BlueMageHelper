@@ -7,6 +7,7 @@ using Dalamud.Game.Text.SeStringHandling.Payloads;
 using Dalamud.Logging;
 using FFXIVClientStructs.FFXIV.Component.GUI;
 using Lumina.Excel.GeneratedSheets;
+using Newtonsoft.Json;
 
 namespace BlueMageHelper;
 
@@ -19,8 +20,8 @@ public class Spell
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public Spell() { }
 
-    public SpellSource Source => Sources[0];
-    public bool HasMultipleSources => Sources.Count > 1;
+    [JsonIgnore] public SpellSource Source => Sources[0];
+    [JsonIgnore] public bool HasMultipleSources => Sources.Count > 1;
 }
 
 public class SpellSource
@@ -44,7 +45,16 @@ public class SpellSource
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public SpellSource() { }
 
-    public SpellSource(string info) { Info = info; }
+    public SpellSource(string info)
+    {
+        Info = info;
+    }
+
+    public SpellSource(string info, RegionType type)
+    {
+        Info = info;
+        Type = type;
+    }
 
     [OnDeserialized]
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
@@ -122,6 +132,9 @@ public enum RegionType
     ARank = 100,
     BRank = 101,
     SRank = 102,
+
+    // New Patch
+    Unknown = 999,
 }
 
 public static class SpellSources

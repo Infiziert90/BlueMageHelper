@@ -2174,5 +2174,285 @@
         "yCoord": 0.0
       }
     ]
+  },
+  "105": {
+    "Name": "Goblin Punch",
+    "Icon": 72306,
+    "Sources": [
+      {
+        "Info": "",
+        "AcquiringTips": "",
+        "Type": 999,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
+  },
+  "106": {
+    "Name": "Right Round",
+    "Icon": 72307,
+    "Sources": [
+      {
+        "Info": "",
+        "AcquiringTips": "",
+        "Type": 999,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
+  },
+  "107": {
+    "Name": "Schiltron",
+    "Icon": 72308,
+    "Sources": [
+      {
+        "Info": "",
+        "AcquiringTips": "",
+        "Type": 999,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
+  },
+  "108": {
+    "Name": "Rehydration",
+    "Icon": 72309,
+    "Sources": [
+      {
+        "Info": "",
+        "AcquiringTips": "",
+        "Type": 999,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
+  },
+  "109": {
+    "Name": "Breath of Magic",
+    "Icon": 72310,
+    "Sources": [
+      {
+        "Info": "Available after learning 100 spells.",
+        "AcquiringTips": "",
+        "Type": 3,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
+  },
+  "110": {
+    "Name": "Wild Rage",
+    "Icon": 72311,
+    "Sources": [
+      {
+        "Info": "",
+        "AcquiringTips": "",
+        "Type": 999,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
+  },
+  "111": {
+    "Name": "Peat Pelt",
+    "Icon": 72312,
+    "Sources": [
+      {
+        "Info": "",
+        "AcquiringTips": "",
+        "Type": 999,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
+  },
+  "112": {
+    "Name": "Deep Clean",
+    "Icon": 72313,
+    "Sources": [
+      {
+        "Info": "",
+        "AcquiringTips": "",
+        "Type": 999,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
+  },
+  "113": {
+    "Name": "Ruby Dynamics",
+    "Icon": 72314,
+    "Sources": [
+      {
+        "Info": "",
+        "AcquiringTips": "",
+        "Type": 999,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
+  },
+  "114": {
+    "Name": "Divination Rune",
+    "Icon": 72315,
+    "Sources": [
+      {
+        "Info": "",
+        "AcquiringTips": "",
+        "Type": 999,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
+  },
+  "115": {
+    "Name": "Dimensional Shift",
+    "Icon": 72316,
+    "Sources": [
+      {
+        "Info": "",
+        "AcquiringTips": "",
+        "Type": 999,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
+  },
+  "116": {
+    "Name": "Conviction Marcato",
+    "Icon": 72317,
+    "Sources": [
+      {
+        "Info": "",
+        "AcquiringTips": "",
+        "Type": 999,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
+  },
+  "117": {
+    "Name": "Force Field",
+    "Icon": 72318,
+    "Sources": [
+      {
+        "Info": "Available after learning 120 spells.",
+        "AcquiringTips": "",
+        "Type": 3,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
+  },
+  "118": {
+    "Name": "Winged Reprobation",
+    "Icon": 72319,
+    "Sources": [
+      {
+        "Info": "",
+        "AcquiringTips": "",
+        "Type": 999,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
+  },
+  "119": {
+    "Name": "Laser Eye",
+    "Icon": 72320,
+    "Sources": [
+      {
+        "Info": "",
+        "AcquiringTips": "",
+        "Type": 999,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
+  },
+  "120": {
+    "Name": "Candy Cane",
+    "Icon": 72321,
+    "Sources": [
+      {
+        "Info": "",
+        "AcquiringTips": "",
+        "Type": 999,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
+  },
+  "121": {
+    "Name": "Mortal Flame",
+    "Icon": 72322,
+    "Sources": [
+      {
+        "Info": "",
+        "AcquiringTips": "",
+        "Type": 999,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
+  },
+  "122": {
+    "Name": "Sea Shanty",
+    "Icon": 72323,
+    "Sources": [
+      {
+        "Info": "",
+        "AcquiringTips": "",
+        "Type": 999,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
+  },
+  "123": {
+    "Name": "Apokalypsis",
+    "Icon": 72324,
+    "Sources": [
+      {
+        "Info": "",
+        "AcquiringTips": "",
+        "Type": 999,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
+  },
+  "124": {
+    "Name": "Being Mortal",
+    "Icon": 72325,
+    "Sources": [
+      {
+        "Info": "",
+        "AcquiringTips": "",
+        "Type": 999,
+        "TerritoryTypeID": 0,
+        "xCoord": 0.0,
+        "yCoord": 0.0
+      }
+    ]
   }
 }

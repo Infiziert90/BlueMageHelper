@@ -24,7 +24,6 @@ using Lumina.Excel.GeneratedSheets;
 using Newtonsoft.Json;
 
 using static BlueMageHelper.SpellSources;
-using Map = Lumina.Excel.GeneratedSheets.Map;
 
 namespace BlueMageHelper
 {
@@ -41,13 +40,13 @@ namespace BlueMageHelper
         public string Name => "Blue Mage Helper";
         private const string CommandName = "/spellbook";
 
-        public static readonly string Authors = "Infi, Sl0nderman";
+        public const string Authors = "Infi, Sl0nderman";
         public static readonly string Version = Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? "Unknown";
 
         public Configuration Configuration { get; init; }
-        public WindowSystem WindowSystem = new("Blue Mage Helper");
-        public MainWindow MainWindow = null!;
-        public ConfigWindow ConfigWindow = null!;
+        private WindowSystem WindowSystem = new("Blue Mage Helper");
+        private MainWindow MainWindow;
+        private ConfigWindow ConfigWindow;
 
         private const int BlankTextTextnodeIndex = 49;
         private const int SpellNumberTextnodeIndex = 57;
@@ -58,15 +57,14 @@ namespace BlueMageHelper
         private string lastSeenSpell = string.Empty;
         private string lastOrgText = string.Empty;
 
-        private List<AozAction> AozActionsCache = null!;
-        private List<AozActionTransient> AozTransientCache = null!;
+        private List<AozAction> AozActionsCache;
+        private List<AozActionTransient> AozTransientCache;
 
         private bool OnCooldown;
         private readonly Timer Cooldown = new(3 * 1000);
 
         public Dictionary<string, bool> UnlockedSpells = new();
 
-        private static ExcelSheet<Map> MapSheet = null!;
         private static ExcelSheet<MapMarker> MapMarkerSheet = null!;
         private static ExcelSheet<Aetheryte> AetheryteSheet = null!;
 
@@ -77,7 +75,6 @@ namespace BlueMageHelper
             AozActionsCache = Data.GetExcelSheet<AozAction>()!.Where(a => a.Rank != 0).ToList();
             AozTransientCache = Data.GetExcelSheet<AozActionTransient>()!.Where(a => a.Number != 0).ToList();
 
-            MapSheet = Data.GetExcelSheet<Map>()!;
             MapMarkerSheet = Data.GetExcelSheet<MapMarker>()!;
             AetheryteSheet = Data.GetExcelSheet<Aetheryte>()!;
 
@@ -177,11 +174,11 @@ namespace BlueMageHelper
             AtkTextNode* spellNumberTextnode = (AtkTextNode*)spellbookBaseNode->UldManager.NodeList[SpellNumberTextnodeIndex];
             AtkTextNode* region = (AtkTextNode*)spellbookBaseNode->UldManager.NodeList[RegionTextnodeIndex];
             AtkImageNode* regionImage = (AtkImageNode*)spellbookBaseNode->UldManager.NodeList[RegionImageIndex];
-            var spellNumberString = spellNumberTextnode->NodeText.ToString();
-            spellNumberString = spellNumberString[1..]; // Remove the # from the spell number
+            var spellNumberString = spellNumberTextnode->NodeText.ToString()[1..]; // Remove the # from the spell number
 
             // Try to preserve last seen org text
-            if (spellNumberString != lastSeenSpell) lastOrgText = emptyTextnode->NodeText.ToString();
+            if (spellNumberString != lastSeenSpell)
+                lastOrgText = emptyTextnode->NodeText.ToString();
             lastSeenSpell = spellNumberString;
 
             var spellSource = GetHintText(spellNumberString);
@@ -189,11 +186,12 @@ namespace BlueMageHelper
             emptyTextnode->AtkResNode.ToggleVisibility(true);
 
             // Change region if needed
-            spellSource.SetRegion(region, regionImage);
+            if (spellSource.Type != RegionType.Unknown)
+                spellSource.SetRegion(region, regionImage);
         }
 
         private static SpellSource GetHintText(string spellNumber) =>
-            Spells.TryGetValue(spellNumber, out var spell) ? spell.Source : new SpellSource($"No data #{spellNumber}");
+            Spells.TryGetValue(spellNumber, out var spell) ? spell.Source : new SpellSource($"Currently Unknown");
 
         public void Dispose()
         {
@@ -273,26 +271,20 @@ namespace BlueMageHelper
             }
         }
 
-        private struct Skill { public string Name; public string Icon; }
-
         private void PrintBlueSkills()
         {
+
             // skip the first non existing skill
-            var aozActionTransients = Data.GetExcelSheet<AozActionTransient>()!.ToArray()[1..];
-            var aozActions = Data.GetExcelSheet<AozAction>()!.ToArray()[1..];
-            var sorted = new SortedDictionary<uint, Skill>();
+            var aozActionTransients = Data.GetExcelSheet<AozActionTransient>()!.Skip(1);
+            var aozActions = Data.GetExcelSheet<AozAction>()!.Skip(1);
+
+            Dictionary<string, Spell> spells = new();
             foreach (var (transient, action) in aozActionTransients.Zip(aozActions))
             {
-                sorted.Add(transient.Number, new Skill() {Name = action.Action.Value!.Name.ToString(), Icon = transient.Icon.ToString()});
+                spells.Add(transient.Number.ToString(), new Spell() {Name = action.Action.Value!.Name.ToString(), Icon = transient.Icon, Sources = { new SpellSource("", RegionType.Unknown) }});
             }
 
-            foreach (var (key, value) in sorted)
-            {
-                PluginLog.Information("---------------");
-                PluginLog.Information($"Key: {key}");
-                PluginLog.Information($"Icon: {value.Icon}");
-                PluginLog.Information($"Name: {value.Name}");
-            }
+            PluginLog.Information(JsonConvert.SerializeObject(spells, Formatting.Indented));
         }
         #endregion
     }
