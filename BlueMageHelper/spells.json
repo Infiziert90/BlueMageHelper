@@ -2252,7 +2252,7 @@
       {
         "Info": "",
         "AcquiringTips": "",
-        "Type": 12,
+        "Type": 13,
         "TerritoryTypeID": 916,
         "xCoord": 0.0,
         "yCoord": 0.0
@@ -2266,7 +2266,7 @@
       {
         "Info": "",
         "AcquiringTips": "",
-        "Type": 12,
+        "Type": 13,
         "TerritoryTypeID": 933,
         "xCoord": 0.0,
         "yCoord": 0.0
@@ -2280,7 +2280,7 @@
       {
         "Info": "",
         "AcquiringTips": "",
-        "Type": 12,
+        "Type": 13,
         "TerritoryTypeID": 884,
         "xCoord": 0.0,
         "yCoord": 0.0
@@ -2336,7 +2336,7 @@
       {
         "Info": "",
         "AcquiringTips": "",
-        "Type": 12,
+        "Type": 13,
         "TerritoryTypeID": 822,
         "xCoord": 0.0,
         "yCoord": 0.0
@@ -2392,7 +2392,7 @@
       {
         "Info": "",
         "AcquiringTips": "",
-        "Type": 12,
+        "Type": 13,
         "TerritoryTypeID": 821,
         "xCoord": 0.0,
         "yCoord": 0.0
@@ -2406,7 +2406,7 @@
       {
         "Info": "",
         "AcquiringTips": "",
-        "Type": 12,
+        "Type": 13,
         "TerritoryTypeID": 884,
         "xCoord": 0.0,
         "yCoord": 0.0
@@ -2420,7 +2420,7 @@
       {
         "Info": "",
         "AcquiringTips": "",
-        "Type": 12,
+        "Type": 13,
         "TerritoryTypeID": 933,
         "xCoord": 0.0,
         "yCoord": 0.0
@@ -2434,7 +2434,7 @@
       {
         "Info": "",
         "AcquiringTips": "",
-        "Type": 12,
+        "Type": 13,
         "TerritoryTypeID": 838,
         "xCoord": 0.0,
         "yCoord": 0.0
