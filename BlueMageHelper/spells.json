@@ -2180,12 +2180,12 @@
     "Icon": 72306,
     "Sources": [
       {
-        "Info": "",
+        "Info": "Hobgoblin",
         "AcquiringTips": "",
         "Type": 2,
         "TerritoryTypeID": 870,
-        "xCoord": 0.0,
-        "yCoord": 0.0
+        "xCoord": 34.0,
+        "yCoord": 32.5
       }
     ]
   },
@@ -2194,7 +2194,7 @@
     "Icon": 72307,
     "Sources": [
       {
-        "Info": "",
+        "Info": "Greater Armadillo",
         "AcquiringTips": "",
         "Type": 13,
         "TerritoryTypeID": 836,
@@ -2208,12 +2208,12 @@
     "Icon": 72308,
     "Sources": [
       {
-        "Info": "",
+        "Info": "Hardscale Armadillo",
         "AcquiringTips": "",
         "Type": 2,
         "TerritoryTypeID": 872,
-        "xCoord": 0.0,
-        "yCoord": 0.0
+        "xCoord": 15.3,
+        "yCoord": 29.3
       }
     ]
   },
@@ -2222,12 +2222,12 @@
     "Icon": 72309,
     "Sources": [
       {
-        "Info": "",
+        "Info": "Slippery Armadillo",
         "AcquiringTips": "",
         "Type": 2,
         "TerritoryTypeID": 872,
-        "xCoord": 0.0,
-        "yCoord": 0.0
+        "xCoord": 32.2,
+        "yCoord": 9.2
       }
     ]
   },
@@ -2250,7 +2250,7 @@
     "Icon": 72311,
     "Sources": [
       {
-        "Info": "",
+        "Info": "Spectral Berserker",
         "AcquiringTips": "",
         "Type": 13,
         "TerritoryTypeID": 916,
@@ -2264,7 +2264,7 @@
     "Icon": 72312,
     "Sources": [
       {
-        "Info": "",
+        "Info": "Mudman",
         "AcquiringTips": "",
         "Type": 13,
         "TerritoryTypeID": 933,
@@ -2278,7 +2278,7 @@
     "Icon": 72313,
     "Sources": [
       {
-        "Info": "",
+        "Info": "Seeker Of Solitude",
         "AcquiringTips": "",
         "Type": 13,
         "TerritoryTypeID": 884,
@@ -2334,7 +2334,7 @@
     "Icon": 72317,
     "Sources": [
       {
-        "Info": "",
+        "Info": "Forgiven Obscenity",
         "AcquiringTips": "",
         "Type": 13,
         "TerritoryTypeID": 822,
@@ -2390,7 +2390,7 @@
     "Icon": 72321,
     "Sources": [
       {
-        "Info": "",
+        "Info": "Aenc Thon",
         "AcquiringTips": "",
         "Type": 13,
         "TerritoryTypeID": 821,
@@ -2404,7 +2404,7 @@
     "Icon": 72322,
     "Sources": [
       {
-        "Info": "",
+        "Info": "Lugus",
         "AcquiringTips": "",
         "Type": 13,
         "TerritoryTypeID": 884,
@@ -2418,7 +2418,7 @@
     "Icon": 72323,
     "Sources": [
       {
-        "Info": "",
+        "Info": "Nixie",
         "AcquiringTips": "",
         "Type": 13,
         "TerritoryTypeID": 933,
@@ -2432,7 +2432,7 @@
     "Icon": 72324,
     "Sources": [
       {
-        "Info": "",
+        "Info": "Therion",
         "AcquiringTips": "",
         "Type": 13,
         "TerritoryTypeID": 838,
