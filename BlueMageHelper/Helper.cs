@@ -7,7 +7,7 @@ namespace BlueMageHelper;
 public static class Helper
 {
     // From Ottermandias
-    public static string ToTitleCaseExtended(SeString s, sbyte article)
+    public static string ToTitleCaseExtended(SeString s, sbyte article = 0)
     {
         if (article == 1)
             return s.ToDalamudString().ToString();

@@ -1,11 +1,14 @@
-﻿using System;
+﻿#nullable enable
+using System;
 using System.Linq;
 using System.Numerics;
 using Dalamud.Interface;
 using Dalamud.Interface.Colors;
 using Dalamud.Interface.Windowing;
 using ImGuiNET;
+using Lumina.Excel.GeneratedSheets;
 using static BlueMageHelper.SpellSources;
+using static Dalamud.Interface.Components.ImGuiComponents;
 
 namespace BlueMageHelper.Windows;
 
@@ -14,9 +17,11 @@ public class MainWindow : Window, IDisposable
     private Plugin Plugin;
     private Configuration Configuration;
 
-    private int selectedSpellNumber = 1; // 0 is the first learned blu skill
-    private int selectedSource = 0;
-    private static Vector2 size = new(80, 80);
+    private int SelectedSpellNumber;
+    private int SelectedSource;
+    private static readonly Vector2 size = new(80, 80);
+
+    public ExcelSheetSelector.ExcelSheetPopupOptions<AozAction>? SourceOptions;
 
     public MainWindow(Plugin plugin) : base("Grimoire", ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse)
     {
@@ -28,14 +33,27 @@ public class MainWindow : Window, IDisposable
 
         Plugin = plugin;
         Configuration = plugin.Configuration;
+
+        // 0 is the first learned blu skill
+        SelectedSpellNumber = SelectedSpellNumber = Configuration.ShowOnlyUnlearned ? 0 : 1;
     }
 
     public void Dispose() { }
 
     public override void Draw()
     {
-        var currentSpell = selectedSpellNumber;
-        var keyList = Spells.Keys.Where(num => !Configuration.ShowOnlyUnlearned || Plugin.UnlockedSpells.TryGetValue(num, out var isUnlocked) && !isUnlocked).ToList();
+        if (SourceOptions == null)
+        {
+            ExcelSheetSelector.FilteredSearchSheet = null!;
+            SourceOptions = new()
+            {
+                FormatRow = a => $"{Helper.ToTitleCaseExtended(a.Action.Value!.Name)}",
+                FilteredSheet = Plugin.AozActionsCache.Where(a => IsUnlocked($"{Plugin.AozTransientCache[(int)a.RowId - 1].Number}")).OrderBy(a => Plugin.AozTransientCache[(int)a.RowId - 1].Number)
+            };
+        }
+
+        var currentSpell = SelectedSpellNumber;
+        var keyList = Spells.Keys.Where(IsUnlocked).ToList();
 
         if (!keyList.Any())
         {
@@ -44,15 +62,22 @@ public class MainWindow : Window, IDisposable
             return;
         }
 
-        if (selectedSpellNumber >= keyList.Count)
-            selectedSpellNumber = Configuration.ShowOnlyUnlearned ? 0 : 1; // 0 is the first learned blu skill, so we skip to 1 for all
+        if (SelectedSpellNumber >= keyList.Count)
+            SelectedSpellNumber = Configuration.ShowOnlyUnlearned ? 0 : 1; // 0 is the first learned blu skill, so we skip to 1 for all
 
         var stringList = Spells.Where(x => keyList.Contains(x.Key)).Select(x => $"{x.Key} - {x.Value.Name}").ToArray();
-        ImGui.Combo("##spellSelector", ref selectedSpellNumber, stringList, stringList.Length);
-        DrawArrows(ref selectedSpellNumber, stringList.Length, 0);
+        ImGui.Combo("##spellSelector", ref SelectedSpellNumber, stringList, stringList.Length);
+        ImGui.SameLine();
+        IconButton(99, FontAwesomeIcon.Search);
+        if (ExcelSheetSelector.ExcelSheetPopup("SourceResultPopup", out var spellRow, SourceOptions))
+        {
+            var spellNumber = Plugin.AozTransientCache[(int)spellRow - 1].Number;
+            SelectedSpellNumber = Array.IndexOf(stringList, $"{spellNumber} - {Spells[$"{spellNumber}"].Name}");
+        }
+        DrawArrows(ref SelectedSpellNumber, stringList.Length, 0);
 
-        if (currentSpell != selectedSpellNumber)
-            selectedSource = 0;
+        if (currentSpell != SelectedSpellNumber)
+            SelectedSource = 0;
 
         ImGuiHelpers.ScaledDummy(10);
         ImGui.Separator();
@@ -61,19 +86,19 @@ public class MainWindow : Window, IDisposable
         if (!Spells.Any())
             return;
 
-        var selectedSpell = Spells[keyList[selectedSpellNumber]];
+        var selectedSpell = Spells[keyList[SelectedSpellNumber]];
         DrawIcon(selectedSpell.Icon);
         ImGuiHelpers.ScaledDummy(10);
 
         if (ImGui.BeginChild("Content", new Vector2(0, -30), false, 0))
         {
-            var source = selectedSpell.Sources[selectedSource];
+            var source = selectedSpell.Sources[SelectedSource];
             if (selectedSpell.HasMultipleSources)
             {
                 var sourcesList = selectedSpell.Sources.Select(x => $"{x.Info} ").ToArray();
-                ImGui.Combo("##sourcesSelector", ref selectedSource, sourcesList, sourcesList.Length);
-                DrawArrows(ref selectedSource, selectedSpell.Sources.Count, 2);
-                source = selectedSpell.Sources[selectedSource];
+                ImGui.Combo("##sourcesSelector", ref SelectedSource, sourcesList, sourcesList.Length);
+                DrawArrows(ref SelectedSource, selectedSpell.Sources.Count, 2);
+                source = selectedSpell.Sources[SelectedSource];
             }
             else
             {
@@ -133,13 +158,13 @@ public class MainWindow : Window, IDisposable
             }
 
             ImGui.TextUnformatted($"Learned: ");
-            DrawProgressSymbol(Plugin.UnlockedSpells.TryGetValue(keyList[selectedSpellNumber], out var unlocked) && unlocked);
+            DrawProgressSymbol(Plugin.UnlockedSpells.TryGetValue(keyList[SelectedSpellNumber], out var unlocked) && unlocked);
 
             if (source.TerritoryType != null && source.Type != RegionType.Buy)
             {
                 var combos = Spells
                     .Where(key => keyList.Contains(key.Key))
-                    .Where(key => key.Key != keyList[selectedSpellNumber])
+                    .Where(key => key.Key != keyList[SelectedSpellNumber])
                     .Where(spell => spell.Value.Sources.Any(spellSource => source.CompareTerritory(spellSource)))
                     .ToArray();
 
@@ -153,8 +178,8 @@ public class MainWindow : Window, IDisposable
                     {
                         if (ImGui.Selectable($"{key} - {value.Name}"))
                         {
-                            selectedSource = value.Sources.FindIndex(x => x.TerritoryTypeID == source.TerritoryTypeID);
-                            selectedSpellNumber = keyList.FindIndex(val => val == key);;
+                            SelectedSource = value.Sources.FindIndex(x => x.TerritoryTypeID == source.TerritoryTypeID);
+                            SelectedSpellNumber = keyList.FindIndex(val => val == key);;
                         }
                     }
                 }
@@ -189,12 +214,12 @@ public class MainWindow : Window, IDisposable
     {
         ImGui.SameLine();
         if (selected == 0) ImGui.BeginDisabled();
-        if (Dalamud.Interface.Components.ImGuiComponents.IconButton(id, FontAwesomeIcon.ArrowLeft)) selected--;
+        if (IconButton(id, FontAwesomeIcon.ArrowLeft)) selected--;
         if (selected == 0) ImGui.EndDisabled();
 
         ImGui.SameLine();
         if (selected + 1 == length) ImGui.BeginDisabled();
-        if (Dalamud.Interface.Components.ImGuiComponents.IconButton(id+1, FontAwesomeIcon.ArrowRight)) selected++;
+        if (IconButton(id+1, FontAwesomeIcon.ArrowRight)) selected++;
         if (selected + 1 == length) ImGui.EndDisabled();
     }
 
@@ -214,4 +239,6 @@ public class MainWindow : Window, IDisposable
         ImGui.TextColored(color, text);
         ImGui.PopFont();
     }
+
+    private bool IsUnlocked(string num) => !Configuration.ShowOnlyUnlearned || (Plugin.UnlockedSpells.TryGetValue(num, out var isUnlocked) && !isUnlocked);
 }

@@ -45,7 +45,7 @@ namespace BlueMageHelper
 
         public Configuration Configuration { get; init; }
         private WindowSystem WindowSystem = new("Blue Mage Helper");
-        private MainWindow MainWindow;
+        public MainWindow MainWindow;
         private ConfigWindow ConfigWindow;
 
         private const int BlankTextTextnodeIndex = 49;
@@ -57,8 +57,8 @@ namespace BlueMageHelper
         private string lastSeenSpell = string.Empty;
         private string lastOrgText = string.Empty;
 
-        private List<AozAction> AozActionsCache;
-        private List<AozActionTransient> AozTransientCache;
+        public List<AozAction> AozActionsCache;
+        public List<AozActionTransient> AozTransientCache;
 
         private bool OnCooldown;
         private readonly Timer Cooldown = new(3 * 1000);

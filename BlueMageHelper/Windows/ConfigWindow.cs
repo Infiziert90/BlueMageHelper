@@ -9,6 +9,7 @@ namespace BlueMageHelper.Windows;
 
 public class ConfigWindow : Window, IDisposable
 {
+    private Plugin Plugin;
     private Configuration Configuration;
 
     public ConfigWindow(Plugin plugin) : base("Configuration")
@@ -19,6 +20,7 @@ public class ConfigWindow : Window, IDisposable
             MaximumSize = new Vector2(float.MaxValue, float.MaxValue)
         };
 
+        Plugin = plugin;
         Configuration = plugin.Configuration;
     }
 
@@ -55,7 +57,10 @@ public class ConfigWindow : Window, IDisposable
         ImGui.Unindent(10.0f);
 
         if (changed)
+        {
+            Plugin.MainWindow.SourceOptions = null;
             Configuration.Save();
+        }
 
         ImGui.EndTabItem();
     }
