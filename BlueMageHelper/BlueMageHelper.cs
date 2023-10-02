@@ -1,7 +1,4 @@
-﻿using Dalamud.Game;
-using Dalamud.Game.Gui;
-using Dalamud.IoC;
-using Dalamud.Logging;
+﻿using Dalamud.IoC;
 using Dalamud.Plugin;
 using System;
 using System.Collections.Generic;
@@ -12,11 +9,10 @@ using System.Reflection;
 using System.Timers;
 using BlueMageHelper.IPC;
 using BlueMageHelper.Windows;
-using Dalamud.Data;
-using Dalamud.Game.ClientState;
 using Dalamud.Game.Command;
 using Dalamud.Game.Text.SeStringHandling.Payloads;
 using Dalamud.Interface.Windowing;
+using Dalamud.Plugin.Services;
 using FFXIVClientStructs.FFXIV.Client.Game.UI;
 using FFXIVClientStructs.FFXIV.Component.GUI;
 using Lumina.Excel;
@@ -29,15 +25,15 @@ namespace BlueMageHelper
 {
     public sealed class Plugin : IDalamudPlugin
     {
-        [PluginService] public static DataManager Data { get; private set; } = null!;
-        [PluginService] public static Framework Framework { get; private set; } = null!;
-        [PluginService] public static CommandManager Commands { get; private set; } = null!;
+        [PluginService] public static IDataManager Data { get; private set; } = null!;
+        [PluginService] public static IFramework Framework { get; private set; } = null!;
+        [PluginService] public static ICommandManager Commands { get; private set; } = null!;
         [PluginService] public static DalamudPluginInterface PluginInterface { get; private set; } = null!;
-        [PluginService] public static ClientState ClientState { get; private set; } = null!;
-        [PluginService] public static GameGui GameGui { get; private set; } = null!;
-        [PluginService] public static ChatGui ChatGui { get; private set; } = null!;
+        [PluginService] public static IClientState ClientState { get; private set; } = null!;
+        [PluginService] public static IGameGui GameGui { get; private set; } = null!;
+        [PluginService] public static IChatGui ChatGui { get; private set; } = null!;
+        [PluginService] public static IPluginLog Log { get; private set; } = null!;
 
-        public string Name => "Blue Mage Helper";
         private const string CommandName = "/spellbook";
 
         public const string Authors = "Infi, Sl0nderman";
@@ -106,25 +102,25 @@ namespace BlueMageHelper
 
             try
             {
-                PluginLog.Debug("Loading Spell Sources.");
+                Log.Debug("Loading Spell Sources.");
                 var path = Path.Combine(PluginInterface.AssemblyLocation.Directory?.FullName!, "spells.json");
                 var jsonString = File.ReadAllText(path);
                 Spells = JsonConvert.DeserializeObject<Dictionary<string, Spell>>(jsonString);
             }
             catch (Exception e)
             {
-                PluginLog.Error("There was a problem building the Grimoire.");
-                PluginLog.Error(e.Message);
-                PluginLog.Error(e.StackTrace!);
+                Log.Error("There was a problem building the Grimoire.");
+                Log.Error(e.Message);
+                Log.Error(e.StackTrace!);
                 if (e.InnerException != null)
                 {
-                    PluginLog.Error(e.InnerException.Message);
-                    PluginLog.Error(e.InnerException.StackTrace!);
+                    Log.Error(e.InnerException.Message);
+                    Log.Error(e.InnerException.StackTrace!);
                 }
             }
         }
 
-        private void CheckLearnedSpells(Framework framework)
+        private void CheckLearnedSpells(IFramework framework)
         {
             if (OnCooldown)
                 return;
@@ -144,11 +140,11 @@ namespace BlueMageHelper
                 UnlockedSpells.Add(transient.Number.ToString(), SpellUnlocked(action.Action.Value!.UnlockLink));
         }
 
-        private void AozNotebookAddonManager(Framework framework)
+        private void AozNotebookAddonManager(IFramework framework)
         {
             try
             {
-                var addonPtr = GameGui.GetAddonByName("AOZNotebook", 1);
+                var addonPtr = GameGui.GetAddonByName("AOZNotebook");
                 if (addonPtr == nint.Zero)
                     return;
                 SpellbookWriter(addonPtr);
@@ -156,7 +152,7 @@ namespace BlueMageHelper
             catch (OperationCanceledException) { }
             catch (Exception e)
             {
-                PluginLog.Verbose("Blue Mage Helper caught an exception: "+ e);
+                Log.Verbose("Blue Mage Helper caught an exception: "+ e);
             }
         }
 
@@ -259,15 +255,15 @@ namespace BlueMageHelper
             {
                 if (match.RowId == 0) continue;
                 if (match.Map.Value!.PlaceName.Value!.Name == "") continue;
-                PluginLog.Information("---------------");
-                PluginLog.Information(match.Map.Value!.PlaceName.Value!.Name);
-                PluginLog.Information($"TerriID: {match.RowId}");
-                PluginLog.Information($"MapID: {match.Map.Row}");
+                Log.Information("---------------");
+                Log.Information(match.Map.Value!.PlaceName.Value!.Name);
+                Log.Information($"TerriID: {match.RowId}");
+                Log.Information($"MapID: {match.Map.Row}");
 
                 var content = contentSheet.FirstOrDefault(x => x.TerritoryType.Row == match.RowId);
                 if (content == null) continue;
                 if (Helper.ToTitleCaseExtended(content.Name, 0) == "") continue;
-                PluginLog.Information($"Duty: {Helper.ToTitleCaseExtended(content.Name, 0)}");
+                Log.Information($"Duty: {Helper.ToTitleCaseExtended(content.Name, 0)}");
             }
         }
 
@@ -284,7 +280,7 @@ namespace BlueMageHelper
                 spells.Add(transient.Number.ToString(), new Spell() {Name = action.Action.Value!.Name.ToString(), Icon = transient.Icon, Sources = { new SpellSource("", RegionType.Unknown) }});
             }
 
-            PluginLog.Information(JsonConvert.SerializeObject(spells, Formatting.Indented));
+            Log.Information(JsonConvert.SerializeObject(spells, Formatting.Indented));
         }
         #endregion
     }

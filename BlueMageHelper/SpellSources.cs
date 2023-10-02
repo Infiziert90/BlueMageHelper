@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.Serialization;
 using Dalamud.Game.Text.SeStringHandling.Payloads;
-using Dalamud.Logging;
+
 using FFXIVClientStructs.FFXIV.Component.GUI;
 using Lumina.Excel.GeneratedSheets;
 using Newtonsoft.Json;
@@ -92,7 +92,7 @@ public class SpellSource
             }
             catch
             {
-                PluginLog.Error($"MapLink creation failed for {Info}.");
+                Plugin.Log.Error($"MapLink creation failed for {Info}.");
             }
         }
         else if (Type == RegionType.Buy)

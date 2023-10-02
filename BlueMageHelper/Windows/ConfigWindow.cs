@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Numerics;
-using Dalamud.Interface;
 using Dalamud.Interface.Colors;
+using Dalamud.Interface.Utility;
 using Dalamud.Interface.Windowing;
 using ImGuiNET;
 
@@ -12,7 +12,7 @@ public class ConfigWindow : Window, IDisposable
     private Plugin Plugin;
     private Configuration Configuration;
 
-    public ConfigWindow(Plugin plugin) : base("Configuration")
+    public ConfigWindow(Plugin plugin) : base("Configuration###BlueMageHelper")
     {
         SizeConstraints = new WindowSizeConstraints
         {

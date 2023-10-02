@@ -4,9 +4,11 @@ using System.Linq;
 using System.Numerics;
 using Dalamud.Interface;
 using Dalamud.Interface.Colors;
+using Dalamud.Interface.Utility;
 using Dalamud.Interface.Windowing;
 using ImGuiNET;
 using Lumina.Excel.GeneratedSheets;
+
 using static BlueMageHelper.SpellSources;
 using static Dalamud.Interface.Components.ImGuiComponents;
 
@@ -23,8 +25,9 @@ public class MainWindow : Window, IDisposable
 
     public ExcelSheetSelector.ExcelSheetPopupOptions<AozAction>? SourceOptions;
 
-    public MainWindow(Plugin plugin) : base("Grimoire", ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse)
+    public MainWindow(Plugin plugin) : base("Grimoire###BlueMageHelper")
     {
+        Flags = ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse;
         SizeConstraints = new WindowSizeConstraints
         {
             MinimumSize = new Vector2(370, 500),
@@ -141,7 +144,7 @@ public class MainWindow : Window, IDisposable
                 {
                     if (!source.CurrentlyUnknown)
                     {
-                        if (ImGui.Selectable($"Coords: {source.MapLink.CoordinateString}##mapCoords"))
+                        if (ImGui.Selectable($"Coords: {source.MapLink?.CoordinateString ?? "Unknown"}##mapCoords"))
                             Plugin.SetMapMarker(source.MapLink);
                     }
                     else
