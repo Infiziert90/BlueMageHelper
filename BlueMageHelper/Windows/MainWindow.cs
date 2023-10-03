@@ -228,8 +228,15 @@ public class MainWindow : Window, IDisposable
 
     private static void DrawIcon(uint iconId)
     {
-        var texture = TexturesCache.Instance!.GetTextureFromIconId(iconId);
-        ImGui.Image(texture.ImGuiHandle, size);
+        var iconSize = size * ImGuiHelpers.GlobalScale;
+        var texture = Plugin.Texture.GetIcon(iconId);
+        if (texture == null)
+        {
+            ImGui.Text($"Unknown icon {iconId}");
+            return;
+        }
+
+        ImGui.Image(texture.ImGuiHandle, iconSize);
     }
 
     private static void DrawProgressSymbol(bool done)

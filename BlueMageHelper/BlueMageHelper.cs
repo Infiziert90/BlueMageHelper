@@ -33,6 +33,7 @@ namespace BlueMageHelper
         [PluginService] public static IGameGui GameGui { get; private set; } = null!;
         [PluginService] public static IChatGui ChatGui { get; private set; } = null!;
         [PluginService] public static IPluginLog Log { get; private set; } = null!;
+        [PluginService] public static ITextureProvider Texture { get; private set; } = null!;
 
         private const string CommandName = "/spellbook";
 
@@ -97,8 +98,6 @@ namespace BlueMageHelper
             PluginInterface.UiBuilder.OpenConfigUi += DrawConfigUI;
             Framework.Update += AozNotebookAddonManager;
             Framework.Update += CheckLearnedSpells;
-
-            TexturesCache.Initialize();
 
             try
             {
@@ -191,8 +190,6 @@ namespace BlueMageHelper
 
         public void Dispose()
         {
-			TexturesCache.Instance?.Dispose();
-
             WindowSystem.RemoveAllWindows();
             Commands.RemoveHandler(CommandName);
             Framework.Update -= AozNotebookAddonManager;
