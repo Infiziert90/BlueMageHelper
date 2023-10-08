@@ -12,7 +12,7 @@ public class ConfigWindow : Window, IDisposable
     private Plugin Plugin;
     private Configuration Configuration;
 
-    public ConfigWindow(Plugin plugin) : base("Configuration###BlueMageHelper")
+    public ConfigWindow(Plugin plugin) : base("Configuration##BlueMageHelper")
     {
         SizeConstraints = new WindowSizeConstraints
         {

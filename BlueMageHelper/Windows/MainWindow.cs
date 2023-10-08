@@ -25,7 +25,7 @@ public class MainWindow : Window, IDisposable
 
     public ExcelSheetSelector.ExcelSheetPopupOptions<AozAction>? SourceOptions;
 
-    public MainWindow(Plugin plugin) : base("Grimoire###BlueMageHelper")
+    public MainWindow(Plugin plugin) : base("Grimoire##BlueMageHelper")
     {
         Flags = ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse;
         SizeConstraints = new WindowSizeConstraints
