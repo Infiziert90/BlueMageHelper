@@ -1873,7 +1873,7 @@
         "Info": "(Last Boss) Mist Dragon",
         "AcquiringTips": "When the Mist Dragon begins casting Vaporize, it will summon 3 Draconic Regards (white dragon heads). You must leave at least one head alive in order for the cast to go off, otherwise the Mist Dragon will cast White Death instead and you will not get the spell.\nUse Diamondback or other mitigation to help survive the damage.",
         "Type": 99,
-        "TerritoryTypeID": 789,
+        "TerritoryTypeID": 1173,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
@@ -2071,7 +2071,7 @@
         "Info": "(1st Boss) Kelpie",
         "AcquiringTips": "",
         "Type": 99,
-        "TerritoryTypeID": 731,
+        "TerritoryTypeID": 1172,
         "xCoord": 0.0,
         "yCoord": 0.0
       }
