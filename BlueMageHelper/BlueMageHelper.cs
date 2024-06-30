@@ -28,7 +28,7 @@ namespace BlueMageHelper
         [PluginService] public static IDataManager Data { get; private set; } = null!;
         [PluginService] public static IFramework Framework { get; private set; } = null!;
         [PluginService] public static ICommandManager Commands { get; private set; } = null!;
-        [PluginService] public static DalamudPluginInterface PluginInterface { get; private set; } = null!;
+        [PluginService] public static IDalamudPluginInterface PluginInterface { get; private set; } = null!;
         [PluginService] public static IClientState ClientState { get; private set; } = null!;
         [PluginService] public static IGameGui GameGui { get; private set; } = null!;
         [PluginService] public static IChatGui ChatGui { get; private set; } = null!;
@@ -81,7 +81,6 @@ namespace BlueMageHelper
             Cooldown.Elapsed += (_, __) => OnCooldown = false;
 
             Configuration = PluginInterface.GetPluginConfig() as Configuration ?? new Configuration();
-            Configuration.Initialize(PluginInterface);
 
             MainWindow = new MainWindow(this);
             ConfigWindow = new ConfigWindow(this);
@@ -162,7 +161,7 @@ namespace BlueMageHelper
                 return;
 
             AtkTextNode* unlearnedTextNode = (AtkTextNode*)spellbookBaseNode->UldManager.NodeList[UnlearnedNodeIndex];
-            if (!unlearnedTextNode->AtkResNode.IsVisible && !Configuration.ShowHintEvenIfUnlocked)
+            if (!unlearnedTextNode->AtkResNode.IsVisible() && !Configuration.ShowHintEvenIfUnlocked)
                 return;
 
             AtkTextNode* emptyTextnode = (AtkTextNode*)spellbookBaseNode->UldManager.NodeList[BlankTextTextnodeIndex];

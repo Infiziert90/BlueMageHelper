@@ -30,7 +30,7 @@ public class MainWindow : Window, IDisposable
         Flags = ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse;
         SizeConstraints = new WindowSizeConstraints
         {
-            MinimumSize = new Vector2(370, 500),
+            MinimumSize = new Vector2(420, 500),
             MaximumSize = new Vector2(float.MaxValue, float.MaxValue)
         };
 
@@ -78,6 +78,10 @@ public class MainWindow : Window, IDisposable
             SelectedSpellNumber = Array.IndexOf(stringList, $"{spellNumber} - {Spells[$"{spellNumber}"].Name}");
         }
         DrawArrows(ref SelectedSpellNumber, stringList.Length, 0);
+        ImGui.SameLine();
+        ImGui.Checkbox("##unlearnedSpells", ref Configuration.ShowOnlyUnlearned);
+        if (ImGui.IsItemHovered())
+            ImGui.SetTooltip("Show only unlearned spells.");
 
         if (currentSpell != SelectedSpellNumber)
             SelectedSource = 0;
@@ -229,13 +233,7 @@ public class MainWindow : Window, IDisposable
     private static void DrawIcon(uint iconId)
     {
         var iconSize = size * ImGuiHelpers.GlobalScale;
-        var texture = Plugin.Texture.GetIcon(iconId);
-        if (texture == null)
-        {
-            ImGui.Text($"Unknown icon {iconId}");
-            return;
-        }
-
+        var texture = Plugin.Texture.GetFromGameIcon(iconId).GetWrapOrEmpty();
         ImGui.Image(texture.ImGuiHandle, iconSize);
     }
 
