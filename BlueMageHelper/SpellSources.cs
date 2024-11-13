@@ -1,12 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using System.Runtime.Serialization;
 using Dalamud.Game.Text.SeStringHandling.Payloads;
 
 using FFXIVClientStructs.FFXIV.Component.GUI;
-using Lumina.Excel.GeneratedSheets;
+using Lumina.Excel.Sheets;
 using Newtonsoft.Json;
 
 namespace BlueMageHelper;
@@ -34,7 +33,7 @@ public class SpellSource
     public float xCoord = 0;
     public float yCoord = 0;
 
-    [NonSerialized] public TerritoryType TerritoryType = null;
+    [NonSerialized] public TerritoryType? TerritoryType = null;
     [NonSerialized] public MapLinkPayload? MapLink = null;
 
     [NonSerialized] public bool IsDuty = false;
@@ -62,18 +61,17 @@ public class SpellSource
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public void Initialize(StreamingContext _)
     {
-        if (TerritoryTypeID != 0)
+        if (TerritoryTypeID != 0 && Plugin.TerritorySheet.HasRow(TerritoryTypeID))
         {
-            TerritoryType = Plugin.Data.GetExcelSheet<TerritoryType>()!.GetRow(TerritoryTypeID)!;
-            PlaceName = TerritoryType.PlaceName.Value!.Name;
+            TerritoryType = Plugin.TerritorySheet.GetRow(TerritoryTypeID);
+            PlaceName = TerritoryType.Value.PlaceName.Value.Name.ExtractText();
 
-            var content = Plugin.Data.GetExcelSheet<ContentFinderCondition>()!
-                .FirstOrDefault(content => content.TerritoryType.Row == TerritoryType.RowId);
-            if (content != null && content.Name != "")
+            var content = Plugin.ContentFinderSheet.FirstOrNull(content => content.TerritoryType.RowId == TerritoryType.Value.RowId);
+            if (content != null && content.Value.Name.ExtractText() != "")
             {
                 IsDuty = true;
-                DutyName = Helper.ToTitleCaseExtended(content.Name, 0);
-                DutyMinLevel = content.ClassJobLevelRequired.ToString();
+                DutyName = Helper.ToTitleCaseExtended(content.Value.Name);
+                DutyMinLevel = content.Value.ClassJobLevelRequired.ToString();
             }
         }
 
@@ -82,13 +80,13 @@ public class SpellSource
             if (xCoord == 0 || yCoord == 0)
             {
                 CurrentlyUnknown = true;
-                MapLink = new MapLinkPayload(TerritoryType.RowId, TerritoryType.Map.Row, 15, 15);
+                MapLink = new MapLinkPayload(TerritoryType.Value.RowId, TerritoryType.Value.Map.RowId, 15, 15);
                 return;
             }
 
             try
             {
-                MapLink = new MapLinkPayload(TerritoryType.RowId, TerritoryType.Map.Row, xCoord, yCoord);
+                MapLink = new MapLinkPayload(TerritoryType.Value.RowId, TerritoryType.Value.Map.RowId, xCoord, yCoord);
             }
             catch
             {
@@ -98,16 +96,18 @@ public class SpellSource
         else if (Type == RegionType.Buy)
         {
             // Ul'dah - Steps of Thal - (x12.5, y12.9)
-            TerritoryType = Plugin.Data.GetExcelSheet<TerritoryType>()!.GetRow(131)!;
-            PlaceName = TerritoryType.PlaceName.Value!.Name;
-            MapLink = new MapLinkPayload(TerritoryType.RowId, TerritoryType.Map.Row, 12.5f, 12.9f);
+            TerritoryType = Plugin.TerritorySheet.GetRow(131);
+            PlaceName = TerritoryType.Value.PlaceName.Value.Name.ExtractText();
+            MapLink = new MapLinkPayload(TerritoryType.Value.RowId, TerritoryType.Value.Map.RowId, 12.5f, 12.9f);
         }
     }
 
     public bool CompareTerritory(SpellSource other)
     {
-        if (other.TerritoryType == null) return false;
-        return other.TerritoryType.RowId == TerritoryType.RowId;
+        if (other.TerritoryType == null || TerritoryType == null)
+            return false;
+
+        return other.TerritoryType.Value.RowId == TerritoryType.Value.RowId;
     }
 
     public unsafe void SetRegion(AtkTextNode* region, AtkImageNode* regionType)
@@ -116,7 +116,7 @@ public class SpellSource
         {
             RegionType.OpenWorld => $"{MapLink!.PlaceName} {MapLink!.CoordinateString}",
             RegionType.Buy => $"{MapLink!.PlaceName} {MapLink!.CoordinateString}",
-            RegionType.Dungeon => $"{TerritoryType.PlaceName.Value!.Name}",
+            RegionType.Dungeon => $"{TerritoryType?.PlaceName.Value.Name.ExtractText() ?? "Unknown"}",
             _ => ""
         };
 

@@ -7,7 +7,7 @@ using Dalamud.Interface.Colors;
 using Dalamud.Interface.Utility;
 using Dalamud.Interface.Windowing;
 using ImGuiNET;
-using Lumina.Excel.GeneratedSheets;
+using Lumina.Excel.Sheets;
 
 using static BlueMageHelper.SpellSources;
 using static Dalamud.Interface.Components.ImGuiComponents;
@@ -23,7 +23,7 @@ public class MainWindow : Window, IDisposable
     private int SelectedSource;
     private static readonly Vector2 size = new(80, 80);
 
-    public ExcelSheetSelector.ExcelSheetPopupOptions<AozAction>? SourceOptions;
+    public ExcelSheetSelector<AozAction>.ExcelSheetPopupOptions? SourceOptions;
 
     public MainWindow(Plugin plugin) : base("Grimoire##BlueMageHelper")
     {
@@ -47,7 +47,7 @@ public class MainWindow : Window, IDisposable
     {
         if (SourceOptions == null)
         {
-            ExcelSheetSelector.FilteredSearchSheet = null!;
+            ExcelSheetSelector<AozAction>.FilteredSearchSheet = null!;
             SourceOptions = new()
             {
                 FormatRow = a => $"{Helper.ToTitleCaseExtended(a.Action.Value!.Name)}",
@@ -72,7 +72,7 @@ public class MainWindow : Window, IDisposable
         ImGui.Combo("##spellSelector", ref SelectedSpellNumber, stringList, stringList.Length);
         ImGui.SameLine();
         IconButton(99, FontAwesomeIcon.Search);
-        if (ExcelSheetSelector.ExcelSheetPopup("SourceResultPopup", out var spellRow, SourceOptions))
+        if (ExcelSheetSelector<AozAction>.ExcelSheetPopup("SourceResultPopup", out var spellRow, SourceOptions))
         {
             var spellNumber = Plugin.AozTransientCache[(int)spellRow - 1].Number;
             SelectedSpellNumber = Array.IndexOf(stringList, $"{spellNumber} - {Spells[$"{spellNumber}"].Name}");
