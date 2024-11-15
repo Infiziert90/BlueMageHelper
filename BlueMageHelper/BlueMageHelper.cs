@@ -98,6 +98,7 @@ public sealed class Plugin : IDalamudPlugin
         });
 
         PluginInterface.UiBuilder.Draw += DrawUI;
+        PluginInterface.UiBuilder.OpenMainUi += DrawMainUI;
         PluginInterface.UiBuilder.OpenConfigUi += DrawConfigUI;
         Framework.Update += AozNotebookAddonManager;
         Framework.Update += CheckLearnedSpells;
@@ -197,11 +198,16 @@ public sealed class Plugin : IDalamudPlugin
         Commands.RemoveHandler(CommandName);
         Framework.Update -= AozNotebookAddonManager;
         Framework.Update -= CheckLearnedSpells;
+
+        PluginInterface.UiBuilder.Draw -= DrawUI;
+        PluginInterface.UiBuilder.OpenMainUi -= DrawMainUI;
+        PluginInterface.UiBuilder.OpenConfigUi -= DrawConfigUI;
     }
 
-    private void OnCommand(string command, string args) => MainWindow.IsOpen = true;
+    private void OnCommand(string command, string args) => DrawMainUI();
     private void DrawUI() => WindowSystem.Draw();
-    private void DrawConfigUI() => ConfigWindow.IsOpen = true;
+    private void DrawMainUI() => MainWindow.Toggle();
+    private void DrawConfigUI() => ConfigWindow.Toggle();
     public void SetMapMarker(MapLinkPayload map) => GameGui.OpenMapWithMapLink(map);
 
     private unsafe bool SpellUnlocked(uint unlockLink) => UIState.Instance()->IsUnlockLinkUnlockedOrQuestCompleted(unlockLink);
